@@ -53,11 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HediffDefOf.cs" />
-    <Compile Include="JobDriver_InjectStimulant.cs" />
-    <Compile Include="MedicExtensions.cs" />
+    <Compile Include="AdvancedRaidersDefOf.cs" />
+    <Compile Include="JobDriver_FirstAid.cs" />
+    <Compile Include="JobGiver_FirstAid.cs" />
+    <Compile Include="MedicAIUtility.cs" />
+    <Compile Include="MedicUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Toils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

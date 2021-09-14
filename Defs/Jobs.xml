@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef>
+    <defName>FirstAid</defName>
+    <driverClass>AdvancedRaiders.JobDriver_FirstAid</driverClass>
+    <reportString>providing first aid for TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
+</Defs>

@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+    <!-- Omega stimulant-->
+    <!-- Hediff -->
     <HediffDef ParentName="DiseaseBase">
-        <defName>OmegaStimulant</defName>
+        <defName>OmegaStimulantHigh</defName>
+        <hediffClass>Hediff_High</hediffClass>
         <label>omegaStimulant</label>
         <description>Omega stimulant in the bloodstream. Despite granting a huge strength, endurance and consciousness buffs at first, it soon backfires with extreme pain, delirium and, at the end, brain hemorrhage and, therefore, death.</description>
+        <scenarioCanAdd>false</scenarioCanAdd>
         <lethalSeverity>1</lethalSeverity>
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">
-                <severityPerDay>2.5</severityPerDay>
+                <severityPerDay>2.4</severityPerDay>
             </li>
         </comps>
         <stages>
             <li>
                 <label>warmup</label>
                 <painFactor>0.75</painFactor>
+                <statFactors>
+                    <IncomingDamageFactor>0.8</IncomingDamageFactor>
+                </statFactors>
                 <statOffsets>
-                    <IncomingDamageFactor>-0.2</IncomingDamageFactor>
-                    <MeleeDPS>0.3</MeleeDPS>
+                    <MeleeDPS>2.5</MeleeDPS>
                     <MeleeHitChance>0.3</MeleeHitChance>
-                    <ShootingAccuracyPawn>0.25</ShootingAccuracyPawn>
+                    <ShootingAccuracyPawn>2.5</ShootingAccuracyPawn>
 					<MeleeDodgeChance>0.3</MeleeDodgeChance>
                 </statOffsets>
                 <capMods>
@@ -40,11 +46,13 @@
                 <minSeverity>0.15</minSeverity>
                 <label>peak</label>
                 <painFactor>0.2</painFactor>
+                <statFactors>
+                    <IncomingDamageFactor>0.5</IncomingDamageFactor>
+                </statFactors>
                 <statOffsets>
-                    <IncomingDamageFactor>-0.5</IncomingDamageFactor>
-                    <MeleeDPS>0.8</MeleeDPS>
+                    <MeleeDPS>10.0</MeleeDPS>
                     <MeleeHitChance>0.8</MeleeHitChance>
-                    <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+                    <ShootingAccuracyPawn>10.0</ShootingAccuracyPawn>
 					<MeleeDodgeChance>0.6</MeleeDodgeChance>
                 </statOffsets>
                 <capMods>
@@ -68,7 +76,7 @@
                 <painFactor>0.8</painFactor>
                 <painOffset>0.2</painOffset>
                 <statOffsets>
-                    <IncomingDamageFactor>-0.1</IncomingDamageFactor>
+                    <IncomingDamageFactor>0.9</IncomingDamageFactor>
                     <MeleeHitChance>-0.1</MeleeHitChance>
                     <MeleeDPS>0.2</MeleeDPS>
                     <ShootingAccuracyPawn>-0.2</ShootingAccuracyPawn>
@@ -134,4 +142,47 @@
             </li>
         </stages>
     </HediffDef>
+
+    <!-- item -->
+    <ThingDef ParentName="DrugPillBase">
+        <defName>OmegaStimulant</defName>
+        <label>omega stimulant</label>
+        <description>Quite effective combat drug created in attempt of reverse-engineering glitterworld stimulants. Just like original, it boosts reaction, edurance and strength, hardens skin and keeps its flexibility at the same time, and on top of that has a painkiller effect.\n\nStill, this is only replica of high-tech stimulants. In 4 hours after injection effects start to fade and 6 hours later soldier dies in terrifying agony.</description>
+        <descriptionHyperlinks>
+            <HediffDef>OmegaStimulantHigh</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>drug_placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <stackLimit>25</stackLimit>
+        <techLevel>Spacer</techLevel>
+        <statBases>
+            <DeteriorationRate>0.5</DeteriorationRate>
+            <MarketValue>25</MarketValue>
+            <Mass>0.01</Mass>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <ingestible>
+            <foodType>Fluid, Processed</foodType>
+            <drugCategory>Medical</drugCategory>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>OmegaStimulantHigh</hediffDef>
+                    <severity>0.00</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+			</li>
+		</comps>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <allowedArchonexusCount>50</allowedArchonexusCount>
+    </ThingDef>
+
 </Defs>
