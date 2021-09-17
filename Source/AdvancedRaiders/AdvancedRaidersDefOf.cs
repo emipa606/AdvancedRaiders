@@ -14,6 +14,7 @@ namespace AdvancedRaiders
         public static HediffDef OmegaStimulantHigh;
         public static ThingDef OmegaStimulant;
         public static JobDef FirstAid;
+        public static PawnKindDef MercenaryMedic;
         static AdvancedRaidersDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(AdvancedRaidersDefOf));
     }
 }

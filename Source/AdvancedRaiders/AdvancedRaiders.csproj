@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\HarmonyRimWorld\Current\Assemblies\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -38,6 +41,9 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="HarmonyMod">
+      <HintPath>..\..\..\HarmonyRimWorld\Current\Assemblies\HarmonyMod.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,12 +59,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedRaiders.cs" />
     <Compile Include="AdvancedRaidersDefOf.cs" />
+    <Compile Include="PawnClassDef.cs" />
+    <Compile Include="PawnClassDefOf.cs" />
+    <Compile Include="HarmonyPatches.cs" />
     <Compile Include="JobDriver_FirstAid.cs" />
     <Compile Include="JobGiver_FirstAid.cs" />
     <Compile Include="MedicAIUtility.cs" />
     <Compile Include="MedicUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaidExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

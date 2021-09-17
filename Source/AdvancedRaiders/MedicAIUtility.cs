@@ -19,6 +19,12 @@ namespace AdvancedRaiders
                 Log.Warning("Tried to find first aid target for None action");
                 return false;
             }
+            if (medic.Faction == null)
+            {
+                Log.Warning("Tried to search for first aid targets for medic with no faction");
+                target = null;
+                return false;
+            }
             var curMap = medic.Map;
 
             var potentialTargets = 
