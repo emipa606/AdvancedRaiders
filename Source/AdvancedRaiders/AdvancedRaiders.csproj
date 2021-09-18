@@ -64,8 +64,8 @@
     <Compile Include="PawnClassDef.cs" />
     <Compile Include="PawnClassDefOf.cs" />
     <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="JobDriver_FirstAid.cs" />
-    <Compile Include="JobGiver_FirstAid.cs" />
+    <Compile Include="JobDriver_OmegaStimShot.cs" />
+    <Compile Include="JobGiver_OmegaStimShot.cs" />
     <Compile Include="MedicAIUtility.cs" />
     <Compile Include="MedicUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

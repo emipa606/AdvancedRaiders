@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
     <!-- TODO -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>/Defs/FactionDef[defName="OutlanderCivil"]/pawnGroupMakers</xpath>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
     <value>
-
+      <Mercenary_Medic>5</Mercenary_Medic>
     </value>
   </Operation>
 </Patch>

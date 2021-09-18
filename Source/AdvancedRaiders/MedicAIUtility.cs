@@ -11,54 +11,39 @@ namespace AdvancedRaiders
 {
     public static class MedicAIUtility
     {
-        public static bool TryFindFirstAidTarget(Pawn medic, float searchRadius, FirstAidAction action, out Pawn target)
+        
+
+        public static bool TryFindOmegaStimShotTarget(Pawn medic, float searchRadius, out Pawn target)
         {
-            if (action==FirstAidAction.None)
-            {
-                target = null;
-                Log.Warning("Tried to find first aid target for None action");
-                return false;
-            }
             if (medic.Faction == null)
             {
-                Log.Warning("Tried to search for first aid targets for medic with no faction");
+                Log.Warning("Tried to search for omega stim shot targets for medic with no faction");
                 target = null;
                 return false;
             }
             var curMap = medic.Map;
 
-            var potentialTargets = 
-                               from p in curMap.mapPawns.FreeHumanlikesSpawnedOfFaction(medic.Faction)
-                               where p.Downed && !p.health.hediffSet.HasHediff(AdvancedRaidersDefOf.OmegaStimulantHigh)
-                               select p;
-
-            if (potentialTargets.Count()==0)
+            Predicate<Thing> validator = (Predicate<Thing>)(t =>
             {
-                target = null;
+                Pawn pawn = t as Pawn;
+                return pawn.RaceProps.Humanlike && 
+                pawn.Downed && 
+                pawn.Faction == medic.Faction && 
+                (medic.CanReserve((LocalTargetInfo)(Thing)pawn) && 
+                !pawn.health.hediffSet.HasHediff(AdvancedRaidersDefOf.OmegaStimulantHigh));
+            });
+
+
+            target = (Pawn) GenClosest.ClosestThingReachable(medic.Position, curMap, ThingRequest.ForGroup(ThingRequestGroup.Pawn), PathEndMode.OnCell, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some), searchRadius, validator);
+
+            if (target == null)
+            {
                 return false;
             }
 
-            var closestTarget = potentialTargets.First();
-            float minDistToTarget = 1e35f;
-            foreach (var t in potentialTargets)
-            {
-                float dist = medic.Position.DistanceTo(t.Position);
-                if (dist < minDistToTarget)
-                {
-                    minDistToTarget = dist;
-                    closestTarget = t;
-                }
-            }
-
-            if (minDistToTarget>searchRadius)
-            {
-                target = null;
-                return false;
-            }
-
-            target = closestTarget;
             return true;
-
         }
+
+        
     }
 }

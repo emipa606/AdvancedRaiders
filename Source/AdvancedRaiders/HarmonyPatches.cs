@@ -21,7 +21,7 @@ namespace AdvancedRaiders
     }
 
     [HarmonyPatch(typeof(LordJob), "LordJobTick")]
-    class AssaultColonyPatch
+    class GiveJobsToSpecialUnitsPatch
     {
         [HarmonyPostfix]
         public static void TryGiveJobsToSpecialUnits(LordJob __instance)//i should find a better way to patch ticks. mb path the ticker itself?
@@ -32,4 +32,7 @@ namespace AdvancedRaiders
             }
         }
     }
+
+    
+
 }

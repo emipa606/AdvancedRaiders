@@ -10,7 +10,7 @@ namespace AdvancedRaiders
 {
     public static class MedicUtility
     {
-        public static bool IsMedic(this Pawn pawn) => pawn.kindDef == AdvancedRaidersDefOf.MercenaryMedic;
+        public static bool IsMedic(this Pawn pawn) => pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Medic;
 
         public static ThingDef ActionRelatedThingDef(FirstAidAction action)
         {

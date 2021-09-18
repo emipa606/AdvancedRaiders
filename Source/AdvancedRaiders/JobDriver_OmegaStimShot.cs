@@ -13,18 +13,16 @@ namespace AdvancedRaiders
    
 
 
-    public class JobDriver_FirstAid : JobDriver
+    public class JobDriver_OmegaStimShot : JobDriver
     {
         public Pawn FirstAidTarget => TargetThingA as Pawn;
         public Thing FirstAidDrug => TargetThingB;
 
-        private bool TargetDoesntNeedFirstAid()
+        private bool NoNeedInOmegaStim()
         {
             
-            if (FirstAidTargetIsMobile)
-                return true;
-
-            if (FirstAidTarget.health.State != PawnHealthState.Down)        //add ressurect action
+            
+            if (FirstAidTarget.health.State != PawnHealthState.Down)        
                 return true;
 
             if (FirstAidTarget.health.hediffSet.HasHediff(AdvancedRaidersDefOf.OmegaStimulantHigh))
@@ -36,7 +34,7 @@ namespace AdvancedRaiders
 
         public bool FirstAidTargetIsMobile => FirstAidTarget.health.State == PawnHealthState.Mobile;
     
-        public JobDriver_FirstAid() : base()
+        public JobDriver_OmegaStimShot() : base()
         {
         }
 
@@ -46,38 +44,41 @@ namespace AdvancedRaiders
             AddEndCondition(delegate
             {
 
-                if (TargetDoesntNeedFirstAid())
+                if (NoNeedInOmegaStim())
                 {
                     return JobCondition.Incompletable;
                 }
-                if (!GetActor().CanReserve(TargetA))
+                if (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA))
+                {
                     return JobCondition.Incompletable;
+                }
+
                 return JobCondition.Ongoing;
             });
 
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-            this.AddFailCondition(TargetDoesntNeedFirstAid);
+            this.AddFailCondition(NoNeedInOmegaStim);
+            this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));
 
             yield return Toils_Reserve.Reserve(TargetIndex.A);
-
-
-            Toil gotoToil = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
-            yield return gotoToil;
+            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
 
             yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
 
-            Toil ingestToil = Toils_Ingest.ChewIngestible(FirstAidTarget, 1f, TargetIndex.B).FailOnCannotTouch<Toil>(TargetIndex.B, PathEndMode.Touch);
 
+            yield return Toils_Ingest.ChewIngestible(FirstAidTarget, 1f, TargetIndex.B).FailOnCannotTouch<Toil>(TargetIndex.B, PathEndMode.Touch);
 
-            yield return ingestToil;
-            yield return Toils_Ingest.FinalizeIngest(FirstAidTarget, TargetIndex.B);
-            yield return new Toil()
+            Toil bringDownedBackToFight = new Toil();
+            bringDownedBackToFight.defaultCompleteMode = ToilCompleteMode.Instant;
+            bringDownedBackToFight.initAction = (Action)(() =>
             {
-                initAction = (Action)(() =>
-                {
+                if (GetActor().GetLord()!=null && !GetActor().GetLord().ownedPawns.Contains(FirstAidTarget))
                     GetActor().GetLord().AddPawn(FirstAidTarget);
-                })
-            };
+            });
+            yield return bringDownedBackToFight;
+
+            yield return Toils_Ingest.FinalizeIngest(FirstAidTarget, TargetIndex.B);
+            
            
         }
 

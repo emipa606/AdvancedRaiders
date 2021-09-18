@@ -13,8 +13,8 @@ namespace AdvancedRaiders
     {
         public static HediffDef OmegaStimulantHigh;
         public static ThingDef OmegaStimulant;
-        public static JobDef FirstAid;
-        public static PawnKindDef MercenaryMedic;
+        public static JobDef OmegaStimShot;
+        public static PawnKindDef Mercenary_Medic;
         static AdvancedRaidersDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(AdvancedRaidersDefOf));
     }
 }

@@ -2,7 +2,7 @@
 <Defs>
   <!-- for some reason parent defs doesnt work-->
       <PawnKindDef>
-          <defName>MercenaryMedic</defName>
+          <defName>Mercenary_Medic</defName>
           <defaultFactionType>Pirate</defaultFactionType>
           <race>Human</race>
           <label>mercenary medic</label>

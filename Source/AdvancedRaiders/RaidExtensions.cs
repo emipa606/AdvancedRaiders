@@ -14,12 +14,12 @@ namespace AdvancedRaiders
     {
         public static void TryKindSpecificJobGiversOnOwnedPawns(this Lord lord)
         {
-            JobGiver_FirstAid medicJobGiver = new JobGiver_FirstAid();
+            JobGiver_OmegaStimShot medicJobGiver = new JobGiver_OmegaStimShot();
             JobIssueParams pars;
             pars.maxDistToSquadFlag = 30f;
             foreach(var p in lord.ownedPawns)
             {
-                if (p.IsMedic() && p.jobs.curJob.def != AdvancedRaidersDefOf.FirstAid)
+                if (p.IsMedic() && p.jobs.curJob.def != AdvancedRaidersDefOf.OmegaStimShot)
                 {
                     Job job = medicJobGiver.TryIssueJobPackage(p, pars).Job;
                     if (job != null)
