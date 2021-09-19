@@ -17,7 +17,8 @@
         <stages>
             <li>
                 <label>warmup</label>
-                <painFactor>0.75</painFactor>
+                <painFactor>0.5</painFactor>
+                <totalBleedFactor>0.2</totalBleedFactor>
                 <statFactors>
                     <IncomingDamageFactor>0.8</IncomingDamageFactor>
                 </statFactors>
@@ -46,6 +47,7 @@
                 <minSeverity>0.15</minSeverity>
                 <label>peak</label>
                 <painFactor>0.2</painFactor>
+                <totalBleedFactor>0.05</totalBleedFactor>
                 <statFactors>
                     <IncomingDamageFactor>0.5</IncomingDamageFactor>
                 </statFactors>
@@ -75,8 +77,9 @@
                 <label>decline</label>
                 <painFactor>0.8</painFactor>
                 <painOffset>0.2</painOffset>
+                <totalBleedFactor>0.5</totalBleedFactor>
                 <statOffsets>
-                    <IncomingDamageFactor>0.9</IncomingDamageFactor>
+                    <IncomingDamageFactor>0.5</IncomingDamageFactor>
                     <MeleeHitChance>-0.1</MeleeHitChance>
                     <MeleeDPS>0.2</MeleeDPS>
                     <ShootingAccuracyPawn>-0.2</ShootingAccuracyPawn>
@@ -184,5 +187,87 @@
         </tradeTags>
         <allowedArchonexusCount>50</allowedArchonexusCount>
     </ThingDef>
+
+
+    <!-- Ukuphila herb -->
+    <!-- Hediff -->
+    <HediffDef ParentName="DiseaseBase">
+        <defName>UkuphilaResurrection</defName>
+        <label>ukuphila resurrection</label>
+        <description>placeholder text with funny joke</description>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <lethalSeverity>1</lethalSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>1</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <!-- костыль конечно, но кого волнует?-->
+                <mentalStateGivers>
+                    <li>
+                      <mentalState>UkuphilaResurrected</mentalState>
+                      <mtbDays>0.0001</mtbDays>
+                    </li>
+                </mentalStateGivers>
+                <statFactors>
+                    <IncomingDamageFactor>0.7</IncomingDamageFactor>
+                    <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+                    <MeleeHitChance>0.8</MeleeHitChance>
+                    <MeleeDodgeChance>0.5</MeleeDodgeChance>
+                </statFactors>
+                
+                <label>animation</label>
+                <painFactor>0.0</painFactor>
+                <totalBleedFactor>0.0</totalBleedFactor>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>+1.0</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.4</offset>
+                        <setMax>0.6</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        
+    </HediffDef>
+    <!-- item -->
+    <ThingDef ParentName="MedicineBase">
+        <defName>UkuphilaHerb</defName>
+        <label>ukuphila herb</label>
+        <description>A result of archotechs-know-what rituals on anima grass. Some tribal healers use it to give those who perished on the battlefield a second chance to fulfill their duty to the tribe.\n\n"Ressurected" in such way person can be best described as zombie as they are incapable of anything but fighting. They are quite tenacious, but death will come for them eventually. While they remember their faction, they will attack any outsider they see, even ally. </description>
+        <graphicData>
+          <texPath>Things/Items/UkuphilaHerb</texPath>
+          <graphicClass>Graphic_StackCount</graphicClass>
+          <drawSize>0.85</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <stackLimit>25</stackLimit>
+        <techLevel>Neolithic</techLevel>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>0.05</Mass>
+            <DeteriorationRate>5.0</DeteriorationRate>
+            <Flammability>1.5</Flammability>
+            <MarketValue>13</MarketValue>
+        </statBases>
+        <thingCategories>
+          <li>Items</li>
+        </thingCategories>
+        
+        <comps>
+          <li Class="CompProperties_Targetable">
+            <compClass>CompTargetable_SingleCorpse</compClass>
+            <fleshCorpsesOnly>true</fleshCorpsesOnly>
+            <nonDessicatedCorpsesOnly>true</nonDessicatedCorpsesOnly>
+          </li>
+        </comps>
+      </ThingDef>
 
 </Defs>

@@ -10,9 +10,6 @@ using Verse.AI.Group;
 
 namespace AdvancedRaiders
 {
-   
-
-
     public class JobDriver_OmegaStimShot : JobDriver
     {
         public Pawn FirstAidTarget => TargetThingA as Pawn;
@@ -62,10 +59,7 @@ namespace AdvancedRaiders
 
             yield return Toils_Reserve.Reserve(TargetIndex.A);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
-
             yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
-
-
             yield return Toils_Ingest.ChewIngestible(FirstAidTarget, 1f, TargetIndex.B).FailOnCannotTouch<Toil>(TargetIndex.B, PathEndMode.Touch);
 
             Toil bringDownedBackToFight = new Toil();
@@ -78,8 +72,7 @@ namespace AdvancedRaiders
             yield return bringDownedBackToFight;
 
             yield return Toils_Ingest.FinalizeIngest(FirstAidTarget, TargetIndex.B);
-            
-           
+            yield return Toils_Reserve.Release(TargetIndex.A);
         }
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)

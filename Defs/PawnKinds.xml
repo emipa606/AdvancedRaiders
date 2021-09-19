@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <!-- for some reason parent defs doesnt work-->
+  <!-- for some reason parent def doesnt work-->
       <PawnKindDef>
           <defName>Mercenary_Medic</defName>
           <defaultFactionType>Pirate</defaultFactionType>
@@ -45,4 +45,42 @@
           <initialWillRange>1~2</initialWillRange>
           <initialResistanceRange>8~16</initialResistanceRange>
       </PawnKindDef>
+
+      <PawnKindDef ParentName="TribalBase">
+        <defName>Tribal_Medic</defName>
+        <defaultFactionType>TribeCivil</defaultFactionType>
+        <label>tribal medic</label>
+        <combatPower>80</combatPower>
+        <inventoryOptions>
+          <subOptionsTakeAll>
+              <li>
+                  <thingDef>UkuphilaHerb</thingDef>
+                  <countRange>2~3</countRange>
+              </li>
+          </subOptionsTakeAll>
+        </inventoryOptions>
+        <gearHealthRange>0.5~1.8</gearHealthRange>
+        <apparelMoney>200~300</apparelMoney>
+        <apparelRequired>
+          <li>Apparel_WarVeil</li>
+        </apparelRequired>
+        <weaponMoney>100~100</weaponMoney>
+        <weaponTags>
+          <li>NeolithicRangedDecent</li>
+        </weaponTags>
+        <disallowedTraits>
+          <li>Brawler</li>
+        </disallowedTraits>
+        <initialWillRange>2~4</initialWillRange>
+        <initialResistanceRange>10~16</initialResistanceRange>
+        <requiredWorkTags>
+          <li>Caring</li>
+        </requiredWorkTags>
+        <skills>
+          <li>
+            <skill>Medicine</skill>
+            <range>6~20</range>
+          </li>
+        </skills>
+    </PawnKindDef>
 </Defs>

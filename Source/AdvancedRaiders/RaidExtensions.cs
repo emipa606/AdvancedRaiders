@@ -12,17 +12,30 @@ namespace AdvancedRaiders
 {
     public static class RaidExtensions
     {
+        public static ThinkNode_JobGiver GetPawnClassRelatedJobGiver(this Pawn pawn)
+        {
+            if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Medic)
+                return new JobGiver_OmegaStimShot();
+
+            if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_Medic)
+                return new JobGiver_MakeUkuphilaZombie();
+
+            return null;
+        }
+
         public static void TryKindSpecificJobGiversOnOwnedPawns(this Lord lord)
         {
-            JobGiver_OmegaStimShot medicJobGiver = new JobGiver_OmegaStimShot();
-            JobIssueParams pars;
+            JobIssueParams pars;            //понять бы еще как правильно использовать JobGiver...
             pars.maxDistToSquadFlag = 30f;
+            
             foreach(var p in lord.ownedPawns)
             {
-                if (p.IsMedic() && p.jobs.curJob.def != AdvancedRaidersDefOf.OmegaStimShot)
+                var jobGiver = GetPawnClassRelatedJobGiver(p);
+                
+                if (jobGiver!=null)
                 {
-                    Job job = medicJobGiver.TryIssueJobPackage(p, pars).Job;
-                    if (job != null)
+                    Job job = jobGiver.TryIssueJobPackage(p, pars).Job;       //забиваем микроскопом гвозди??
+                    if (job != null && p.CurJobDef !=job.def)
                     {
                         job.count = 1;
                         p.jobs.StartJob(job, resumeCurJobAfterwards: true);

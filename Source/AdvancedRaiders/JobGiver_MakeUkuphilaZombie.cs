@@ -1,26 +1,21 @@
-﻿using Verse;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Verse;
 using Verse.AI;
 
 namespace AdvancedRaiders
 {
-    public enum FirstAidAction
-    {
-        None,
-        Stabilize,
-        Evac,
-        Painkiller,
-        OmegaStimulantShot
-    }
-
-    public class JobGiver_OmegaStimShot : ThinkNode_JobGiver
+    class JobGiver_MakeUkuphilaZombie : ThinkNode_JobGiver
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
-            Pawn patient = null;
-            
-            if (MedicAIUtility.TryFindOmegaStimShotTarget(pawn, 20f, out patient))
+            Corpse targetCorpse = null;
+            if (MedicAIUtility.TryFindUkuphilaHerbResurrectionTarget(pawn, 20f, out targetCorpse))
             {
-                var requiedThingDef = AdvancedRaidersDefOf.OmegaStimulant;
+                var requiedThingDef = AdvancedRaidersDefOf.UkuphilaHerb;
                 Thing thingToUse = null;
                 foreach (var t in pawn.inventory.GetDirectlyHeldThings())
                 {
@@ -30,25 +25,24 @@ namespace AdvancedRaiders
                         break;
                     }
                 }
-                    
+
                 if (thingToUse != null)         //if medic actually has drug that can be used for this action
                 {
-                    Job job = JobMaker.MakeJob(AdvancedRaidersDefOf.OmegaStimShot);
-                    job.targetA = patient;
+                    Job job = JobMaker.MakeJob(AdvancedRaidersDefOf.MakeUkuphilaZombie);
+                    job.targetA = targetCorpse;
                     job.targetB = thingToUse;
                     job.count = 1;
-                    
+
                     return job;
                 }
                 else
                 {
-                    patient = null;
+                    targetCorpse = null;
                 }
             }
-            
+
             return null;
         }
-
-
     }
+    
 }

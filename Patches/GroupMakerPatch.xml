@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-    <!-- TODO -->
+   <!-- for reason beyond me patches by defName dont work properly-->
+   <!-- when i find a way to patch specific factions (i dont want to make civil tribe have tribal medics as this kind of guys doesnt look too civil) ill rewrite it-->
+
+
+  <!--outlanders-->
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/FactionDef/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
+    <xpath>/Defs/FactionDef[pawnSingular="outlander"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
     <value>
       <Mercenary_Medic>5</Mercenary_Medic>
+    </value>
+  </Operation>
+
+  <!--pirates-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
+    <value>
+      <Mercenary_Medic>5</Mercenary_Medic>
+    </value>
+  </Operation>
+
+  <!-- ooga boogas-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
+    <value>
+      <Tribal_Medic>7</Tribal_Medic>
     </value>
   </Operation>
 </Patch>

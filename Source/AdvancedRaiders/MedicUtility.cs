@@ -5,33 +5,42 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using RimWorld;
+using Verse.AI.Group;
+using Verse.AI;
 
 namespace AdvancedRaiders
 {
     public static class MedicUtility
     {
-        public static bool IsMedic(this Pawn pawn) => pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Medic;
-
-        public static ThingDef ActionRelatedThingDef(FirstAidAction action)
+        
+        public static void MakeUkuphilaZombie(Pawn pawn)
         {
-            switch (action) 
+            if (!pawn.Dead)
             {
-                case FirstAidAction.OmegaStimulantShot:
-                    return AdvancedRaidersDefOf.OmegaStimulant;
-                default:
-                    return null;
+                Log.Error("Attemp to make ukuphila zombie from living pawn");
+                return;
             }
 
-        }
+            if (!pawn.RaceProps.Humanlike)
+            {
+                Log.Error("Attempt to make ukuphila zombie from non-humanlike");
+                return;
+            }
 
-        public static FirstAidAction ThingRelatedFirstAidAction(Thing thing) => ThingDefRelatedFirstAidAction(thing.def);
-        public static FirstAidAction ThingDefRelatedFirstAidAction(ThingDef def)
-        {
+            if (!pawn.health.hediffSet.HasHead)
+            {
+                Log.Message("Attempted to make ukuphila zombie from headless corpse. Fail");
+                return;
+            }
+
+            ResurrectionUtility.Resurrect(pawn);
+            pawn.health.AddHediff(AdvancedRaidersDefOf.UkuphilaResurrection);
             
-            if(def == AdvancedRaidersDefOf.OmegaStimulant)
-                return FirstAidAction.OmegaStimulantShot;
+            if (pawn.Dead)
+                Log.Error("Looks like even forbidden herbs couldn't revive " + pawn.Name + ". Press F and fix this asap, it shouldnt happen");
 
-            return FirstAidAction.None;
+
+
         }
     }
 }

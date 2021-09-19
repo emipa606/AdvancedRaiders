@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <MentalStateDef ParentName="BaseMentalState">
+        <defName>UkuphilaResurrected</defName>
+        <label>ukuphila resurrected</label>
+        <stateClass>AdvancedRaiders.MentalState_UkuphilaResurrected</stateClass>
+        <category>Aggro</category>
+        <minTicksBeforeRecovery>999999</minTicksBeforeRecovery>
+        <recoveryMtbDays>999</recoveryMtbDays>
+        <blockNormalThoughts>true</blockNormalThoughts>
+        <nameColor>(0.73, 0.05, 0.79)</nameColor>
+        <baseInspectLine>Mental state: ukuphila psyhosis</baseInspectLine>
+        <unspawnedCanDo>true</unspawnedCanDo>
+      </MentalStateDef>
+</Defs>

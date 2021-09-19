@@ -7,4 +7,13 @@
     <casualInterruptible>false</casualInterruptible>
     <collideWithPawns>true</collideWithPawns>
   </JobDef>
+
+  <JobDef>
+    <defName>MakeUkuphilaZombie</defName>
+    <driverClass>AdvancedRaiders.JobDriver_MakeUkuphilaZombie</driverClass>
+    <reportString>making ukuphila zombie from TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
+
 </Defs>
