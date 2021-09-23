@@ -62,7 +62,9 @@
     <Compile Include="AdvancedRaiders.cs" />
     <Compile Include="AdvancedRaidersDefOf.cs" />
     <Compile Include="CompTargetEffect_UkuphilaResurrect.cs" />
+    <Compile Include="JobDriver_BreakTurret.cs" />
     <Compile Include="JobDriver_MakeUkuphilaZombie.cs" />
+    <Compile Include="JobGiver_BreakTurret.cs" />
     <Compile Include="JobGiver_MakeUkuphilaZombie.cs" />
     <Compile Include="MentalState_UkuphilaResurrected.cs" />
     <Compile Include="PawnClassDef.cs" />
@@ -70,8 +72,8 @@
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="JobDriver_OmegaStimShot.cs" />
     <Compile Include="JobGiver_OmegaStimShot.cs" />
-    <Compile Include="MedicAIUtility.cs" />
-    <Compile Include="MedicUtility.cs" />
+    <Compile Include="SpecialUnitAIUtility.cs" />
+    <Compile Include="SpecialUnitUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaidExtensions.cs" />
   </ItemGroup>

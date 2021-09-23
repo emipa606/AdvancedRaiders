@@ -9,10 +9,8 @@ using Verse.AI;
 
 namespace AdvancedRaiders
 {
-    public static class MedicAIUtility
+    public static class SpecialUnitAIUtility
     {
-        
-
         public static bool TryFindOmegaStimShotTarget(Pawn medic, float searchRadius, out Pawn target)
         {
             if (medic.Faction == null)
@@ -57,7 +55,7 @@ namespace AdvancedRaiders
         {
             if (medic.Faction == null)
             {
-                Log.Warning("Tried to search for omega stim shot targets for medic with no faction");
+                Log.Warning("Tried to search for ukuphila resurrection targets for medic with no faction");
                 target = null;
                 return false;
             }
@@ -88,6 +86,56 @@ namespace AdvancedRaiders
                 return false;
 
             return true;
+        }
+
+
+        public static bool TryFindBreakableEnemyTurret(Pawn technician, float searchRadius, out Building turret)
+        {
+            Predicate<Thing> validator = (t =>
+            {
+                var building = t as Building;
+                var turretComp = building.GetComp<CompBreakdownable>();
+                return
+                building != null &&
+                turretComp != null &&
+                building.def.weaponTags.Contains("TurretGun") &&
+                !turretComp.BrokenDown &&
+                technician.Faction.HostileTo(building.Faction);
+            }
+            );
+
+            turret = (Building) GenClosest.ClosestThingReachable(
+                technician.Position,
+                technician.Map,
+                ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
+                PathEndMode.OnCell,
+                TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
+                searchRadius,
+                validator);
+
+            if (turret == null)
+                return false;
+
+            return true;
+        }
+
+        public static bool TryFindBreakableEnemyTrap(Pawn technician, float searchRadius, out Building trap)
+        {
+            Predicate<Thing> validator = (t =>
+            {
+                var building = t as Building;
+                var turretComp = building.GetComp<CompBreakdownable>();
+                return
+                building != null &&
+                turretComp != null &&
+                building.def.weaponTags.Contains("TurretGun") &&
+                !turretComp.BrokenDown &&
+                technician.Faction.HostileTo(building.Faction);
+            }
+            );
+
+            trap = null;
+            return false;
         }
     }
 }

@@ -16,4 +16,12 @@
     <collideWithPawns>true</collideWithPawns>
   </JobDef>
 
+  <JobDef>
+    <defName>BreakTurret</defName>
+    <driverClass>AdvancedRaiders.JobDriver_BreakTurret</driverClass>
+    <reportString>breaking TurretA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
+
 </Defs>

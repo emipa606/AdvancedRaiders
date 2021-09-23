@@ -6,15 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using Verse.AI;
-using Verse.AI.Group;
 
 namespace AdvancedRaiders
 {
-    public class JobDriver_MakeUkuphilaZombie : JobDriver
+    public class JobDriver_BreakTurret : JobDriver
     {
-        public Corpse TargetCorpse => TargetThingA as Corpse;
-        public Thing UkuphilaHerb => TargetThingB;
-        
+        private Building Turret => TargetThingA as Building;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
@@ -37,23 +34,16 @@ namespace AdvancedRaiders
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));
 
             yield return Toils_Reserve.Reserve(TargetIndex.A);
-            yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.InteractionCell);
-            yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
-            yield return Toils_General.Wait(50);
-            yield return Toils_General.Do((Action)this.MakeUkuphilaZombie);
+            yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.ClosestTouch);
+            yield return Toils_General.Wait(140);
+            yield return Toils_General.Do(() =>   
+                GetActor().meleeVerbs.TryMeleeAttack(Turret)
+            );
             yield return Toils_General.Do(() =>
-            {
-                if (GetActor().GetLord() != null && !GetActor().GetLord().ownedPawns.Contains(TargetCorpse.InnerPawn))
-                    GetActor().GetLord().AddPawn(TargetCorpse.InnerPawn);
-            });     //death is not an excuse for fleeing!
+                Turret.GetComp<CompBreakdownable>().DoBreakdown()
+            );
             yield return Toils_Reserve.Release(TargetIndex.A);
-        }
 
-        private void MakeUkuphilaZombie()
-        {
-            Pawn innerPawn = TargetCorpse.InnerPawn;
-            SpecialUnitUtility.MakeUkuphilaZombie(innerPawn);
-            UkuphilaHerb.Destroy();
         }
     }
 }

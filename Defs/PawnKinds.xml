@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <!-- for some reason parent def doesnt work-->
-      <PawnKindDef>
+  
+      <PawnKindDef ParentName="MercenaryMidTierBase">
           <defName>Mercenary_Medic</defName>
           <defaultFactionType>Pirate</defaultFactionType>
           <race>Human</race>
@@ -19,20 +19,20 @@
                 </li>
             </subOptionsTakeAll>
           </inventoryOptions>
-          <apparelTags>
+        <!--  <apparelTags>
             <li>IndustrialBasic</li>
             <li>IndustrialAdvanced</li>
             <li>IndustrialMilitaryBasic</li>
             <li>IndustrialMilitaryAdvanced</li>
             <li>BeltDefensePop</li>
-          </apparelTags>
+          </apparelTags> 
           <apparelMoney>1000~1500</apparelMoney>
-          <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+          <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance> -->
           <apparelColor>(245,235,235)</apparelColor>
           <weaponMoney>330~650</weaponMoney>
-          <weaponTags>
+         <!-- <weaponTags>
             <li>Gun</li>
-          </weaponTags>
+          </weaponTags> -->
           <requiredWorkTags>
             <li>Caring</li>
           </requiredWorkTags>
@@ -61,6 +61,7 @@
         </inventoryOptions>
         <gearHealthRange>0.5~1.8</gearHealthRange>
         <apparelMoney>200~300</apparelMoney>
+        <apparelColor>(166,16,235)</apparelColor>
         <apparelRequired>
           <li>Apparel_WarVeil</li>
         </apparelRequired>
@@ -82,5 +83,25 @@
             <range>6~20</range>
           </li>
         </skills>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="MercenaryMidTierBase">
+      <defName>Mercenary_Technician</defName>
+      <combatPower>75</combatPower>
+
+      <apparelColor>(14,33,204)</apparelColor>
+
+      <requiredWorkTags>
+        <li>Crafting</li>
+      </requiredWorkTags>
+
+      <skills>
+        <li>
+          <skill>Crafting</skill>
+          <range>6~20</range>
+        </li>
+      </skills>
+
+      
     </PawnKindDef>
 </Defs>

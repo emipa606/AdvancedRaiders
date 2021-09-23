@@ -12,13 +12,19 @@ namespace AdvancedRaiders
 {
     public static class RaidExtensions
     {
+        private static JobGiver_MakeUkuphilaZombie makeUkuphilaZombie = new JobGiver_MakeUkuphilaZombie();
+        private static JobGiver_OmegaStimShot omegaStimShot = new JobGiver_OmegaStimShot();
+        private static JobGiver_BreakTurret breakTurret = new JobGiver_BreakTurret();
         public static ThinkNode_JobGiver GetPawnClassRelatedJobGiver(this Pawn pawn)
         {
             if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Medic)
-                return new JobGiver_OmegaStimShot();
+                return omegaStimShot;
 
             if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_Medic)
-                return new JobGiver_MakeUkuphilaZombie();
+                return makeUkuphilaZombie;
+
+            if (pawn.kindDef == AdvancedRaidersDefOf.Mercenaty_Technician)
+                return breakTurret;
 
             return null;
         }
@@ -26,7 +32,7 @@ namespace AdvancedRaiders
         public static void TryKindSpecificJobGiversOnOwnedPawns(this Lord lord)
         {
             JobIssueParams pars;            //понять бы еще как правильно использовать JobGiver...
-            pars.maxDistToSquadFlag = 30f;
+            pars.maxDistToSquadFlag = 999f;
             
             foreach(var p in lord.ownedPawns)
             {
