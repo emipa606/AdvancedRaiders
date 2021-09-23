@@ -64,7 +64,7 @@
     <Compile Include="CompTargetEffect_UkuphilaResurrect.cs" />
     <Compile Include="JobDriver_MakeUkuphilaZombie.cs" />
     <Compile Include="JobGiver_MakeUkuphilaZombie.cs" />
-    <Compile Include="MentalState_UkuphilaResurrected.cs" />
+    <Compile Include="MentalState_UkuphilaResurrectionPsychosis.cs" />
     <Compile Include="PawnClassDef.cs" />
     <Compile Include="PawnClassDefOf.cs" />
     <Compile Include="HarmonyPatches.cs" />

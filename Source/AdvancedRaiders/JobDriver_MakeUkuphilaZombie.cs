@@ -42,11 +42,14 @@ namespace AdvancedRaiders
             yield return Toils_General.Wait(50);
             yield return Toils_General.Do((Action)this.MakeUkuphilaZombie);
             yield return Toils_General.Do(() =>
-            {
-                if (GetActor().GetLord() != null && !GetActor().GetLord().ownedPawns.Contains(TargetCorpse.InnerPawn))
-                    GetActor().GetLord().AddPawn(TargetCorpse.InnerPawn);
-            });     //death is not an excuse for fleeing!
+                TargetCorpse.InnerPawn.mindState.mentalStateHandler.TryStartMentalState(
+                    AdvancedRaidersDefOf.UkuphilaResurrectionPsychosis,
+                    "resurrected with ukuphila herb",
+                    forceWake: true,
+                    otherPawn: GetActor(),
+                    transitionSilently: true));
             yield return Toils_Reserve.Release(TargetIndex.A);
+            yield return Toils_General.Do(() => TargetCorpse.InnerPawn.GetLord().RemovePawn(TargetCorpse.InnerPawn));       //they are western zombies, not chinese. they cant follow orders
         }
 
         private void MakeUkuphilaZombie()

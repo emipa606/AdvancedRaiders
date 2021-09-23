@@ -20,9 +20,12 @@
                 <painFactor>0.5</painFactor>
                 <totalBleedFactor>0.2</totalBleedFactor>
                 <statFactors>
+                    <MeleeWeapon_CooldownMultiplier>0.75</MeleeWeapon_CooldownMultiplier>
+                    <RangedWeapon_Cooldown>0.75</RangedWeapon_Cooldown>
                     <IncomingDamageFactor>0.8</IncomingDamageFactor>
                 </statFactors>
                 <statOffsets>
+                    
                     <MeleeDPS>2.5</MeleeDPS>
                     <MeleeHitChance>0.3</MeleeHitChance>
                     <ShootingAccuracyPawn>2.5</ShootingAccuracyPawn>
@@ -49,6 +52,8 @@
                 <painFactor>0.2</painFactor>
                 <totalBleedFactor>0.05</totalBleedFactor>
                 <statFactors>
+                    <MeleeWeapon_CooldownMultiplier>0.5</MeleeWeapon_CooldownMultiplier>
+                    <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
                     <IncomingDamageFactor>0.5</IncomingDamageFactor>
                 </statFactors>
                 <statOffsets>
@@ -207,7 +212,7 @@
                 <!-- костыль конечно, но кого волнует?-->
                 <mentalStateGivers>
                     <li>
-                      <mentalState>UkuphilaResurrected</mentalState>
+                      <mentalState>UkuphilaResurrectionPsychosis</mentalState>
                       <mtbDays>0.0001</mtbDays>
                     </li>
                 </mentalStateGivers>

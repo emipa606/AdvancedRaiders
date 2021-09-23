@@ -22,6 +22,8 @@ namespace AdvancedRaiders
 
         public static PawnKindDef Mercenary_Medic;
         public static PawnKindDef Tribal_Medic;
+
+        public static MentalStateDef UkuphilaResurrectionPsychosis;
         static AdvancedRaidersDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(AdvancedRaidersDefOf));
     }
 }

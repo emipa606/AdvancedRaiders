@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
     <MentalStateDef ParentName="BaseMentalState">
-        <defName>UkuphilaResurrected</defName>
+        <defName>UkuphilaResurrectionPsychosis</defName>
         <label>ukuphila resurrected</label>
-        <stateClass>AdvancedRaiders.MentalState_UkuphilaResurrected</stateClass>
+        <stateClass>AdvancedRaiders.MentalState_UkuphilaResurrectionPsychosis</stateClass>
         <category>Aggro</category>
         <minTicksBeforeRecovery>999999</minTicksBeforeRecovery>
         <recoveryMtbDays>999</recoveryMtbDays>
