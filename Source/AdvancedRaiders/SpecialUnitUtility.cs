@@ -10,7 +10,7 @@ using Verse.AI;
 
 namespace AdvancedRaiders
 {
-    public static class MedicUtility
+    public static class SpecialUnitUtility
     {
         
         public static void MakeUkuphilaZombie(Pawn pawn)

@@ -19,9 +19,11 @@ namespace AdvancedRaiders
 
         public static JobDef OmegaStimShot;
         public static JobDef MakeUkuphilaZombie;
+        public static JobDef BreakTurret;
 
         public static PawnKindDef Mercenary_Medic;
         public static PawnKindDef Tribal_Medic;
+        public static PawnKindDef Mercenaty_Technician;
 
         public static MentalStateDef UkuphilaResurrectionPsychosis;
         static AdvancedRaidersDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(AdvancedRaidersDefOf));

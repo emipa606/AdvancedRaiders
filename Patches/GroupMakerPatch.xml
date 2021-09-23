@@ -8,7 +8,8 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="outlander"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
     <value>
-      <Mercenary_Medic>5</Mercenary_Medic>
+      <Mercenary_Medic>6</Mercenary_Medic>
+      <Mercenary_Technician>5</Mercenary_Technician>
     </value>
   </Operation>
 
@@ -24,7 +25,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
     <value>
-      <Tribal_Medic>7</Tribal_Medic>
+      <Tribal_Medic>4</Tribal_Medic>
     </value>
   </Operation>
 </Patch>

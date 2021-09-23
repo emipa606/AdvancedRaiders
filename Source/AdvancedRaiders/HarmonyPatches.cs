@@ -33,6 +33,15 @@ namespace AdvancedRaiders
         }
     }
 
-    
+    [HarmonyPatch(typeof(Building_Trap), "KnowsOfTrap")]
+    class TechniciansCanSeeTrapsPatch
+    {
+        [HarmonyPostfix]
+        public static bool TechnicansCanSeeTraps(ref bool __result, Pawn __p)
+        {
+            __result = __result || __p.kindDef == AdvancedRaidersDefOf.Mercenaty_Technician;
+            return __result;
+        }
+    }
 
 }

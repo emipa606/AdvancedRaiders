@@ -13,7 +13,7 @@ namespace AdvancedRaiders
         protected override Job TryGiveJob(Pawn pawn)
         {
             Corpse targetCorpse = null;
-            if (MedicAIUtility.TryFindUkuphilaHerbResurrectionTarget(pawn, 20f, out targetCorpse))
+            if (SpecialUnitAIUtility.TryFindUkuphilaHerbResurrectionTarget(pawn, 20f, out targetCorpse))
             {
                 var requiedThingDef = AdvancedRaidersDefOf.UkuphilaHerb;
                 Thing thingToUse = null;

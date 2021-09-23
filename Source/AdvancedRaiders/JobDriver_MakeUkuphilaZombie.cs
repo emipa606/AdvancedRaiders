@@ -55,7 +55,7 @@ namespace AdvancedRaiders
         private void MakeUkuphilaZombie()
         {
             Pawn innerPawn = TargetCorpse.InnerPawn;
-            MedicUtility.MakeUkuphilaZombie(innerPawn);
+            SpecialUnitUtility.MakeUkuphilaZombie(innerPawn);
             UkuphilaHerb.Destroy();
         }
     }

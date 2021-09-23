@@ -18,7 +18,7 @@ namespace AdvancedRaiders
         {
             Pawn patient = null;
             
-            if (MedicAIUtility.TryFindOmegaStimShotTarget(pawn, 20f, out patient))
+            if (SpecialUnitAIUtility.TryFindOmegaStimShotTarget(pawn, 20f, out patient))
             {
                 var requiedThingDef = AdvancedRaidersDefOf.OmegaStimulant;
                 Thing thingToUse = null;
