@@ -18,6 +18,7 @@
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
     <value>
       <Mercenary_Medic>5</Mercenary_Medic>
+      <Mercenary_Technician>4</Mercenary_Technician>
     </value>
   </Operation>
 

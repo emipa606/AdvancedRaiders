@@ -25,10 +25,8 @@ namespace AdvancedRaiders
                 {
                     return JobCondition.Incompletable;
                 }
-
                 return JobCondition.Ongoing;
             });
-
 
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));

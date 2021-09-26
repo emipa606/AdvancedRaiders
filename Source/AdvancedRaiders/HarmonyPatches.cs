@@ -20,20 +20,9 @@ namespace AdvancedRaiders
         }
     }
 
-    [HarmonyPatch(typeof(LordJob), "LordJobTick")]
-    class GiveJobsToSpecialUnitsPatch
-    {
-        [HarmonyPostfix]
-        public static void TryGiveJobsToSpecialUnits(LordJob __instance)//i should find a better way to patch ticks. mb path the ticker itself?
-        {
-            if (Find.TickManager.TicksGame % 250 == 0)       //not the best way since all medics rush to target at the same time. FIX.       
-            {
-                __instance.lord.TryKindSpecificJobGiversOnOwnedPawns();
-            }
-        }
-    }
+    
 
-    [HarmonyPatch(typeof(Building_Trap), "KnowsOfTrap")]
+  /*  [HarmonyPatch(typeof(Building_Trap), "KnowsOfTrap")]
     class TechniciansCanSeeTrapsPatch
     {
         [HarmonyPostfix]
@@ -42,6 +31,6 @@ namespace AdvancedRaiders
             __result = __result || __p.kindDef == AdvancedRaidersDefOf.Mercenaty_Technician;
             return __result;
         }
-    }
+    }*/
 
 }

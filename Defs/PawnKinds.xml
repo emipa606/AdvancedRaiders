@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   
-      <PawnKindDef ParentName="MercenaryMidTierBase">
+      <PawnKindDef ParentName="MercenaryBase">
           <defName>Mercenary_Medic</defName>
           <defaultFactionType>Pirate</defaultFactionType>
           <race>Human</race>
-          <label>mercenary medic</label>
+          <label>Mercenary-Medic</label>
           <combatPower>80</combatPower>
           <inventoryOptions>
             <subOptionsTakeAll>
@@ -19,7 +19,7 @@
                 </li>
             </subOptionsTakeAll>
           </inventoryOptions>
-        <!--  <apparelTags>
+          <apparelTags>
             <li>IndustrialBasic</li>
             <li>IndustrialAdvanced</li>
             <li>IndustrialMilitaryBasic</li>
@@ -27,12 +27,12 @@
             <li>BeltDefensePop</li>
           </apparelTags> 
           <apparelMoney>1000~1500</apparelMoney>
-          <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance> -->
+          <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
           <apparelColor>(245,235,235)</apparelColor>
           <weaponMoney>330~650</weaponMoney>
-         <!-- <weaponTags>
+          <weaponTags>
             <li>Gun</li>
-          </weaponTags> -->
+          </weaponTags>
           <requiredWorkTags>
             <li>Caring</li>
           </requiredWorkTags>
@@ -48,7 +48,7 @@
 
       <PawnKindDef ParentName="TribalBase">
         <defName>Tribal_Medic</defName>
-        <defaultFactionType>TribeCivil</defaultFactionType>
+        <defaultFactionType>TribeRough</defaultFactionType>
         <label>tribal medic</label>
         <combatPower>80</combatPower>
         <inventoryOptions>
@@ -85,16 +85,25 @@
         </skills>
     </PawnKindDef>
 
-    <PawnKindDef ParentName="MercenaryMidTierBase">
+    <PawnKindDef ParentName="MercenaryBase">
       <defName>Mercenary_Technician</defName>
       <combatPower>75</combatPower>
-
-      <apparelColor>(14,33,204)</apparelColor>
-
+      <label>Mercenary technician</label>
+      <apparelTags>
+        <li>IndustrialBasic</li>
+        <li>BeltDefensePop</li>
+      </apparelTags>
+      <apparelMoney>1000~1500</apparelMoney>
+          <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+      <apparelColor>(100, 160, 217)</apparelColor>
+      <weaponMoney>800~1500</weaponMoney>
+          <weaponTags>
+            <li>GrenadeEMP</li>
+            <li>GrenadeSmoke</li>
+          </weaponTags>
       <requiredWorkTags>
         <li>Crafting</li>
       </requiredWorkTags>
-
       <skills>
         <li>
           <skill>Crafting</skill>
@@ -102,6 +111,7 @@
         </li>
       </skills>
 
-      
+      <initialWillRange>2~4</initialWillRange>
+      <initialResistanceRange>10~16</initialResistanceRange>
     </PawnKindDef>
 </Defs>

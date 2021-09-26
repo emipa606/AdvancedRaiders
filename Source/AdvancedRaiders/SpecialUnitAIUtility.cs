@@ -79,7 +79,7 @@ namespace AdvancedRaiders
                 ThingRequest.ForGroup(ThingRequestGroup.Corpse),
                 PathEndMode.OnCell,
                 TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
-                searchRadius,
+                maxDistance: searchRadius,
                 validator);
 
             if (target == null)
@@ -91,26 +91,33 @@ namespace AdvancedRaiders
 
         public static bool TryFindBreakableEnemyTurret(Pawn technician, float searchRadius, out Building turret)
         {
-            Predicate<Thing> validator = (t =>
+            var curMap = technician.Map;
+
+            Predicate<Thing> validator = (Predicate<Thing>)(t =>
             {
                 var building = t as Building;
-                var turretComp = building.GetComp<CompBreakdownable>();
-                return
-                building != null &&
-                turretComp != null &&
-                building.def.weaponTags.Contains("TurretGun") &&
-                !turretComp.BrokenDown &&
-                technician.Faction.HostileTo(building.Faction);
-            }
-            );
+                CompBreakdownable turretComp;
+                if (building != null)
+                    turretComp = building.TryGetComp<CompBreakdownable>();
+                else
+                    return false;
 
+                return
+                turretComp!=null &&
+                building.def.building.IsTurret &&           //building.def.building.def.building.def.building....
+                !turretComp.BrokenDown &&
+                technician.Faction.HostileTo(building.Faction) &&
+                technician.CanReserve(building);
+            });
+
+                   
             turret = (Building) GenClosest.ClosestThingReachable(
                 technician.Position,
-                technician.Map,
-                ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
-                PathEndMode.OnCell,
+                curMap,
+                ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),        
+                PathEndMode.ClosestTouch,
                 TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
-                searchRadius,
+                maxDistance: searchRadius,
                 validator);
 
             if (turret == null)
@@ -119,23 +126,6 @@ namespace AdvancedRaiders
             return true;
         }
 
-        public static bool TryFindBreakableEnemyTrap(Pawn technician, float searchRadius, out Building trap)
-        {
-            Predicate<Thing> validator = (t =>
-            {
-                var building = t as Building;
-                var turretComp = building.GetComp<CompBreakdownable>();
-                return
-                building != null &&
-                turretComp != null &&
-                building.def.weaponTags.Contains("TurretGun") &&
-                !turretComp.BrokenDown &&
-                technician.Faction.HostileTo(building.Faction);
-            }
-            );
-
-            trap = null;
-            return false;
-        }
+       
     }
 }
