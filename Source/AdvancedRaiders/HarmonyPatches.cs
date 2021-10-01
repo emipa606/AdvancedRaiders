@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Security;
 using Verse;
 using RimWorld;
 using HarmonyLib;
 using Verse.AI.Group;
+using System.Reflection.Emit;
 
 namespace AdvancedRaiders
 {
@@ -20,17 +22,38 @@ namespace AdvancedRaiders
         }
     }
 
-    
-
-  /*  [HarmonyPatch(typeof(Building_Trap), "KnowsOfTrap")]
-    class TechniciansCanSeeTrapsPatch
+    [HarmonyPatch(typeof(Lord))]
+    [HarmonyPatch("SetJob")]
+    public static class OogaBoogaGoWaaaagh
+    {
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> DontPanicIfDrummerPresent(IEnumerable<CodeInstruction> instructions)
+        {
+            foreach(var line in instructions)
+            {
+                if ((line.opcode == OpCodes.Newobj) &&
+                    ((ConstructorInfo) line.operand == typeof(Trigger_FractionPawnsLost).GetConstructor(new Type[] { typeof(float) })))     
+                {
+                    yield return new CodeInstruction(OpCodes.Newobj, typeof(Trigger_FractionPawnsLostAndNoDrummer).GetConstructor(new Type[] { typeof(float) }));
+                }
+                else
+                    yield return line;
+            }
+        }
+    }
+   
+    [HarmonyPatch(typeof(Pawn))]
+    [HarmonyPatch("SpawnSetup")]
+    public static class PawnSetupPatch
     {
         [HarmonyPostfix]
-        public static bool TechnicansCanSeeTraps(ref bool __result, Pawn __p)
+        public static void GiveAbilitiesToSpecialUnits(Pawn __instance)
         {
-            __result = __result || __p.kindDef == AdvancedRaidersDefOf.Mercenaty_Technician;
-            return __result;
+            if (__instance.Spawned)
+            {
+                if (__instance.kindDef == AdvancedRaidersDefOf.Tribal_Drummer && __instance.abilities.GetAbility(AdvancedRaidersDefOf.InspiringDrumming) != null)
+                    __instance.abilities.GainAbility(AdvancedRaidersDefOf.InspiringDrumming);
+            }
         }
-    }*/
-
+    }
 }

@@ -244,7 +244,7 @@
     <ThingDef ParentName="MedicineBase">
         <defName>UkuphilaHerb</defName>
         <label>ukuphila herb</label>
-        <description>A result of archotechs-know-what rituals on anima grass. Some tribal healers use it to give those who perished on the battlefield a second chance to fulfill their duty to the tribe.\n\n"Ressurected" in such way person can be best described as zombie as they are incapable of anything but fighting. They are quite tenacious, but death will come for them eventually. While they remember their faction, they will attack any outsider they see, even ally.</description>
+        <description>A result of archotechs-know-what rituals on anima grass. Some tribal healers use it to give those who perished on the battlefield a second chance to fulfill their duty to the tribe.\n\n"Resurrected" in such way person can be best described as zombie as they are incapable of anything but fighting. They are quite tenacious, but death will come for them eventually. While they remember their faction, they will attack any outsider they see, even ally.</description>
         <graphicData>
           <texPath>Things/Items/UkuphilaHerb</texPath>
           <graphicClass>Graphic_StackCount</graphicClass>

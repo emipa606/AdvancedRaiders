@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="BaseWeapon">
+        <defName>MeleeWeapon_PlasteelCrowbar</defName>
+        <label>plasteel crowbar</label>
+        <description>Hehe funny description</description>
+        <graphicData>
+          <texPath>Things/Weapons/PlasteelCrowbar</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>WeaponsMelee</li>
+        </thingCategories>
+        <weaponTags>
+          <li>Weapon_MercenaryTechnician</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>Melee</li>
+        </weaponClasses>
+        <smeltable>true</smeltable>
+        <statBases>
+          <MarketValue>150</MarketValue>
+          <Mass>1.1</Mass>
+        </statBases>
+
+        <tools>
+          <li>
+            <label>handle</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>6</power>
+            <cooldownTime>1.0</cooldownTime>
+          </li>
+          <li>
+              <label>chisel</label>
+              <capacities>
+                  <li>Stab</li>
+              </capacities>
+              <power>9</power>
+              <cooldownTime>1.5</cooldownTime>
+          </li>
+          <li>
+            <label>swan neck</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>1.8</cooldownTime>
+          </li>
+        </tools>
+        
+
+      </ThingDef>
+</Defs>

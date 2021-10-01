@@ -24,4 +24,12 @@
     <collideWithPawns>true</collideWithPawns>
   </JobDef>
 
+  <JobDef>
+    <defName>InspireAllies</defName>
+    <driverClass>AdvancedRaiders.JobDriver_InspireAllies</driverClass>
+    <reportString>inspiring.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
+
 </Defs>

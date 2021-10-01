@@ -22,16 +22,6 @@ namespace AdvancedRaiders
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            AddEndCondition(delegate
-            {
-                if (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA))
-                {
-                    return JobCondition.Incompletable;
-                }
-
-                return JobCondition.Ongoing;
-            });
-
 
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));

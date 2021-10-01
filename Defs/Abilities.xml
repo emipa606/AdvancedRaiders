@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <AbilityDef>
+        <defName>InspiringDrumming</defName>
+        <label>inspiring drumming</label>
+        <abilityClass>Ability</abilityClass>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <targetRequired>False</targetRequired>
+        <stunTargetWhileCasting>False</stunTargetWhileCasting>
+        <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
+        <statBases>
+          <Ability_Duration>1000</Ability_Duration>
+          <Ability_EffectRadius>9.9</Ability_EffectRadius>
+        </statBases>
+        <verbProperties>
+          <verbClass>Verb_CastAbility</verbClass>
+          <warmupTime>0.5</warmupTime>
+          <range>15.0</range>
+          <targetParams>
+            <canTargetSelf>true</canTargetSelf>
+            <canTargetPawns>false</canTargetPawns>
+            <canTargetBuildings>false</canTargetBuildings>
+            <canTargetAnimals>false</canTargetAnimals>
+            <canTargetHumans>true</canTargetHumans>
+            <canTargetMechs>false</canTargetMechs>
+          </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class = "AdvancedRaiders.CompProperties_AbilityInspireAllies">
+              <inspirationStrength>0.2</inspirationStrength>
+            </li>
+          </comps>
+      </AbilityDef>
+</Defs>

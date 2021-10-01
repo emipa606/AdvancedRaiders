@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,7 +44,7 @@ namespace AdvancedRaiders
 
         protected Job TribalMedicJob(Pawn medic)
         {
-            Corpse targetCorpse = null;
+            Corpse targetCorpse;
             if (SpecialUnitAIUtility.TryFindUkuphilaHerbResurrectionTarget(medic, 20f, out targetCorpse))
             {
                 var requiedThingDef = AdvancedRaidersDefOf.UkuphilaHerb;
@@ -85,7 +86,14 @@ namespace AdvancedRaiders
             return null;
         }
 
-
+        protected Job TribalDrummerJob(Pawn drummer)
+        {
+            Job job = JobMaker.MakeJob(JobDefOf.CastAbilityOnThing);
+            job.ability = drummer.abilities.GetAbility(AdvancedRaidersDefOf.InspiringDrumming);
+            if (job.ability == null)
+                return null;
+            return job;
+        }
         protected override Job TryGiveJob(Pawn pawn)
         {
             if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Medic)
@@ -96,6 +104,9 @@ namespace AdvancedRaiders
 
             if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Technician)
                 return MercenaryTechnicianJob(pawn);
+
+            if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_Drummer)
+                return TribalDrummerJob(pawn);
 
             return null;
         }

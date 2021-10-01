@@ -5,7 +5,7 @@
           <defName>Mercenary_Medic</defName>
           <defaultFactionType>Pirate</defaultFactionType>
           <race>Human</race>
-          <label>Mercenary-Medic</label>
+          <label>mercenary medic</label>
           <combatPower>80</combatPower>
           <inventoryOptions>
             <subOptionsTakeAll>
@@ -87,19 +87,20 @@
 
     <PawnKindDef ParentName="MercenaryBase">
       <defName>Mercenary_Technician</defName>
-      <combatPower>75</combatPower>
-      <label>Mercenary technician</label>
+      <combatPower>85</combatPower>
+      <label>mercenary technician</label>
       <apparelTags>
         <li>IndustrialBasic</li>
-        <li>BeltDefensePop</li>
       </apparelTags>
+      <apparelRequired>
+        <li>Apparel_ShieldBelt</li>
+      </apparelRequired>
       <apparelMoney>1000~1500</apparelMoney>
           <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
       <apparelColor>(100, 160, 217)</apparelColor>
-      <weaponMoney>800~1500</weaponMoney>
+      <weaponMoney>1500~1500</weaponMoney>
           <weaponTags>
-            <li>GrenadeEMP</li>
-            <li>GrenadeSmoke</li>
+            <li>Weapon_MercenaryTechnician</li>
           </weaponTags>
       <requiredWorkTags>
         <li>Crafting</li>
@@ -114,4 +115,28 @@
       <initialWillRange>2~4</initialWillRange>
       <initialResistanceRange>10~16</initialResistanceRange>
     </PawnKindDef>
+
+    <PawnKindDef ParentName="TribalBase">
+      <defName>Tribal_Drummer</defName>
+      <defaultFactionType>TribeRough</defaultFactionType>
+      <label>tribal drummer</label>
+      <combatPower>70</combatPower>
+      
+      <gearHealthRange>0.5~1.8</gearHealthRange>
+      <apparelMoney>200~300</apparelMoney>
+      <apparelColor>(235,177,33)</apparelColor>
+      <apparelRequired>
+        <li>Apparel_WarVeil</li>
+      </apparelRequired>
+      <weaponMoney>100~100</weaponMoney>
+      <weaponTags>
+        <li>NeolithicRangedDecent</li>
+      </weaponTags>
+      <disallowedTraits>
+        <li>Brawler</li>
+      </disallowedTraits>
+      <initialWillRange>2~4</initialWillRange>
+      <initialResistanceRange>10~16</initialResistanceRange>
+      
+  </PawnKindDef>
 </Defs>

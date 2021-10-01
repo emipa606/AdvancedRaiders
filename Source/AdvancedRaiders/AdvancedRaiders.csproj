@@ -61,17 +61,20 @@
   <ItemGroup>
     <Compile Include="AdvancedRaiders.cs" />
     <Compile Include="AdvancedRaidersDefOf.cs" />
+    <Compile Include="CompAbilityEffect_InspireAllies.cs" />
     <Compile Include="CompTargetEffect_UkuphilaResurrect.cs" />
     <Compile Include="JobDriver_BreakTurret.cs" />
+    <Compile Include="JobDriver_InspireAllies.cs" />
     <Compile Include="JobDriver_MakeUkuphilaZombie.cs" />
     <Compile Include="JobGiver_TryUseSpecialUnitAbility.cs" />
     <Compile Include="MentalState_UkuphilaResurrectionPsychosis.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="JobDriver_OmegaStimShot.cs" />
+    <Compile Include="RaidExtentions.cs" />
     <Compile Include="SpecialUnitAIUtility.cs" />
     <Compile Include="SpecialUnitUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RaidExtensions.cs" />
+    <Compile Include="Trigger_FractionPawnsLostAndNoDrummer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
