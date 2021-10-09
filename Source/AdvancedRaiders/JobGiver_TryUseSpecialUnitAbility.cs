@@ -86,12 +86,15 @@ namespace AdvancedRaiders
             return null;
         }
 
-        protected Job TribalDrummerJob(Pawn drummer)
+        protected Job InspirerJob(Pawn inspirer)
         {
-            Job job = JobMaker.MakeJob(JobDefOf.CastAbilityOnThing);
-            job.ability = drummer.abilities.GetAbility(AdvancedRaidersDefOf.InspiringDrumming);
-            if (job.ability == null)
+            Ability ability = inspirer.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
+            if (ability == null || !ability.CanCast || ability.Casting)
                 return null;
+
+            Job job = JobMaker.MakeJob(JobDefOf.CastAbilityOnWorldTile);                        //not a world tile ability. me not smart to figure out how to make proper non-target cast ability job
+            job.ability = ability;
+
             return job;
         }
         protected override Job TryGiveJob(Pawn pawn)
@@ -105,8 +108,8 @@ namespace AdvancedRaiders
             if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Technician)
                 return MercenaryTechnicianJob(pawn);
 
-            if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_Drummer)
-                return TribalDrummerJob(pawn);
+            if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommander)
+                return InspirerJob(pawn);
 
             return null;
         }

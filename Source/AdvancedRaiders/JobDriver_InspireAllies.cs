@@ -18,11 +18,14 @@ namespace AdvancedRaiders
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            Ability ability = GetActor().abilities.GetAbility(AdvancedRaidersDefOf.InspiringDrumming, true);
+            Ability ability = GetActor().abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility, true);
             AddFailCondition(() => ability == null);
             AddFailCondition(() => !ability.CanCast || ability.Casting);
 
-            yield return null;
+            
+            //if (ability.CanCast && !ability.Casting)
+            yield return Toils_General.Do(() => ability.Activate(TargetA, TargetB));
+
         }
 
         

@@ -116,27 +116,21 @@
       <initialResistanceRange>10~16</initialResistanceRange>
     </PawnKindDef>
 
-    <PawnKindDef ParentName="TribalBase">
-      <defName>Tribal_Drummer</defName>
+    <PawnKindDef ParentName="TribalChiefBase">
+      <defName>Tribal_ChiefCommander</defName>
       <defaultFactionType>TribeRough</defaultFactionType>
-      <label>tribal drummer</label>
-      <combatPower>70</combatPower>
-      
-      <gearHealthRange>0.5~1.8</gearHealthRange>
-      <apparelMoney>200~300</apparelMoney>
-      <apparelColor>(235,177,33)</apparelColor>
-      <apparelRequired>
-        <li>Apparel_WarVeil</li>
-      </apparelRequired>
-      <weaponMoney>100~100</weaponMoney>
+      <label>commander chief</label>
+      <combatPower>110</combatPower>
+      <apparelColor>(214,56,56)</apparelColor>
+
       <weaponTags>
-        <li>NeolithicRangedDecent</li>
+        <li>NeolithicRangedChief</li>
       </weaponTags>
       <disallowedTraits>
         <li>Brawler</li>
       </disallowedTraits>
-      <initialWillRange>2~4</initialWillRange>
-      <initialResistanceRange>10~16</initialResistanceRange>
-      
+      <initialResistanceRange>36~48</initialResistanceRange>
   </PawnKindDef>
+
+
 </Defs>

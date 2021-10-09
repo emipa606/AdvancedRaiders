@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <AbilityDef>
-        <defName>InspiringDrumming</defName>
-        <label>inspiring drumming</label>
-        <abilityClass>Ability</abilityClass>
-        <jobDef>CastAbilityOnThing</jobDef>
-        <targetRequired>False</targetRequired>
-        <stunTargetWhileCasting>False</stunTargetWhileCasting>
+      <AbilityDef>
+        <defName>InspireAlliesAbility</defName>
+        <label>inspire allies</label>
+        <iconPath>UI/inspire</iconPath>
         <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
         <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
-        <statBases>
-          <Ability_Duration>1000</Ability_Duration>
-          <Ability_EffectRadius>9.9</Ability_EffectRadius>
-        </statBases>
+        <showPsycastEffects>True</showPsycastEffects>
+        <stunTargetWhileCasting>True</stunTargetWhileCasting>
+        <cooldownTicksRange>1200</cooldownTicksRange>
+        <targetRequired>False</targetRequired>
         <verbProperties>
           <verbClass>Verb_CastAbility</verbClass>
-          <warmupTime>0.5</warmupTime>
-          <range>15.0</range>
+          <range>-1</range>
+          <warmupTime>1.0</warmupTime>
+          <requireLineOfSight>False</requireLineOfSight>
           <targetParams>
             <canTargetSelf>true</canTargetSelf>
             <canTargetPawns>false</canTargetPawns>
             <canTargetBuildings>false</canTargetBuildings>
             <canTargetAnimals>false</canTargetAnimals>
-            <canTargetHumans>true</canTargetHumans>
+            <canTargetHumans>false</canTargetHumans>
             <canTargetMechs>false</canTargetMechs>
           </targetParams>
         </verbProperties>
         <comps>
             <li Class = "AdvancedRaiders.CompProperties_AbilityInspireAllies">
               <inspirationStrength>0.2</inspirationStrength>
+              <radius>10.0</radius>
             </li>
-          </comps>
-      </AbilityDef>
+        </comps>
+      </AbilityDef> 
+     
 </Defs>

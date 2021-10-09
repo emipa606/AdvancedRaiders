@@ -74,7 +74,7 @@
     <Compile Include="SpecialUnitAIUtility.cs" />
     <Compile Include="SpecialUnitUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trigger_FractionPawnsLostAndNoDrummer.cs" />
+    <Compile Include="Trigger_FractionPawnsLostAndNoInspirer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

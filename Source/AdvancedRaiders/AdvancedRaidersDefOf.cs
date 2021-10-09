@@ -25,11 +25,11 @@ namespace AdvancedRaiders
         public static PawnKindDef Mercenary_Medic;
         public static PawnKindDef Tribal_Medic;
         public static PawnKindDef Mercenary_Technician;
-        public static PawnKindDef Tribal_Drummer;
+        public static PawnKindDef Tribal_ChiefCommander;
 
         public static MentalStateDef UkuphilaResurrectionPsychosis;
 
-        public static AbilityDef InspiringDrumming;
+        public static AbilityDef InspireAlliesAbility;
         static AdvancedRaidersDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(AdvancedRaidersDefOf));
     }
 }

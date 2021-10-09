@@ -27,14 +27,14 @@ namespace AdvancedRaiders
     public static class OogaBoogaGoWaaaagh
     {
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> DontPanicIfDrummerPresent(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> DontPanicFleeIfInspirerPresent(IEnumerable<CodeInstruction> instructions)
         {
             foreach(var line in instructions)
             {
                 if ((line.opcode == OpCodes.Newobj) &&
                     ((ConstructorInfo) line.operand == typeof(Trigger_FractionPawnsLost).GetConstructor(new Type[] { typeof(float) })))     
                 {
-                    yield return new CodeInstruction(OpCodes.Newobj, typeof(Trigger_FractionPawnsLostAndNoDrummer).GetConstructor(new Type[] { typeof(float) }));
+                    yield return new CodeInstruction(OpCodes.Newobj, typeof(Trigger_FractionPawnsLostAndNoInspirer).GetConstructor(new Type[] { typeof(float) }));
                 }
                 else
                     yield return line;
@@ -44,15 +44,17 @@ namespace AdvancedRaiders
    
     [HarmonyPatch(typeof(Pawn))]
     [HarmonyPatch("SpawnSetup")]
-    public static class PawnSetupPatch
+    static class PawnSetupPatch
     {
         [HarmonyPostfix]
         public static void GiveAbilitiesToSpecialUnits(Pawn __instance)
         {
             if (__instance.Spawned)
             {
-                if (__instance.kindDef == AdvancedRaidersDefOf.Tribal_Drummer && __instance.abilities.GetAbility(AdvancedRaidersDefOf.InspiringDrumming) != null)
-                    __instance.abilities.GainAbility(AdvancedRaidersDefOf.InspiringDrumming);
+                if (__instance.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommander && 
+                    __instance.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility) == null)
+
+                    __instance.abilities.GainAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
             }
         }
     }
