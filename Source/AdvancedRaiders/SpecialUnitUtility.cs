@@ -39,8 +39,8 @@ namespace AdvancedRaiders
             if (pawn.Dead)
                 Log.Error("Looks like even forbidden herbs couldn't revive " + pawn.Name + ". Press F and fix this asap, it shouldnt happen");
 
-
-
+            //avoiding lord spam
+            pawn.GetLord().RemovePawn(pawn);
         }
     }
 }

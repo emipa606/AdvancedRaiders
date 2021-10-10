@@ -44,7 +44,7 @@ namespace AdvancedRaiders
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));
 
             yield return Toils_Reserve.Reserve(TargetIndex.A);
-            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
+            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
             yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
             yield return Toils_Ingest.ChewIngestible(FirstAidTarget, 1f, TargetIndex.B).FailOnCannotTouch<Toil>(TargetIndex.B, PathEndMode.Touch);
 

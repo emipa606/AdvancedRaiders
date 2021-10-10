@@ -22,30 +22,32 @@ namespace AdvancedRaiders
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-
+            Pawn pawnToResurrect = TargetCorpse.InnerPawn;
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));
 
             yield return Toils_Reserve.Reserve(TargetIndex.A);
-            yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.InteractionCell);
+            yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.ClosestTouch);
             yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
-            yield return Toils_General.Wait(50);
+            yield return Toils_General.Wait(100);
             yield return Toils_General.Do((Action)this.MakeUkuphilaZombie);
             yield return Toils_General.Do(() =>
-                TargetCorpse.InnerPawn.mindState.mentalStateHandler.TryStartMentalState(
+                pawnToResurrect.mindState.mentalStateHandler.TryStartMentalState(
                     AdvancedRaidersDefOf.UkuphilaResurrectionPsychosis,
                     "resurrected with ukuphila herb",
                     forceWake: true,
                     otherPawn: GetActor(),
                     transitionSilently: true));
             yield return Toils_Reserve.Release(TargetIndex.A);
-            yield return Toils_General.Do(() => TargetCorpse.InnerPawn.GetLord().RemovePawn(TargetCorpse.InnerPawn));       //they are western zombies, not chinese. they cant follow orders
+            //yield return Toils_General.Do(() => TargetCorpse.InnerPawn.GetLord().RemovePawn(TargetCorpse.InnerPawn));       //they are western zombies, not eastern. they cant follow orders
+            
         }
 
         private void MakeUkuphilaZombie()
         {
             Pawn innerPawn = TargetCorpse.InnerPawn;
             SpecialUnitUtility.MakeUkuphilaZombie(innerPawn);
+            GetActor().GetLord().AddPawn(innerPawn);
             UkuphilaHerb.Destroy();
         }
     }

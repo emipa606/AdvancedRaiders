@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
       <PawnKindDef ParentName="MercenaryBase">
           <defName>Mercenary_Medic</defName>
           <defaultFactionType>Pirate</defaultFactionType>
@@ -46,11 +45,12 @@
           <initialResistanceRange>8~16</initialResistanceRange>
       </PawnKindDef>
 
+
       <PawnKindDef ParentName="TribalBase">
         <defName>Tribal_Medic</defName>
         <defaultFactionType>TribeRough</defaultFactionType>
         <label>tribal medic</label>
-        <combatPower>80</combatPower>
+        <combatPower>100</combatPower>
         <inventoryOptions>
           <subOptionsTakeAll>
               <li>
@@ -85,6 +85,7 @@
         </skills>
     </PawnKindDef>
 
+
     <PawnKindDef ParentName="MercenaryBase">
       <defName>Mercenary_Technician</defName>
       <combatPower>85</combatPower>
@@ -116,6 +117,7 @@
       <initialResistanceRange>10~16</initialResistanceRange>
     </PawnKindDef>
 
+
     <PawnKindDef ParentName="TribalChiefBase">
       <defName>Tribal_ChiefCommander</defName>
       <defaultFactionType>TribeRough</defaultFactionType>
@@ -131,6 +133,41 @@
       </disallowedTraits>
       <initialResistanceRange>36~48</initialResistanceRange>
   </PawnKindDef>
+  
 
+  <PawnKindDef ParentName="MercenaryMidTierBase" Name="MercenaryPacifierBase" Abstract ="True">
+    <label>pacifier</label>
+    <combatPower>120</combatPower>
+    <apparelRequired>
+      <li>Apparel_FlakJacket</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelColor>(28,26,26)</apparelColor>
+    <weaponMoney>1500~1500</weaponMoney>
+    <apparelMoney>700~1500</apparelMoney>
+    <weaponTags>
+      <li>Weapon_MercenaryPacifier</li>
+    </weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>32~42</initialResistanceRange>
+  </PawnKindDef>
 
+  <PawnKindDef ParentName="MercenaryPacifierBase">
+    <defName>MercenaryPacifier_Bloodlust</defName>
+    <forcedTraits>
+      <li>Bloodlust</li>
+    </forcedTraits>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MercenaryPacifierBase">
+    <defName>MercenaryPacifier_Psychopath</defName>
+    <forcedTraits>
+      <li>Psychopath</li>
+    </forcedTraits>
+  </PawnKindDef>
 </Defs>

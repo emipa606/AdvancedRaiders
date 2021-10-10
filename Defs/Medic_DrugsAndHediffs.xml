@@ -209,12 +209,6 @@
         </comps>
         <stages>
             <li>
-                <mentalStateGivers>
-                    <li>
-                      <mentalState>UkuphilaResurrectionPsychosis</mentalState>
-                      <mtbDays>0.001</mtbDays>
-                    </li>
-                </mentalStateGivers>
                 <statFactors>
                     <IncomingDamageFactor>0.7</IncomingDamageFactor>
                     <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>

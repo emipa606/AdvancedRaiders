@@ -19,7 +19,6 @@ namespace AdvancedRaiders
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            
 
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));

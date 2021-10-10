@@ -19,7 +19,7 @@
   <JobDef>
     <defName>BreakTurret</defName>
     <driverClass>AdvancedRaiders.JobDriver_BreakTurret</driverClass>
-    <reportString>breaking TurretA.</reportString>
+    <reportString>breaking TargetA.</reportString>
     <casualInterruptible>false</casualInterruptible>
     <collideWithPawns>true</collideWithPawns>
   </JobDef>
@@ -32,4 +32,12 @@
     <collideWithPawns>true</collideWithPawns>
   </JobDef>
 
+  <JobDef>
+    <defName>PacifyDownedPawn</defName>
+    <driverClass>AdvancedRaiders.JobDriver_PacifyDownedPawn</driverClass>
+    <reportString>pacifing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
+  
 </Defs>

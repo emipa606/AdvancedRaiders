@@ -9,7 +9,9 @@
     <xpath>/Defs/FactionDef[pawnSingular="outlander"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
     <value>
       <Mercenary_Medic>5</Mercenary_Medic>
-      <Mercenary_Technician>5</Mercenary_Technician>
+      <Mercenary_Technician>3</Mercenary_Technician>
+      <MercenaryPacifier_Bloodlust>2</MercenaryPacifier_Bloodlust>
+      <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
     </value>
   </Operation>
 
@@ -18,7 +20,9 @@
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
     <value>
       <Mercenary_Medic>6</Mercenary_Medic>
-      <Mercenary_Technician>4</Mercenary_Technician>
+      <Mercenary_Technician>3</Mercenary_Technician>
+      <MercenaryPacifier_Bloodlust>3</MercenaryPacifier_Bloodlust>
+      <MercenaryPacifier_Psychopath>3</MercenaryPacifier_Psychopath>
     </value>
   </Operation>
 
@@ -26,8 +30,8 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
     <value>
-      <Tribal_Medic>4</Tribal_Medic>
-      <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
+      <Tribal_Medic>3</Tribal_Medic>
+      <Tribal_ChiefCommander>4</Tribal_ChiefCommander>
     </value>
   </Operation>
 </Patch>

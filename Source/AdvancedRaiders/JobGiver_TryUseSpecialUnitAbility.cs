@@ -34,7 +34,7 @@ namespace AdvancedRaiders
                     job.targetA = patient;
                     job.targetB = thingToUse;
                     job.count = 1;
-
+                    job.collideWithPawns = false;
                     return job;
                 }
             }
@@ -64,7 +64,7 @@ namespace AdvancedRaiders
                     job.targetA = targetCorpse;
                     job.targetB = thingToUse;
                     job.count = 1;
-
+                    job.collideWithPawns = false;
                     return job;
                 }
             }
@@ -80,7 +80,8 @@ namespace AdvancedRaiders
             {
                 Job job = JobMaker.MakeJob(AdvancedRaidersDefOf.BreakTurret);
                 job.targetA = turretToBreak;
-                job.count = 1;
+                job.count = 10;
+                job.collideWithPawns = false;
                 return job;
             }
             return null;
@@ -97,8 +98,26 @@ namespace AdvancedRaiders
 
             return job;
         }
+
+        protected Job MercenaryPacifierJob(Pawn pacifier)
+        {
+            Pawn victim;
+            if (SpecialUnitAIUtility.TryFindPacificationTarget(pacifier, 30f, out victim))
+            {
+                Job job = JobMaker.MakeJob(AdvancedRaidersDefOf.PacifyDownedPawn);
+                job.targetA = victim;
+                job.count = 1;
+                job.collideWithPawns = false;
+                return job;
+                
+            }
+
+            return null;
+        }
+
         protected override Job TryGiveJob(Pawn pawn)
         {
+            //TODO make some kind of extention for Pawn class. ie IsMedic or GetPawnClass()
             if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Medic)
                 return MercenaryMedicJob(pawn);
 
@@ -110,6 +129,9 @@ namespace AdvancedRaiders
 
             if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommander)
                 return InspirerJob(pawn);
+
+            if (pawn.kindDef == AdvancedRaidersDefOf.MercenaryPacifier_Bloodlust || pawn.kindDef == AdvancedRaidersDefOf.MercenaryPacifier_Psychopath)
+                return MercenaryPacifierJob(pawn);
 
             return null;
         }

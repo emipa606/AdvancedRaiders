@@ -51,7 +51,61 @@
             <cooldownTime>1.8</cooldownTime>
           </li>
         </tools>
-        
-
       </ThingDef>
+
+      <ThingDef ParentName="BaseWeapon">
+        <defName>MeleeWeapon_ShockBaton</defName>
+        <label>shock baton</label>
+        <description>painful bonk</description>
+        <graphicData>
+          <texPath>Things/Weapons/ShockBaton</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>WeaponsMelee</li>
+        </thingCategories>
+        <weaponTags>
+          <li>Weapon_MercenaryPacifier</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>Melee</li>
+        </weaponClasses>
+        <statBases>
+          <MarketValue>140</MarketValue>
+          <Mass>0.8</Mass>
+        </statBases>
+        <tools>
+          <li>
+            <label>shock head</label>
+            <capacities>
+              <li>Poke</li>
+            </capacities>
+            <power>10</power>
+            <cooldownTime>2.0</cooldownTime>
+            <extraMeleeDamages>
+              <li>
+                <def>ShockBatonTase</def>
+                <amount>2</amount>
+                <chance>1</chance>
+              </li>
+            </extraMeleeDamages>
+          </li>
+        </tools>
+      </ThingDef>
+
+      <DamageDef ParentName="BluntBase">
+        <defName>ShockBatonTase</defName>
+        <label>tase</label>
+        <makesBlood>false</makesBlood>
+        <additionalHediffs>
+          <li>
+            <hediff>ElectricalSpasm</hediff>
+            <severityPerDamageDealt>0.1</severityPerDamageDealt>
+            <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+          </li>
+        </additionalHediffs>
+        <impactSoundType>Electric</impactSoundType>
+      </DamageDef>
 </Defs>

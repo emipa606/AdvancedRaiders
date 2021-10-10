@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThoughtDef>
+        <defName>WitnessedPacification</defName>
+        <durationDays>3</durationDays>
+        <stackLimit>10</stackLimit>
+        <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+        </nullifyingTraits>
+        <stages>
+          <li>
+            <label>Witnessed pacification</label>
+            <description>The way this pacifier beaten helpless person... I still hear their screams sometimes.</description>
+            <baseMoodEffect>-4</baseMoodEffect>
+          </li>
+        </stages>
+    </ThoughtDef>
+
+
+    <ThoughtDef>
+        <defName>WitnessedPacificationBloodlust</defName>
+        <durationDays>3</durationDays>
+        <stackLimit>10</stackLimit>
+        <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+        <requiredTraits>
+            <li>Bloodlust</li>
+        </requiredTraits>
+        <stages>
+          <li>
+            <label>Witnessed pacification</label>
+            <description>Seeing this sucker screaming in pain and coughing blood was quite amusing!</description>
+            <baseMoodEffect>4</baseMoodEffect>
+          </li>
+        </stages>
+      </ThoughtDef>
+
+      <ThoughtDef>
+        <defName>PacifierPTSDThought</defName>
+        <workerClass>AdvancedRaiders.ThoughtWorker_PacifierPTSD</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>bad memories</label>
+                <description>desc placeholder</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+            <li>
+                <label>shock</label>
+                <description>desc placeholder</description>
+                <baseMoodEffect>-11</baseMoodEffect>
+            </li>
+            <li>
+                <label>psychological trauma</label>
+                <description>desc placeholder</description>
+                <baseMoodEffect>-22</baseMoodEffect>
+            </li>
+            <li>
+                <label>flashbacks</label>
+                <description>NOT AGAIN! GET AWAY FROM ME!!!</description>
+                <baseMoodEffect>-40</baseMoodEffect>
+            </li>
+        </stages>
+      </ThoughtDef>
+</Defs>

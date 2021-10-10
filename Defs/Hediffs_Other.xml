@@ -5,6 +5,8 @@
         <label>inspiration</label>
         <hediffClass>HediffWithComps</hediffClass>
         <description>placeholder desc</description>
+        <initialSeverity>0.05</initialSeverity>
+        <maxSeverity>1</maxSeverity>
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">
                 <severityPerDay>-1</severityPerDay>
@@ -78,4 +80,150 @@
             </li>
         </stages>
     </HediffDef>
+
+
+    <HediffDef>
+        <defName>PacifierPTSD</defName>
+        <label>post traumatic stress disorder</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <description>placeholder desc</description>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>0.05</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.33</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>bad memories</label>
+                <restFallFactor>1.2</restFallFactor>
+            </li>
+            <li>
+                <minSeverity>0.3</minSeverity>
+                <label>shock</label>
+                <restFallFactor>1.5</restFallFactor>
+                <socialFightChanceFactor>2</socialFightChanceFactor>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.6</minSeverity>
+                <label>psychological trauma</label>
+                
+                <restFallFactor>2</restFallFactor>
+                <socialFightChanceFactor>3</socialFightChanceFactor>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <offset>-0.4</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>flashbacks</label>
+                <restFallFactor>5</restFallFactor>
+                
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.3</offset>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <offset>-0.9</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+
+    </HediffDef>
+
+    <HediffDef>
+        <defName>ElectricalSpasm</defName>
+        <label>electrical spasm</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <description>placeholder desc</description>
+        <maxSeverity>1</maxSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-4.8</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>slight pain</label>
+                <painOffset>0.15</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.3</minSeverity>
+                <label>moderate pain</label>
+                <painOffset>0.4</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.3</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.6</minSeverity>
+                <label>extreme pain</label>
+                <painOffset>0.7</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>paralysis</label>
+                <painOffset>1</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.3</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.9</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
 </Defs>

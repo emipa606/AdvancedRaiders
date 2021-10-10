@@ -126,6 +126,32 @@ namespace AdvancedRaiders
             return true;
         }
 
-       
+        public static bool TryFindPacificationTarget(Pawn pacifier, float searchRadius, out Pawn targetPawn)
+        {
+            Predicate<Thing> validator = (t =>
+            {
+                var pawn = t as Pawn;
+                return
+                pawn != null &&
+                pawn.Faction.HostileTo(pacifier.Faction) &&
+                pawn.Downed &&
+                pawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) > 0.1 &&      //beating someone who had already passed out isnt that much of a joy, you know
+                pacifier.CanReserve(pawn);
+            });
+
+            targetPawn = (Pawn)GenClosest.ClosestThingReachable(
+                pacifier.Position,
+                pacifier.Map,
+                ThingRequest.ForGroup(ThingRequestGroup.Pawn),
+                PathEndMode.ClosestTouch,
+                TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
+                searchRadius,
+                validator);
+
+            if (targetPawn == null)
+                return false;
+
+            return true;
+        }
     }
 }
