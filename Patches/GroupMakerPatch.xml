@@ -6,32 +6,79 @@
 
   <!--outlanders-->
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/FactionDef[pawnSingular="outlander"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
+    <xpath>/Defs/FactionDef[pawnSingular="outlander"]/pawnGroupMakers/li[1]/options</xpath>
     <value>
-      <Mercenary_Medic>5</Mercenary_Medic>
-      <Mercenary_Technician>3</Mercenary_Technician>
+      <Mercenary_Medic>7</Mercenary_Medic>
+      <Mercenary_Technician>5</Mercenary_Technician>
       <MercenaryPacifier_Bloodlust>2</MercenaryPacifier_Bloodlust>
       <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
     </value>
   </Operation>
 
   <!--pirates-->
+  <!-- common raid-->
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[1]/options</xpath>
     <value>
-      <Mercenary_Medic>6</Mercenary_Medic>
-      <Mercenary_Technician>3</Mercenary_Technician>
+      <Mercenary_Medic>7</Mercenary_Medic>
+      <Mercenary_Technician>4</Mercenary_Technician>
       <MercenaryPacifier_Bloodlust>3</MercenaryPacifier_Bloodlust>
       <MercenaryPacifier_Psychopath>3</MercenaryPacifier_Psychopath>
     </value>
   </Operation>
 
-  <!-- ooga boogas-->
+  <!-- melee only raid -->
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[kindDef = "Combat"]/options</xpath>
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[2]/options</xpath>
     <value>
-      <Tribal_Medic>3</Tribal_Medic>
-      <Tribal_ChiefCommander>4</Tribal_ChiefCommander>
+      <MercenaryPacifier_Bloodlust>2</MercenaryPacifier_Bloodlust>
+      <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
+    </value>
+  </Operation>
+
+  <!-- ranged only raid -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[3]/options</xpath>
+    <value>
+      <Mercenary_Medic>7</Mercenary_Medic>
+      <Mercenary_Technician>4</Mercenary_Technician>
+    </value>
+  </Operation>
+
+  <!-- explosives with ranged mix in -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[4]/options</xpath>
+    <value>
+      <Mercenary_Medic>4</Mercenary_Medic>
+      <Mercenary_Technician>2</Mercenary_Technician>
+    </value>
+  </Operation>
+
+  <!-- ooga boogas-->
+  <!-- common raid-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[1]/options</xpath>
+    <value>
+      <Tribal_Medic>5</Tribal_Medic>
+      <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
+    </value>
+  </Operation>
+
+  <!-- ranged only -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[2]/options</xpath>
+    <value>
+      <Tribal_Medic>4</Tribal_Medic>
+      <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
+    </value>
+  </Operation>
+
+  <!-- breach -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[4]/options</xpath>
+    <value>
+      <Tribal_Medic>5</Tribal_Medic>
+      <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
     </value>
   </Operation>
 </Patch>

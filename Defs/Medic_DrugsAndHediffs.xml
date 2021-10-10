@@ -11,11 +11,11 @@
         <lethalSeverity>1</lethalSeverity>
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">
-                <severityPerDay>2.4</severityPerDay>
+                <severityPerDay>4.8</severityPerDay>
             </li>
         </comps>
         <stages>
-            <li>
+            <!--<li>
                 <label>warmup</label>
                 <painFactor>0.5</painFactor>
                 <totalBleedFactor>0.2</totalBleedFactor>
@@ -45,9 +45,9 @@
                         <offset>0.4</offset>
                     </li>
                 </capMods>
-            </li>
+            </li> -->
             <li>
-                <minSeverity>0.15</minSeverity>
+                <!--<minSeverity>0.15</minSeverity> -->
                 <label>peak</label>
                 <painFactor>0.2</painFactor>
                 <totalBleedFactor>0.05</totalBleedFactor>
@@ -155,7 +155,7 @@
     <ThingDef ParentName="DrugPillBase">
         <defName>OmegaStimulant</defName>
         <label>omega stimulant</label>
-        <description>Quite effective combat drug created in attempt of reverse-engineering glitterworld stimulants. Just like original, it boosts reaction, edurance and strength, hardens skin and keeps its flexibility at the same time, and on top of that has a painkiller effect.\n\nStill, this is only replica of high-tech stimulants. In 4 hours after injection effects start to fade and 6 hours later soldier dies in terrifying agony.</description>
+        <description>Quite effective combat drug created in attempt of reverse-engineering glitterworld stimulants. Just like original, it boosts reaction, edurance and strength, hardens skin and keeps its flexibility at the same time, and on top of that has a painkiller effect.\n\nStill, this is only replica of high-tech stimulants. In 2 hours after injection effects start to fade and 5 hours after injection soldier dies in terrifying agony.</description>
         <descriptionHyperlinks>
             <HediffDef>OmegaStimulantHigh</HediffDef>
         </descriptionHyperlinks>
@@ -240,7 +240,7 @@
         <label>ukuphila herb</label>
         <description>A result of archotechs-know-what rituals on anima grass. Some tribal healers use it to give those who perished on the battlefield a second chance to fulfill their duty to the tribe.\n\n"Resurrected" in such way person can be best described as zombie as they are incapable of anything but fighting. They are quite tenacious, but death will come for them eventually. While they remember their faction, they will attack any outsider they see, even ally.</description>
         <graphicData>
-          <texPath>Things/Items/UkuphilaHerb</texPath>
+          <texPath>Things/Drugs/UkuphilaHerb</texPath>
           <graphicClass>Graphic_StackCount</graphicClass>
           <drawSize>0.85</drawSize>
         </graphicData>

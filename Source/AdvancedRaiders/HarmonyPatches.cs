@@ -10,6 +10,7 @@ using RimWorld;
 using HarmonyLib;
 using Verse.AI.Group;
 using System.Reflection.Emit;
+using Verse.AI;
 
 namespace AdvancedRaiders
 {
@@ -55,6 +56,27 @@ namespace AdvancedRaiders
                     __instance.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility) == null)
 
                     __instance.abilities.GainAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Building_TurretGun))]
+    [HarmonyPatch("IsValidTarget")]
+    static class TurretPatch
+    {
+        [HarmonyPostfix]
+        public static void DontShootPawnsWithBlueScreenBelt(ref bool __result, Thing t)
+        {
+            if (__result == true && t is Pawn pawn)
+            {
+                foreach (var ap in pawn.apparel.WornApparel)
+                {
+                    if (ap.def == AdvancedRaidersDefOf.Apparel_BlueScreenBelt)
+                    {
+                        __result = false;
+                        break;
+                    }    
+                }
             }
         }
     }

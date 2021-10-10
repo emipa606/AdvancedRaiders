@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="ApparelBase">
+        <defName>Apparel_BlueScreenBelt</defName>
+        <label>blue screen belt</label>
+        <description>placeholder desc</description>
+        <graphicData>
+          <texPath>Things/Apparel/BlueScreenBelt</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    
+        <statBases>
+          <Mass>2</Mass>
+          <Flammability>0.4</Flammability>
+          <EquipDelay>2</EquipDelay>
+        </statBases>
+        <thingCategories>
+          <li>ApparelUtility</li>
+        </thingCategories>
+        <apparel>
+          <countsAsClothingForNudity>false</countsAsClothingForNudity>
+          <careIfWornByCorpse>false</careIfWornByCorpse>
+          <careIfDamaged>false</careIfDamaged>
+          <wearPerDay>0</wearPerDay>
+          <bodyPartGroups>
+            <li>Waist</li>
+          </bodyPartGroups>
+          <layers>
+            <li>Belt</li>
+          </layers>
+          <tags>
+            <li>MercenaryTechnician_Belt</li>
+          </tags>
+        </apparel>
+      </ThingDef>
+</Defs>

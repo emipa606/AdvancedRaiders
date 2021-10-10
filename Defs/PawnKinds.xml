@@ -10,11 +10,11 @@
             <subOptionsTakeAll>
                 <li>
                     <thingDef>MedicineIndustrial</thingDef>
-                    <countRange>1~4</countRange>
+                    <countRange>1~2</countRange>
                 </li>
                 <li>
                     <thingDef>OmegaStimulant</thingDef>
-                    <countRange>2~3</countRange>
+                    <countRange>3~4</countRange>
                 </li>
             </subOptionsTakeAll>
           </inventoryOptions>
@@ -92,9 +92,12 @@
       <label>mercenary technician</label>
       <apparelTags>
         <li>IndustrialBasic</li>
+        <li>IndustrialAdvanced</li>
+        <li>IndustrialMilitaryBasic</li>
+        <li>IndustrialMilitaryAdvanced</li>
       </apparelTags>
       <apparelRequired>
-        <li>Apparel_ShieldBelt</li>
+        <li>Apparel_BlueScreenBelt</li>
       </apparelRequired>
       <apparelMoney>1000~1500</apparelMoney>
           <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>

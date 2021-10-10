@@ -19,6 +19,7 @@ namespace AdvancedRaiders
 
         public static ThingDef OmegaStimulant;
         public static ThingDef UkuphilaHerb;
+        public static ThingDef Apparel_BlueScreenBelt;
 
         public static JobDef OmegaStimShot;
         public static JobDef MakeUkuphilaZombie;

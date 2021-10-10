@@ -49,10 +49,11 @@ namespace AdvancedRaiders
             }
 
             var eyewitnesses = from p in Victim.Map.mapPawns.AllPawnsSpawned
-                               where 
-                               p.RaceProps.Humanlike && 
+                               where
+                               p.RaceProps.Humanlike &&
                                p.Position.DistanceTo(Victim.Position) < 15.0f &&                      //TODO replace 15f with var
-                               (!p.Faction.HostileTo(Victim.Faction) || p.story.traits.HasTrait(TraitDefOf.Bloodlust))
+                               (!p.Faction.HostileTo(Victim.Faction) || p.story.traits.HasTrait(TraitDefOf.Bloodlust)) &&
+                               p != Victim
                                select p;
 
             Random rng = new Random();
@@ -60,13 +61,13 @@ namespace AdvancedRaiders
             {
                 if (pawn.story.traits.HasTrait(TraitDefOf.Bloodlust))
                 {
-                    if (rng.NextDouble() > 0.5)
+                    if (Rand.Value < 0.5)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf.WitnessedPacificationBloodlust);
                 }
 
                 else if (!pawn.story.traits.HasTrait(TraitDefOf.Psychopath))
                 {
-                    if (rng.NextDouble() > 0.5)
+                    if (Rand.Value < 0.5)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf.WitnessedPacification);
                 }
             }

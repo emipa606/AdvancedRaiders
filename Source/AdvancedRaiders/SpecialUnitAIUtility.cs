@@ -107,6 +107,7 @@ namespace AdvancedRaiders
                 building.def.building.IsTurret &&           //building.def.building.def.building.def.building....
                 !turretComp.BrokenDown &&
                 technician.Faction.HostileTo(building.Faction) &&
+                building.Faction!=Faction.OfMechanoids &&   
                 technician.CanReserve(building);
             });
 
@@ -134,6 +135,7 @@ namespace AdvancedRaiders
                 return
                 pawn != null &&
                 pawn.Faction.HostileTo(pacifier.Faction) &&
+                pawn.RaceProps.Humanlike && 
                 pawn.Downed &&
                 pawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) > 0.1 &&      //beating someone who had already passed out isnt that much of a joy, you know
                 pacifier.CanReserve(pawn);

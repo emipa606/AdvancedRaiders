@@ -26,9 +26,22 @@ namespace AdvancedRaiders
             yield return Toils_Reserve.Reserve(TargetIndex.A);
             yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.ClosestTouch);
             yield return Toils_General.Wait(100);
-            yield return Toils_General.Do(() =>
-                Turret.GetComp<CompBreakdownable>().DoBreakdown()
-            );
+
+            if (Rand.Value < 0.5)
+            {
+                //break turret
+                yield return Toils_General.Do(() =>
+                    Turret.GetComp<CompBreakdownable>().DoBreakdown()
+                );
+            }
+            else
+            {
+                //bug turret
+                yield return Toils_General.Do(() =>
+                    Turret.SetFaction(GetActor().Faction)
+                );
+            }
+
             yield return Toils_General.Do(() =>                             //these guys arent really engineers, you know
                 GetActor().meleeVerbs.TryMeleeAttack(Turret)
             );
