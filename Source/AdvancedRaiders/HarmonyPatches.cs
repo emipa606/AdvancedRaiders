@@ -55,15 +55,14 @@ namespace AdvancedRaiders
 
             if (__instance.Spawned)
             {
-                if (__instance.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommander && 
-                    __instance.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility) == null)
-
+                if (__instance.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommander && __instance.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility) == null)
                     __instance.abilities.GainAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
 
                 if (__instance.kindDef == AdvancedRaidersDefOf.Tribal_Beastmaster)
-                {
                     SpecialUnitUtility.GenBeastmasterPetsAndRelations(__instance);
-                }
+
+                if (__instance.kindDef == AdvancedRaidersDefOf.Mercenary_Bulldozer)
+                    __instance.abilities.GainAbility(AdvancedRaidersDefOf.TauntAbility);
             }
         }
     }

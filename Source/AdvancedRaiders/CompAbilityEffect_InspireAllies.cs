@@ -19,7 +19,7 @@ namespace AdvancedRaiders
 
         public override void Apply(GlobalTargetInfo target) => Apply(null, null);               //rewrite later
 
-        protected void InspireAlliesInRange(LocalTargetInfo center)
+        private void InspireAlliesInRange(LocalTargetInfo center)
         {
             var alliesInRange =
                 from p in parent.pawn.Map.mapPawns.FreeHumanlikesSpawnedOfFaction(parent.pawn.Faction)
@@ -34,7 +34,7 @@ namespace AdvancedRaiders
 
         public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest) => true;          //not the best decision probably
 
-        protected void InspirePawn(Pawn pawn)
+        private void InspirePawn(Pawn pawn)
         {
             var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.InspirationHediff);
             if (hediff == null)
@@ -47,7 +47,7 @@ namespace AdvancedRaiders
                 hediff.Severity += Props.inspirationStrength * InspirationMultipiler(pawn);
             }
         }
-        protected float InspirationMultipiler(Pawn pawn)
+        private float InspirationMultipiler(Pawn pawn)
         {
             var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.InspirationHediff);
 

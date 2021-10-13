@@ -5,7 +5,7 @@
     <driverClass>AdvancedRaiders.JobDriver_OmegaStimShot</driverClass>
     <reportString>injecting omega stimulant to TargetA.</reportString>
     <casualInterruptible>false</casualInterruptible>
-    <collideWithPawns>true</collideWithPawns>
+    <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
   <JobDef>
@@ -13,7 +13,7 @@
     <driverClass>AdvancedRaiders.JobDriver_MakeUkuphilaZombie</driverClass>
     <reportString>making ukuphila zombie from TargetA.</reportString>
     <casualInterruptible>false</casualInterruptible>
-    <collideWithPawns>true</collideWithPawns>
+    <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
   <JobDef>
@@ -21,7 +21,7 @@
     <driverClass>AdvancedRaiders.JobDriver_BreakTurret</driverClass>
     <reportString>breaking TargetA.</reportString>
     <casualInterruptible>false</casualInterruptible>
-    <collideWithPawns>true</collideWithPawns>
+    <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
   <JobDef>
@@ -29,7 +29,7 @@
     <driverClass>AdvancedRaiders.JobDriver_InspireAllies</driverClass>
     <reportString>inspiring.</reportString>
     <casualInterruptible>false</casualInterruptible>
-    <collideWithPawns>true</collideWithPawns>
+    <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
   <JobDef>
@@ -37,7 +37,14 @@
     <driverClass>AdvancedRaiders.JobDriver_PacifyDownedPawn</driverClass>
     <reportString>pacifing TargetA.</reportString>
     <casualInterruptible>false</casualInterruptible>
-    <collideWithPawns>true</collideWithPawns>
+    <collideWithPawns>false</collideWithPawns>
   </JobDef>
   
+  <JobDef>
+    <defName>KillTaunter</defName>
+    <driverClass>AdvancedRaiders.JobDriver_KillWithoutReservations</driverClass>
+    <reportString>trying to kill TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>false</collideWithPawns>
+  </JobDef>
 </Defs>

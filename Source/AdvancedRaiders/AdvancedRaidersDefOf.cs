@@ -27,6 +27,7 @@ namespace AdvancedRaiders
         public static JobDef BreakTurret;
         public static JobDef InspireAllies;
         public static JobDef PacifyDownedPawn;
+        public static JobDef KillTaunter;
 
         public static PawnKindDef Mercenary_Medic;
         public static PawnKindDef Tribal_Medic;
@@ -35,10 +36,13 @@ namespace AdvancedRaiders
         public static PawnKindDef MercenaryPacifier_Bloodlust;
         public static PawnKindDef MercenaryPacifier_Psychopath;
         public static PawnKindDef Tribal_Beastmaster;
+        public static PawnKindDef Mercenary_Bulldozer;
 
         public static MentalStateDef UkuphilaResurrectionPsychosis;
+        public static MentalStateDef MurderousRageTaunted;
 
         public static AbilityDef InspireAlliesAbility;
+        public static AbilityDef TauntAbility;
 
         public static ThoughtDef WitnessedPacification;
         public static ThoughtDef WitnessedPacificationBloodlust;

@@ -11,12 +11,12 @@ namespace AdvancedRaiders
 {
     public static class SpecialUnitAIUtility
     {
-        public static bool TryFindOmegaStimShotTarget(Pawn medic, float searchRadius, out Pawn target)
+        public static bool TryFindOmegaStimShotTarget(Pawn medic, float searchRadius, out Pawn targetPawn)
         {
             if (medic.Faction == null)
             {
                 Log.Warning("Tried to search for omega stim shot targets for medic with no faction");
-                target = null;
+                targetPawn = null;
                 return false;
             }
             var curMap = medic.Map;
@@ -34,7 +34,7 @@ namespace AdvancedRaiders
             });
 
 
-            target = (Pawn) GenClosest.ClosestThingReachable(
+            targetPawn = (Pawn) GenClosest.ClosestThingReachable(
                 medic.Position, 
                 curMap, 
                 ThingRequest.ForGroup(ThingRequestGroup.Pawn), 
@@ -43,12 +43,7 @@ namespace AdvancedRaiders
                 searchRadius, 
                 validator);
 
-            if (target == null)
-            {
-                return false;
-            }
-
-            return true;
+            return targetPawn != null;
         }
 
         public static bool TryFindUkuphilaHerbResurrectionTarget(Pawn medic, float searchRadius, out Corpse target)
@@ -82,10 +77,7 @@ namespace AdvancedRaiders
                 maxDistance: searchRadius,
                 validator);
 
-            if (target == null)
-                return false;
-
-            return true;
+            return target != null;
         }
 
 
@@ -121,10 +113,7 @@ namespace AdvancedRaiders
                 maxDistance: searchRadius,
                 validator);
 
-            if (turret == null)
-                return false;
-
-            return true;
+            return turret != null;
         }
 
         public static bool TryFindPacificationTarget(Pawn pacifier, float searchRadius, out Pawn targetPawn)
@@ -150,10 +139,36 @@ namespace AdvancedRaiders
                 searchRadius,
                 validator);
 
-            if (targetPawn == null)
-                return false;
+            return targetPawn != null;
+        }
 
-            return true;
+        public static bool TryFindTauntTarget(Pawn dozer, float searchRadius, out Pawn targetPawn)
+        {
+            Predicate<Thing> validator = (t =>
+            {
+                var pawn = t as Pawn;
+                return
+                pawn != null &&
+                pawn.Faction.HostileTo(dozer.Faction) &&
+                pawn.health.State == PawnHealthState.Mobile &&
+                //!pawn.skills.GetSkill(SkillDefOf.Shooting).TotallyDisabled &&
+                //!pawn.skills.GetSkill(SkillDefOf.Melee).TotallyDisabled &&
+                pawn.RaceProps.Humanlike &&
+                pawn.MentalStateDef != AdvancedRaidersDefOf.MurderousRageTaunted &&
+                dozer.CanSee(pawn) &&
+                dozer.CanReserve(pawn);
+            });
+
+            targetPawn = (Pawn)GenClosest.ClosestThingReachable(
+                dozer.Position,
+                dozer.Map,
+                ThingRequest.ForGroup(ThingRequestGroup.Pawn),
+                PathEndMode.OnCell,
+                TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly),
+                searchRadius,
+                validator);
+
+            return targetPawn != null;
         }
     }
 }

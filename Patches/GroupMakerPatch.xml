@@ -11,6 +11,7 @@
       <Mercenary_Technician>5</Mercenary_Technician>
       <MercenaryPacifier_Bloodlust>2</MercenaryPacifier_Bloodlust>
       <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
+      <Mercenary_Bulldozer>5</Mercenary_Bulldozer>
     </value>
   </Operation>
 
@@ -23,6 +24,7 @@
       <Mercenary_Technician>4</Mercenary_Technician>
       <MercenaryPacifier_Bloodlust>3</MercenaryPacifier_Bloodlust>
       <MercenaryPacifier_Psychopath>3</MercenaryPacifier_Psychopath>
+      <Mercenary_Bulldozer>5</Mercenary_Bulldozer>
     </value>
   </Operation>
 
@@ -41,6 +43,7 @@
     <value>
       <Mercenary_Medic>7</Mercenary_Medic>
       <Mercenary_Technician>4</Mercenary_Technician>
+      <Mercenary_Bulldozer>5</Mercenary_Bulldozer>
     </value>
   </Operation>
 
@@ -50,6 +53,7 @@
     <value>
       <Mercenary_Medic>4</Mercenary_Medic>
       <Mercenary_Technician>2</Mercenary_Technician>
+      <Mercenary_Bulldozer>3</Mercenary_Bulldozer>
     </value>
   </Operation>
 

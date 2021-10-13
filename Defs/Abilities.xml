@@ -32,5 +32,31 @@
             </li>
         </comps>
       </AbilityDef> 
+
+      <AbilityDef>
+        <defName>TauntAbility</defName>
+        <label>taunt</label>
+        <iconPath>UI/taunt</iconPath>
+        <description>Fill the target with immense hate towards caster. Subject will try to kill caster for some time and wont stop even if their object of hatred is downed.\n\nSome say bulldozer's unique ability to pull fire on themselfs is a result of natural psylink formed during exhausting trainings. But it seems they are just good at pissing off people.</description>
+        <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
+        <stunTargetWhileCasting>False</stunTargetWhileCasting>
+        <cooldownTicksRange>1200</cooldownTicksRange>
+        <targetRequired>True</targetRequired>
+        <verbProperties>
+          <verbClass>Verb_CastAbility</verbClass>
+          <warmupTime>1.0</warmupTime>
+          <range>24.9</range>
+          <targetParams>
+            <canTargetSelf>False</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+          </targetParams>
+        </verbProperties>
+        <comps>
+          <li Class="AdvancedRaiders.CompProperties_AbilityTaunt">
+            <durationTicks>6000</durationTicks>
+          </li>
+        </comps>
+      </AbilityDef>
      
 </Defs>

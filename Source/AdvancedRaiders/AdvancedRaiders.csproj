@@ -62,12 +62,14 @@
     <Compile Include="AdvancedRaiders.cs" />
     <Compile Include="AdvancedRaidersDefOf.cs" />
     <Compile Include="CompAbilityEffect_InspireAllies.cs" />
+    <Compile Include="CompAbilityEffect_Taunt.cs" />
     <Compile Include="CompTargetEffect_UkuphilaResurrect.cs" />
     <Compile Include="JobDriver_BreakTurret.cs" />
     <Compile Include="JobDriver_InspireAllies.cs" />
     <Compile Include="JobDriver_MakeUkuphilaZombie.cs" />
     <Compile Include="JobDriver_PacifyDownedPawn.cs" />
     <Compile Include="JobGiver_TryUseSpecialUnitAbility.cs" />
+    <Compile Include="MentalState_MurderousRageTaunted.cs" />
     <Compile Include="MentalState_UkuphilaResurrectionPsychosis.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="JobDriver_OmegaStimShot.cs" />
