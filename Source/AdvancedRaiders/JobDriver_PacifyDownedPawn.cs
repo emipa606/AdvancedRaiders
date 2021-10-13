@@ -14,7 +14,7 @@ namespace AdvancedRaiders
         protected Pawn Victim => TargetThingA as Pawn;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return true;
+            return pawn.Map.reservationManager.Reserve(pawn, job, job.targetA); ;
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -24,13 +24,11 @@ namespace AdvancedRaiders
             AddEndCondition(() => TargetPacified ? JobCondition.Succeeded : JobCondition.Ongoing);
 
             Log.Warning("Pacification started");
-            yield return Toils_Reserve.Reserve(TargetIndex.A);
+            
             yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.InteractionCell);
 
             yield return Toils_General.Do(Terrify);
             yield return Toils_General.Do(() => GetActor().meleeVerbs.TryMeleeAttack(TargetThingA));
-            
-            yield return Toils_Reserve.Release(TargetIndex.A);
         }
 
         protected bool TargetPacified => !Victim.Downed || Victim.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) < 0.11;

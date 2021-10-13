@@ -12,12 +12,127 @@ namespace AdvancedRaiders
 {
     public static class SpecialUnitUtility
     {
-        
+        public static void GenBeastmasterPetsAndRelations(Pawn beastmaster)
+        {
+            if (beastmaster.relations.GetDirectRelationsCount(PawnRelationDefOf.Bond) > 0)      //avoiding animal spam
+                return;
+
+            Random rng = new Random();
+            PawnKindDef kindDef;
+            int beastNum;
+            List<Pawn> beasts = new List<Pawn>();
+
+            //Adding presets from xml-file here is a good decision, but me dumb me no understand how to.
+            switch(rng.Next(0,5))
+            {
+                case 0:
+                    //A man and a bear.
+                    //story by saloid
+
+                    kindDef = DefDatabase<PawnKindDef>.AllDefs.Where((PawnKindDef def) => def.defName == "Bear_Grizzly").First();
+                    if (kindDef == null)
+                    {
+                        Log.Error("No grizzly def found at GenBeastmasterPetsAndRelations. Weird.");
+                        return;
+                    }
+                    beastNum = 1;
+                    break;
+
+                case 1:
+
+                    kindDef = DefDatabase<PawnKindDef>.AllDefs.Where((PawnKindDef def) => def.defName == "Wolf_Timber").First();
+                    if (kindDef == null)
+                    {
+                        Log.Error("No Wolf_Timber def found at GenBeastmasterPetsAndRelations.");
+                        return;
+                    }
+                    beastNum = 2;
+                    break;
+
+                case 2:
+
+                    kindDef = DefDatabase<PawnKindDef>.AllDefs.Where((PawnKindDef def) => def.defName == "Warg").First();
+                    if (kindDef == null)
+                    {
+                        Log.Error("No warg def found at GenBeastmasterPetsAndRelations.");
+                        return;
+                    }
+                    beastNum = 1;
+                    break;
+
+                case 3:
+
+                    kindDef = DefDatabase<PawnKindDef>.AllDefs.Where((PawnKindDef def) => def.defName == "Cougar").First();
+                    if (kindDef == null)
+                    {
+                        Log.Error("No cougar def found at GenBeastmasterPetsAndRelations.");
+                        return;
+                    }
+                    beastNum = 2;
+                    break;
+
+                case 4:
+
+                    kindDef = DefDatabase<PawnKindDef>.AllDefs.Where((PawnKindDef def) => def.defName == "Boomrat").First();
+                    if (kindDef == null)
+                    {
+                        Log.Error("No boomrat def found at GenBeastmasterPetsAndRelations.");
+                        return;
+                    }
+                    beastNum = 4;
+                    break;
+
+                default:
+                    //this sholdnt happen
+                    kindDef = PawnKindDefOf.Boomalope;
+                    beastNum = 1;
+                    break;
+            }
+
+
+            for (int i = 0; i < beastNum; i++)
+            {
+                var newBeast = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kindDef));
+                beasts.Add(newBeast);
+                GenSpawn.Spawn(newBeast, CellFinder.RandomSpawnCellForPawnNear(beastmaster.Position, beastmaster.Map), beastmaster.Map, WipeMode.VanishOrMoveAside);
+                beastmaster.relations.AddDirectRelation(PawnRelationDefOf.Bond, newBeast);
+
+                newBeast.SetFaction(beastmaster.Faction);
+                newBeast.training.Train(TrainableDefOf.Tameness, beastmaster, true);
+                newBeast.training.Train(TrainableDefOf.Obedience, beastmaster, true);
+                newBeast.training.Train(TrainableDefOf.Release, beastmaster, true);
+            }
+        }
+
+        public static void AddPetsToBeastmasterLord(Pawn beastmaster)
+        {
+            Lord lord = beastmaster.GetLord();
+            if (lord == null)
+                return;
+
+            foreach(var relation in beastmaster.relations.DirectRelations)
+            {
+                if (relation.def == PawnRelationDefOf.Bond)
+                {
+                    Pawn beast = relation.otherPawn;
+                    Lord beastLord = beast.GetLord();
+
+                    if (beastLord == beastmaster.GetLord())
+                        return;
+
+                    if (beastLord != null)
+                        beastLord.RemovePawn(beast);
+
+                    lord.AddPawn(beast);
+                }
+            }
+        }
+
         public static void MakeUkuphilaZombie(Pawn pawn)
         {
             if (!pawn.Dead)
             {
-                Log.Error("Attemp to make ukuphila zombie from living pawn");
+                Log.Error("Attempted to make ukuphila zombie from live pawn");
                 return;
             }
 
@@ -37,7 +152,7 @@ namespace AdvancedRaiders
             pawn.health.AddHediff(AdvancedRaidersDefOf.UkuphilaResurrection);
             
             if (pawn.Dead)
-                Log.Error("Looks like even forbidden herbs couldn't revive " + pawn.Name + ". Press F and fix this asap, it shouldnt happen");
+                Log.Error("Looks like even forbidden herbs couldn't revive " + pawn.Name + ". Press F.");
 
             //avoiding lord spam
             pawn.GetLord().RemovePawn(pawn);

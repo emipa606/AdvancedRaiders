@@ -14,7 +14,7 @@ namespace AdvancedRaiders
         private Building Turret => TargetThingA as Building;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return true;
+            return pawn.Map.reservationManager.Reserve(pawn, job, job.targetA);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -23,7 +23,6 @@ namespace AdvancedRaiders
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));
 
-            yield return Toils_Reserve.Reserve(TargetIndex.A);
             yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.ClosestTouch);
             yield return Toils_General.Wait(100);
 
@@ -45,9 +44,6 @@ namespace AdvancedRaiders
             yield return Toils_General.Do(() =>                             //these guys arent really engineers, you know
                 GetActor().meleeVerbs.TryMeleeAttack(Turret)
             );
-            
-            yield return Toils_Reserve.Release(TargetIndex.A);
-
         }
     }
 }

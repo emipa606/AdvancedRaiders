@@ -17,8 +17,6 @@ namespace AdvancedRaiders
 
         private bool NoNeedInOmegaStim()
         {
-            
-            
             if (FirstAidTarget.health.State != PawnHealthState.Down)        
                 return true;
 
@@ -31,18 +29,13 @@ namespace AdvancedRaiders
 
         public bool FirstAidTargetIsMobile => FirstAidTarget.health.State == PawnHealthState.Mobile;
     
-        public JobDriver_OmegaStimShot() : base()
-        {
-        }
-
-
         protected override IEnumerable<Toil> MakeNewToils()
         {
 
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.AddFailCondition(NoNeedInOmegaStim);
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));
-            yield return Toils_Reserve.Reserve(TargetIndex.A);
+           
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
             
             yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
@@ -58,12 +51,12 @@ namespace AdvancedRaiders
             yield return bringDownedBackToFight;
 
             yield return Toils_Ingest.FinalizeIngest(FirstAidTarget, TargetIndex.B);
-            yield return Toils_Reserve.Release(TargetIndex.A);
+          
         }
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return true;
+            return pawn.Map.reservationManager.Reserve(pawn, job, job.targetA); 
         }
     }
 }

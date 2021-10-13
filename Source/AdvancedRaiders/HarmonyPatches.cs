@@ -48,14 +48,22 @@ namespace AdvancedRaiders
     static class PawnSetupPatch
     {
         [HarmonyPostfix]
-        public static void GiveAbilitiesToSpecialUnits(Pawn __instance)
+        public static void PawnSetupPostfix(Pawn __instance)
         {
+            if (__instance == null)
+                return;
+
             if (__instance.Spawned)
             {
                 if (__instance.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommander && 
                     __instance.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility) == null)
 
                     __instance.abilities.GainAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
+
+                if (__instance.kindDef == AdvancedRaidersDefOf.Tribal_Beastmaster)
+                {
+                    SpecialUnitUtility.GenBeastmasterPetsAndRelations(__instance);
+                }
             }
         }
     }
@@ -65,10 +73,17 @@ namespace AdvancedRaiders
     static class TurretPatch
     {
         [HarmonyPostfix]
-        public static void DontShootPawnsWithBlueScreenBelt(ref bool __result, Thing t)
+        public static void DontShootPawnsWithBlueScreenBelt(Building_TurretGun __instance, ref bool __result, Thing t)
         {
-            if (__result == true && t is Pawn pawn)
+            if (t == null)
+                return;
+            if (__result == true && 
+                __instance.Faction!=Faction.OfMechanoids &&
+                t is Pawn pawn)
             {
+                if (pawn.apparel == null)
+                    return;
+
                 foreach (var ap in pawn.apparel.WornApparel)
                 {
                     if (ap.def == AdvancedRaidersDefOf.Apparel_BlueScreenBelt)
@@ -77,6 +92,24 @@ namespace AdvancedRaiders
                         break;
                     }    
                 }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(LordMaker))]
+    [HarmonyPatch("MakeNewLord")]
+    static class LordMakerPatch
+    {
+        [HarmonyPostfix]
+        public static void AddBeastmasterPets(IEnumerable<Pawn> startingPawns)
+        {
+            if (startingPawns == null)
+                return;
+
+            foreach(var pawn in startingPawns)
+            {
+                if (pawn!=null && pawn.kindDef == AdvancedRaidersDefOf.Tribal_Beastmaster)
+                    SpecialUnitUtility.AddPetsToBeastmasterLord(pawn);
             }
         }
     }

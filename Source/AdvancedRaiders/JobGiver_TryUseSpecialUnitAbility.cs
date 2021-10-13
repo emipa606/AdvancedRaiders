@@ -80,7 +80,7 @@ namespace AdvancedRaiders
             {
                 Job job = JobMaker.MakeJob(AdvancedRaidersDefOf.BreakTurret);
                 job.targetA = turretToBreak;
-                job.count = 10;
+                job.count = 1;
                 job.collideWithPawns = false;
                 return job;
             }
@@ -95,7 +95,7 @@ namespace AdvancedRaiders
 
             Job job = JobMaker.MakeJob(JobDefOf.CastAbilityOnWorldTile);                        //not a world tile ability. me not smart to figure out how to make proper non-target cast ability job
             job.ability = ability;
-
+            job.collideWithPawns = false;
             return job;
         }
 
@@ -109,12 +109,41 @@ namespace AdvancedRaiders
                 job.count = 1;
                 job.collideWithPawns = false;
                 return job;
-                
             }
 
             return null;
         }
 
+        
+
+        protected Job EvacMasterOrFleeJob(Pawn beast)
+        {
+            IntVec3 evacSpot;
+            if (!RCellFinder.TryFindBestExitSpot(beast, out evacSpot))
+                return null;
+
+            Pawn master = beast.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.Bond);
+            if (!master.Downed)
+                return null;
+
+            Job job;
+            if (master.CarriedBy != null || beast.def.defName == "Boomrat")
+            {
+                job = JobMaker.MakeJob(JobDefOf.Flee);
+                job.targetA = evacSpot;
+            }
+            else
+            {
+                job = JobMaker.MakeJob(JobDefOf.Steal);
+                job.targetA = master;
+                job.targetB = evacSpot;
+            }
+
+            job.count = 1;
+            job.collideWithPawns = false;
+            return job;
+        }
+        
         protected override Job TryGiveJob(Pawn pawn)
         {
             //TODO make some kind of extention for Pawn class. ie IsMedic or GetPawnClass()
@@ -132,6 +161,9 @@ namespace AdvancedRaiders
 
             if (pawn.kindDef == AdvancedRaidersDefOf.MercenaryPacifier_Bloodlust || pawn.kindDef == AdvancedRaidersDefOf.MercenaryPacifier_Psychopath)
                 return MercenaryPacifierJob(pawn);
+
+            if (pawn.RaceProps.Animal)
+                return EvacMasterOrFleeJob(pawn);
 
             return null;
         }

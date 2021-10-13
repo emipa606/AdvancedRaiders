@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
    <!-- for reason beyond me patches by defName dont work properly-->
-   <!-- when i find a way to patch specific factions (i dont want to make civil tribe have tribal medics as this kind of guys doesnt look too civil) ill rewrite it-->
 
 
   <!--outlanders-->
@@ -61,6 +60,7 @@
     <value>
       <Tribal_Medic>5</Tribal_Medic>
       <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
+      <Tribal_Beastmaster>5</Tribal_Beastmaster>
     </value>
   </Operation>
 
@@ -70,6 +70,7 @@
     <value>
       <Tribal_Medic>4</Tribal_Medic>
       <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
+      
     </value>
   </Operation>
 
@@ -79,6 +80,7 @@
     <value>
       <Tribal_Medic>5</Tribal_Medic>
       <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
+      <Tribal_Beastmaster>5</Tribal_Beastmaster>
     </value>
   </Operation>
 </Patch>

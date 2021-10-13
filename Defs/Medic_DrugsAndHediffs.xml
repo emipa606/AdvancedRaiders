@@ -52,15 +52,15 @@
                 <painFactor>0.2</painFactor>
                 <totalBleedFactor>0.05</totalBleedFactor>
                 <statFactors>
-                    <MeleeWeapon_CooldownMultiplier>0.5</MeleeWeapon_CooldownMultiplier>
-                    <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
-                    <IncomingDamageFactor>0.5</IncomingDamageFactor>
+                    <MeleeWeapon_CooldownMultiplier>0.3</MeleeWeapon_CooldownMultiplier>
+                    <RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
+                    <IncomingDamageFactor>0.3</IncomingDamageFactor>
                 </statFactors>
                 <statOffsets>
                     <MeleeDPS>10.0</MeleeDPS>
-                    <MeleeHitChance>0.8</MeleeHitChance>
+                    <MeleeHitChance>3</MeleeHitChance>
                     <ShootingAccuracyPawn>10.0</ShootingAccuracyPawn>
-					<MeleeDodgeChance>0.6</MeleeDodgeChance>
+					<MeleeDodgeChance>3</MeleeDodgeChance>
                 </statOffsets>
                 <capMods>
                     <li>
@@ -222,7 +222,7 @@
                 <capMods>
                     <li>
                         <capacity>Moving</capacity>
-                        <offset>+1.0</offset>
+                        <offset>1.0</offset>
                     </li>
                     <li>
                         <capacity>Consciousness</capacity>
@@ -232,8 +232,8 @@
                 </capMods>
             </li>
         </stages>
-        
     </HediffDef>
+
     <!-- item -->
     <ThingDef ParentName="MedicineBase">
         <defName>UkuphilaHerb</defName>

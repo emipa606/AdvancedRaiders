@@ -17,7 +17,7 @@ namespace AdvancedRaiders
         
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return true;
+            return pawn.Map.reservationManager.Reserve(pawn, job, job.targetA); ;
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -26,7 +26,7 @@ namespace AdvancedRaiders
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.AddFailCondition(() => (!GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA)));
 
-            yield return Toils_Reserve.Reserve(TargetIndex.A);
+            
             yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.ClosestTouch);
             yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
             yield return Toils_General.Wait(100);
@@ -38,8 +38,7 @@ namespace AdvancedRaiders
                     forceWake: true,
                     otherPawn: GetActor(),
                     transitionSilently: true));
-            yield return Toils_Reserve.Release(TargetIndex.A);
-            //yield return Toils_General.Do(() => TargetCorpse.InnerPawn.GetLord().RemovePawn(TargetCorpse.InnerPawn));       //they are western zombies, not eastern. they cant follow orders
+           
             
         }
 
@@ -47,7 +46,7 @@ namespace AdvancedRaiders
         {
             Pawn innerPawn = TargetCorpse.InnerPawn;
             SpecialUnitUtility.MakeUkuphilaZombie(innerPawn);
-            GetActor().GetLord().AddPawn(innerPawn);
+            GetActor().GetLord().AddPawn(innerPawn);        //overrides ukuphila psychosis, but this is better then pawns just leaving map
             UkuphilaHerb.Destroy();
         }
     }

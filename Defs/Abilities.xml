@@ -3,6 +3,7 @@
       <AbilityDef>
         <defName>InspireAlliesAbility</defName>
         <label>inspire allies</label>
+        <description>Shout out inspiring phrases and slogans to improve combat capabilities of allies. Cant be done with sore throat.</description>
         <iconPath>UI/inspire</iconPath>
         <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
         <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>

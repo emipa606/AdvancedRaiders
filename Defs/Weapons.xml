@@ -56,7 +56,7 @@
       <ThingDef ParentName="BaseWeapon">
         <defName>MeleeWeapon_ShockBaton</defName>
         <label>shock baton</label>
-        <description>painful bonk</description>
+        <description>This baton was designed in some urban world to be used for crowd control. Its distinctive crackling itself can pacify rioters and electrical shock will finish the most tough ones. Sadly, some sadists like to use it to fulfill their lust for violence.</description>
         <graphicData>
           <texPath>Things/Weapons/ShockBaton</texPath>
           <graphicClass>Graphic_Single</graphicClass>
