@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 using Verse.AI;
 
@@ -22,8 +20,6 @@ namespace AdvancedRaiders
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             AddFailCondition(() => !GetActor().HasReserved(TargetA) && !GetActor().CanReserve(TargetA));
             AddEndCondition(() => TargetPacified ? JobCondition.Succeeded : JobCondition.Ongoing);
-
-            Log.Warning("Pacification started");
             
             yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.InteractionCell);
 

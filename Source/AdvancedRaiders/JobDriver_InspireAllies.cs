@@ -1,16 +1,10 @@
-﻿using System;
+﻿using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse.AI;
-using RimWorld;
-using Verse;
 namespace AdvancedRaiders
 {
     public class JobDriver_InspireAllies : JobDriver
     {
-        
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
@@ -24,9 +18,6 @@ namespace AdvancedRaiders
 
             //if (ability.CanCast && !ability.Casting)
             yield return Toils_General.Do(() => ability.Activate(TargetA, TargetB));
-
         }
-
-        
     }
 }

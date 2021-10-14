@@ -1,9 +1,4 @@
 ﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace AdvancedRaiders
@@ -27,8 +22,6 @@ namespace AdvancedRaiders
                 return ThoughtState.ActiveAtStage(1);
 
             return ThoughtState.ActiveAtStage(0);
-                    
-
         }
     }
 }

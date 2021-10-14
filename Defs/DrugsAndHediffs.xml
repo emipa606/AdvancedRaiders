@@ -503,7 +503,7 @@
           </outcomeDoers>
         </ingestible>
         <recipeMaker>
-          <researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+          <researchPrerequisite>ExoticMedicineDistillery</researchPrerequisite>
           <recipeUsers>
             <li>DrugLab</li>
           </recipeUsers>

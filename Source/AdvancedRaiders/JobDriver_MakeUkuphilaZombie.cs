@@ -39,8 +39,6 @@ namespace AdvancedRaiders
                     forceWake: true,
                     otherPawn: GetActor(),
                     transitionSilently: true));*/
-           
-            
         }
 
         private void MakeUkuphilaZombie()

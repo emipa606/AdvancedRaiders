@@ -4,7 +4,7 @@
   <packageId>saloid.AdvancedRaiders</packageId>
   <author>saloid</author>
   <name>Advanced raiders</name>
-  <description>better push this one to the end</description> 
+  <description>Adds new raider types and related items.</description> 
 
   <supportedVersions>
     <!-- used by version check warning -->
