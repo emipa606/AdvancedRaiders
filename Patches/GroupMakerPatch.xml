@@ -7,7 +7,8 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="outlander"]/pawnGroupMakers/li[1]/options</xpath>
     <value>
-      <Mercenary_Medic>7</Mercenary_Medic>
+      <Mercenary_MedicRanged>4.5</Mercenary_MedicRanged>
+      <Mercenary_MedicMelee>2.5</Mercenary_MedicMelee>
       <Mercenary_Technician>5</Mercenary_Technician>
       <MercenaryPacifier_Bloodlust>2</MercenaryPacifier_Bloodlust>
       <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
@@ -20,7 +21,8 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[1]/options</xpath>
     <value>
-      <Mercenary_Medic>7</Mercenary_Medic>
+      <Mercenary_MedicRanged>4.5</Mercenary_MedicRanged>
+      <Mercenary_MedicMelee>2.5</Mercenary_MedicMelee>
       <Mercenary_Technician>4</Mercenary_Technician>
       <MercenaryPacifier_Bloodlust>3</MercenaryPacifier_Bloodlust>
       <MercenaryPacifier_Psychopath>3</MercenaryPacifier_Psychopath>
@@ -32,6 +34,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[2]/options</xpath>
     <value>
+      <Mercenary_MedicMelee>4</Mercenary_MedicMelee>
       <MercenaryPacifier_Bloodlust>2</MercenaryPacifier_Bloodlust>
       <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
     </value>
@@ -41,7 +44,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[3]/options</xpath>
     <value>
-      <Mercenary_Medic>7</Mercenary_Medic>
+      <Mercenary_MedicRanged>5</Mercenary_MedicRanged>
       <Mercenary_Technician>4</Mercenary_Technician>
       <Mercenary_Bulldozer>5</Mercenary_Bulldozer>
     </value>
@@ -51,7 +54,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[4]/options</xpath>
     <value>
-      <Mercenary_Medic>4</Mercenary_Medic>
+      <Mercenary_MedicRanged>4</Mercenary_MedicRanged>
       <Mercenary_Technician>2</Mercenary_Technician>
       <Mercenary_Bulldozer>3</Mercenary_Bulldozer>
     </value>
@@ -62,8 +65,10 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[1]/options</xpath>
     <value>
-      <Tribal_Medic>5</Tribal_Medic>
-      <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
+      <Tribal_MedicRanged>3</Tribal_MedicRanged>
+      <Tribal_MedicMelee>2</Tribal_MedicMelee>
+      <Tribal_ChiefCommanderRanged>2</Tribal_ChiefCommanderRanged>
+      <Tribal_ChiefCommanderMelee>1</Tribal_ChiefCommanderMelee>
       <Tribal_Beastmaster>5</Tribal_Beastmaster>
     </value>
   </Operation>
@@ -72,9 +77,17 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[2]/options</xpath>
     <value>
-      <Tribal_Medic>4</Tribal_Medic>
-      <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
-      
+      <Tribal_MedicRanged>4</Tribal_MedicRanged>
+      <Tribal_ChiefCommanderRanged>3</Tribal_ChiefCommanderRanged>
+    </value>
+  </Operation>
+
+  <!-- Melee only-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[3]/options</xpath>
+    <value>
+      <Tribal_MedicMelee>4</Tribal_MedicMelee>
+      <Tribal_ChiefCommanderMelee>3</Tribal_ChiefCommanderMelee>
     </value>
   </Operation>
 
@@ -82,8 +95,10 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[4]/options</xpath>
     <value>
-      <Tribal_Medic>5</Tribal_Medic>
-      <Tribal_ChiefCommander>3</Tribal_ChiefCommander>
+      <Tribal_MedicRanged>3</Tribal_MedicRanged>
+      <Tribal_MedicMelee>2</Tribal_MedicMelee>
+      <Tribal_ChiefCommanderRanged>2</Tribal_ChiefCommanderRanged>
+      <Tribal_ChiefCommanderMelee>1</Tribal_ChiefCommanderMelee>
       <Tribal_Beastmaster>5</Tribal_Beastmaster>
     </value>
   </Operation>

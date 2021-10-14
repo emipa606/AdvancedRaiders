@@ -25,7 +25,7 @@
         </blockInteractionRecipientExcept>
         <category>Aggro</category>
         <colonistsOnly>False</colonistsOnly>
-        <minTicksBeforeRecovery>9999</minTicksBeforeRecovery>
+        <minTicksBeforeRecovery>999</minTicksBeforeRecovery>
         <recoveryMtbDays>1</recoveryMtbDays>
         <blockNormalThoughts>true</blockNormalThoughts>
         <nameColor>(196, 33, 33)</nameColor>

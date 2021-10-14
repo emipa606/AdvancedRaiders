@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <!-- Mercenary medic -->
-      <PawnKindDef ParentName="MercenaryBase">
-          <defName>Mercenary_Medic</defName>
+      <PawnKindDef Name="MercenaryMedicBase" ParentName="MercenaryBase" Abstract="True">
+          
           <defaultFactionType>Pirate</defaultFactionType>
           <race>Human</race>
           <label>mercenary medic</label>
@@ -30,9 +30,7 @@
           <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
           <apparelColor>(245,235,235)</apparelColor>
           <weaponMoney>330~650</weaponMoney>
-          <weaponTags>
-            <li>Gun</li>
-          </weaponTags>
+          
           <requiredWorkTags>
             <li>Caring</li>
           </requiredWorkTags>
@@ -44,14 +42,33 @@
           </skills>
           <initialWillRange>1~2</initialWillRange>
           <initialResistanceRange>8~16</initialResistanceRange>
+        </PawnKindDef>
+
+      <PawnKindDef ParentName="MercenaryMedicBase">
+        <defName>Mercenary_MedicRanged</defName>
+        <weaponTags>
+          <li>Gun</li>
+        </weaponTags>
+        <disallowedTraits>
+          <li>Brawler</li>
+        </disallowedTraits>
+      </PawnKindDef>
+      <PawnKindDef ParentName="MercenaryMedicBase">
+        <defName>Mercenary_MedicMelee</defName>
+        <apparelRequired>
+          <li>Apparel_ShieldBelt</li>
+        </apparelRequired>
+        <weaponTags>
+          <li>MedievalMeleeDecent</li>
+          <li>MedievalMeleeAdvanced</li>
+        </weaponTags>
       </PawnKindDef>
 
       <!-- Tribal medic -->
-      <PawnKindDef ParentName="TribalBase">
-        <defName>Tribal_Medic</defName>
+      <PawnKindDef Name="TribalMedicBase" ParentName="TribalBase" Abstract="True">
         <defaultFactionType>TribeRough</defaultFactionType>
         <label>tribal medic</label>
-        <combatPower>100</combatPower>
+        <combatPower>90</combatPower>
         <inventoryOptions>
           <subOptionsTakeAll>
               <li>
@@ -66,13 +83,7 @@
         <apparelRequired>
           <li>Apparel_WarVeil</li>
         </apparelRequired>
-        <weaponMoney>100~100</weaponMoney>
-        <weaponTags>
-          <li>NeolithicRangedDecent</li>
-        </weaponTags>
-        <disallowedTraits>
-          <li>Brawler</li>
-        </disallowedTraits>
+        <weaponMoney>160~160</weaponMoney>
         <initialWillRange>2~4</initialWillRange>
         <initialResistanceRange>10~16</initialResistanceRange>
         <requiredWorkTags>
@@ -84,6 +95,22 @@
             <range>6~20</range>
           </li>
         </skills>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="TribalMedicBase">
+      <defName>Tribal_MedicRanged</defName>
+      <weaponTags>
+        <li>NeolithicRangedDecent</li>
+      </weaponTags>
+      <disallowedTraits>
+        <li>Brawler</li>
+      </disallowedTraits>
+    </PawnKindDef>
+    <PawnKindDef ParentName="TribalMedicBase">
+      <defName>Tribal_MedicMelee</defName>
+      <weaponTags>
+        <li>NeolithicMeleeDecent</li>
+      </weaponTags>
     </PawnKindDef>
 
     <!-- Technician -->
@@ -116,27 +143,35 @@
           <range>6~20</range>
         </li>
       </skills>
-
       <initialWillRange>2~4</initialWillRange>
       <initialResistanceRange>10~16</initialResistanceRange>
     </PawnKindDef>
 
     <!-- Cheif commander -->
-    <PawnKindDef ParentName="TribalChiefBase">
-      <defName>Tribal_ChiefCommander</defName>
+    <PawnKindDef Name="ChiefCommanderBase" ParentName="TribalChiefBase" Abstract="True">
       <defaultFactionType>TribeRough</defaultFactionType>
       <label>commander chief</label>
-      <combatPower>90</combatPower>
+      <combatPower>100</combatPower>
       <apparelColor>(214,56,56)</apparelColor>
+      <initialResistanceRange>36~48</initialResistanceRange>
+    </PawnKindDef>
 
-      <weaponTags>
-        <li>NeolithicRangedChief</li>
-      </weaponTags>
+    <PawnKindDef ParentName="ChiefCommanderBase">
+      <defName>Tribal_ChiefCommanderRanged</defName>
       <disallowedTraits>
         <li>Brawler</li>
       </disallowedTraits>
-      <initialResistanceRange>36~48</initialResistanceRange>
-  </PawnKindDef>
+      <weaponTags>
+        <li>NeolithicRangedChief</li>
+      </weaponTags>
+    </PawnKindDef>
+    <PawnKindDef ParentName="ChiefCommanderBase">
+      <defName>Tribal_ChiefCommanderMelee</defName>
+      <weaponTags>
+        <li>NeolithicMeleeAdvanced</li>
+        <li>MedievalMeleeAdvanced</li>
+      </weaponTags>
+    </PawnKindDef>
   
   <!-- Pacifier -->
   <PawnKindDef ParentName="MercenaryMidTierBase" Name="MercenaryPacifierBase" Abstract ="True">

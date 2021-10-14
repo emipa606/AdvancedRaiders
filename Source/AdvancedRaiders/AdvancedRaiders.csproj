@@ -73,6 +73,7 @@
     <Compile Include="MentalState_UkuphilaResurrectionPsychosis.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="JobDriver_OmegaStimShot.cs" />
+    <Compile Include="PawnExtentions.cs" />
     <Compile Include="RaidExtentions.cs" />
     <Compile Include="SpecialUnitAIUtility.cs" />
     <Compile Include="SpecialUnitUtility.cs" />

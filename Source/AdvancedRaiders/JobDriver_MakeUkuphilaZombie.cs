@@ -31,13 +31,14 @@ namespace AdvancedRaiders
             yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
             yield return Toils_General.Wait(100);
             yield return Toils_General.Do((Action)this.MakeUkuphilaZombie);
-            yield return Toils_General.Do(() =>
+            //better let zombies be controlled by lord
+            /*yield return Toils_General.Do(() =>
                 pawnToResurrect.mindState.mentalStateHandler.TryStartMentalState(
                     AdvancedRaidersDefOf.UkuphilaResurrectionPsychosis,
                     "resurrected with ukuphila herb",
                     forceWake: true,
                     otherPawn: GetActor(),
-                    transitionSilently: true));
+                    transitionSilently: true));*/
            
             
         }
@@ -46,7 +47,8 @@ namespace AdvancedRaiders
         {
             Pawn innerPawn = TargetCorpse.InnerPawn;
             SpecialUnitUtility.MakeUkuphilaZombie(innerPawn);
-            GetActor().GetLord().AddPawn(innerPawn);        //overrides ukuphila psychosis, but this is better then pawns just leaving map
+            if(!innerPawn.Dead)
+                GetActor().GetLord().AddPawn(innerPawn);        
             UkuphilaHerb.Destroy();
         }
     }

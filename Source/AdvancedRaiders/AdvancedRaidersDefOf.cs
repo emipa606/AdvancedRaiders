@@ -29,10 +29,13 @@ namespace AdvancedRaiders
         public static JobDef PacifyDownedPawn;
         public static JobDef KillTaunter;
 
-        public static PawnKindDef Mercenary_Medic;
-        public static PawnKindDef Tribal_Medic;
+        public static PawnKindDef Mercenary_MedicRanged;
+        public static PawnKindDef Mercenary_MedicMelee;
+        public static PawnKindDef Tribal_MedicRanged;
+        public static PawnKindDef Tribal_MedicMelee;
         public static PawnKindDef Mercenary_Technician;
-        public static PawnKindDef Tribal_ChiefCommander;
+        public static PawnKindDef Tribal_ChiefCommanderRanged;
+        public static PawnKindDef Tribal_ChiefCommanderMelee;
         public static PawnKindDef MercenaryPacifier_Bloodlust;
         public static PawnKindDef MercenaryPacifier_Psychopath;
         public static PawnKindDef Tribal_Beastmaster;

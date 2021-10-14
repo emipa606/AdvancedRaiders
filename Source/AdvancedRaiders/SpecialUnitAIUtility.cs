@@ -170,5 +170,22 @@ namespace AdvancedRaiders
 
             return targetPawn != null;
         }
+
+        public static bool AtLeastNAlliesInInspireRadius(int nPawns, Pawn caster)
+        {
+            Ability ability = caster.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
+            if (ability == null)
+                return false;
+
+            float radius = ((CompAbilityEffect_InspireAllies)ability.comps.Find((AbilityComp c) => c is CompAbilityEffect_InspireAllies)).Props.radius;
+            var pawnsInRadius =
+                from p in caster.Map.mapPawns.FreeColonistsSpawned
+                where p.Position.DistanceTo(caster.Position) < radius &&
+                p.health.State == PawnHealthState.Mobile &&
+                p.Faction == caster.Faction
+                select p;
+
+            return pawnsInRadius.Count()-1 >= nPawns;       //-1 for caster themself
+        }
     }
 }

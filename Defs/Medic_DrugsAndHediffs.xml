@@ -160,10 +160,13 @@
             <HediffDef>OmegaStimulantHigh</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>drug_placeholder</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Drugs/OmegaStimulant</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <onGroundRandomRotateAngle>60</onGroundRandomRotateAngle>
         </graphicData>
-        <rotatable>false</rotatable>
+        <equippedAngleOffset>-80</equippedAngleOffset>
+        <rotatable>true</rotatable>
+        <randomizeRotationOnSpawn>true</randomizeRotationOnSpawn>
         <stackLimit>25</stackLimit>
         <techLevel>Spacer</techLevel>
         <statBases>
@@ -204,7 +207,7 @@
         <lethalSeverity>1</lethalSeverity>
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">
-                <severityPerDay>1</severityPerDay>
+                <severityPerDay>2</severityPerDay>
             </li>
         </comps>
         <stages>

@@ -157,5 +157,18 @@ namespace AdvancedRaiders
             //avoiding lord spam
             pawn.GetLord().RemovePawn(pawn);
         }
+
+        public static bool TooManyColonistsTaunted(Map map)
+        {
+            int taunted = 0;
+            int total = 0;
+            foreach (var colonist in map.mapPawns.FreeColonistsSpawned)
+            {
+                total++;
+                if (colonist.MentalStateDef == AdvancedRaidersDefOf.MurderousRageTaunted)
+                    taunted++;
+            }
+            return taunted / total < 0.4;
+        }
     }
 }

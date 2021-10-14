@@ -86,6 +86,9 @@ namespace AdvancedRaiders
 
         protected Job InspirerJob(Pawn inspirer)
         {
+            if (!SpecialUnitAIUtility.AtLeastNAlliesInInspireRadius(4, inspirer))
+                return null;
+
             Ability ability = inspirer.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
             if (ability == null || !ability.CanCast || ability.Casting)
                 return null;
@@ -109,8 +112,6 @@ namespace AdvancedRaiders
             return null;
         }
 
-        
-
         protected Job EvacMasterOrFleeJob(Pawn beast)
         {
             IntVec3 evacSpot;
@@ -118,11 +119,12 @@ namespace AdvancedRaiders
                 return null;
 
             Pawn master = beast.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.Bond);
-            if (!master.Downed)
+            
+            if (master.Spawned && !master.Downed)
                 return null;
 
             Job job;
-            if (master.CarriedBy != null || beast.def.defName == "Boomrat")
+            if (!master.Spawned || master.CarriedBy != null || beast.def.defName == "Boomrat")
             {
                 job = JobMaker.MakeJob(JobDefOf.Flee);
                 job.targetA = evacSpot;
@@ -140,7 +142,8 @@ namespace AdvancedRaiders
         
         protected Job MercenaryBulldozerJob(Pawn dozer)
         {
-            if (dozer.CurJobDef == JobDefOf.CastAbilityOnThing)     
+            if (SpecialUnitUtility.TooManyColonistsTaunted(dozer.Map) ||
+                dozer.CurJobDef == JobDefOf.CastAbilityOnThing)     
                 return null;
             
             Pawn victim;
@@ -164,27 +167,35 @@ namespace AdvancedRaiders
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            //TODO make some kind of extention for PawnKindDef class. ie IsMedic or GetPawnClass()
-            if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Medic)
-                return MercenaryMedicJob(pawn);
+            if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)
+                return null;
 
-            if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_Medic)
-                return TribalMedicJob(pawn);
+            switch (pawn.DefClass())
+            {
+                case PawnClass.MercenaryMedic:
+                    return MercenaryMedicJob(pawn);
 
-            if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Technician)
-                return MercenaryTechnicianJob(pawn);
+                case PawnClass.MercenaryBulldozer:
+                    return MercenaryBulldozerJob(pawn);
 
-            if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommander)
-                return InspirerJob(pawn);
+                case PawnClass.MercenaryPacifier:
+                    return MercenaryPacifierJob(pawn);
 
-            if (pawn.kindDef == AdvancedRaidersDefOf.MercenaryPacifier_Bloodlust || pawn.kindDef == AdvancedRaidersDefOf.MercenaryPacifier_Psychopath)
-                return MercenaryPacifierJob(pawn);
+                case PawnClass.MercenaryTechnician:
+                    return MercenaryTechnicianJob(pawn);
 
+                case PawnClass.TribalMedic:
+                    return TribalMedicJob(pawn);
+
+                case PawnClass.TribalInspirer:
+                    return InspirerJob(pawn);
+
+                case PawnClass.TribalBeastmaster:
+                    break;      //those guys have no special abilities
+            }
+                
             if (pawn.RaceProps.Animal)
                 return EvacMasterOrFleeJob(pawn);
-
-            if (pawn.kindDef == AdvancedRaidersDefOf.Mercenary_Bulldozer)
-                return MercenaryBulldozerJob(pawn);
 
             return null;
         }

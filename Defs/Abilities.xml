@@ -27,7 +27,7 @@
         </verbProperties>
         <comps>
             <li Class = "AdvancedRaiders.CompProperties_AbilityInspireAllies">
-              <inspirationStrength>0.2</inspirationStrength>
+              <inspirationStrength>0.1</inspirationStrength>
               <radius>10.0</radius>
             </li>
         </comps>
@@ -54,7 +54,7 @@
         </verbProperties>
         <comps>
           <li Class="AdvancedRaiders.CompProperties_AbilityTaunt">
-            <durationTicks>6000</durationTicks>
+            <durationTicks>600</durationTicks>
           </li>
         </comps>
       </AbilityDef>
