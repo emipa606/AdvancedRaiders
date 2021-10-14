@@ -252,26 +252,30 @@
     <combatPower>150</combatPower>
     <apparelMoney>9999~9999</apparelMoney>
     <apparelColor>(84,145,83)</apparelColor>
-    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
     <apparelTags>
       <li>SpacerMilitary</li>
     </apparelTags>
     <specificApparelRequirements>
       <li>
-        <requiredTag>SpacerMilitary</requiredTag>
+        <requiredTag>Apparel_PowerArmor</requiredTag>
         <color>(84,145,83)</color>
         <biocode>true</biocode>
         <quality>Masterwork</quality>
       </li>
-      <!--<li>
+      <li>
         <apparelDef>Apparel_PowerArmorHelmet</apparelDef>
         <color>(84,145,83)</color>
         <biocode>true</biocode>
-      </li>-->
+        <quality>Masterwork</quality>
+      </li>
     </specificApparelRequirements>
     <forcedTraits>
       <li>Tough</li>
     </forcedTraits>
+    <techHediffsRequired>
+      <li>YouWallImplant</li>
+    </techHediffsRequired>
     <weaponMoney>900~2200</weaponMoney>
     <weaponTags>
       <li>Weapon_BulldozerRanged</li>

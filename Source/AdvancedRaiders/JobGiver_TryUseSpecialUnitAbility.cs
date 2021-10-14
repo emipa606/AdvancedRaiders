@@ -81,8 +81,9 @@ namespace AdvancedRaiders
 
         protected Job InspirerJob(Pawn inspirer)
         {
-            //if (!SpecialUnitAIUtility.AtLeastNAlliesInInspireRadius(4, inspirer))
-            //    return null;
+            var hediff = inspirer.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.SoreThroat);
+            if (hediff != null && hediff.Visible)
+                return null;
 
             Ability ability = inspirer.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
             if (ability == null || !ability.CanCast || ability.Casting)
@@ -115,7 +116,7 @@ namespace AdvancedRaiders
 
             Pawn master = beast.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.Bond);
             
-            if (master.Spawned && !master.Downed)
+            if (master==null || (master.Spawned && !master.Downed))
                 return null;
 
             Job job;

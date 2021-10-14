@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <ThingDef ParentName="BaseWeapon">
+    <!--<ThingDef ParentName="BaseWeapon">
         <defName>MeleeWeapon_PlasteelCrowbar</defName>
         <label>plasteel crowbar</label>
         <description>Hehe funny description</description>
@@ -51,7 +51,7 @@
             <cooldownTime>1.8</cooldownTime>
           </li>
         </tools>
-      </ThingDef>
+      </ThingDef> -->
 
       <ThingDef ParentName="BaseWeapon">
         <defName>MeleeWeapon_ShockBaton</defName>

@@ -28,7 +28,13 @@ namespace AdvancedRaiders
             }
         }
 
-        public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest) => true;          //not the best decision probably
+        public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest)
+        {
+            var hediff = parent.pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.SoreThroat);
+            return hediff == null || !hediff.Visible;
+        }
+
+        public override bool CanApplyOn(GlobalTargetInfo target) => CanApplyOn(null, null);         
 
         private void InspirePawn(Pawn pawn)
         {

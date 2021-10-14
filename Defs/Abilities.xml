@@ -54,7 +54,7 @@
         </verbProperties>
         <comps>
           <li Class="AdvancedRaiders.CompProperties_AbilityTaunt">
-            <durationTicks>600</durationTicks>
+            <durationTicks>800</durationTicks>
           </li>
         </comps>
       </AbilityDef>

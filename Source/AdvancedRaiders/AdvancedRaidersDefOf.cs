@@ -11,6 +11,7 @@ namespace AdvancedRaiders
         public static HediffDef InspirationHediff;
         public static HediffDef PacifierPTSD;
         public static HediffDef ElectricalSpasm;
+        public static HediffDef SoreThroat;
 
         public static ThingDef OmegaStimulant;
         public static ThingDef UkuphilaHerb;

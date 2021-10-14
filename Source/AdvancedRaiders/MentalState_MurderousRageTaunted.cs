@@ -10,6 +10,7 @@ namespace AdvancedRaiders
 
         public override void MentalStateTick()
         {
+            base.MentalStateTick();
             if (!this.pawn.IsHashIntervalTick(120))
                 return;
 

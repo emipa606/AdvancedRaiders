@@ -29,7 +29,9 @@ namespace AdvancedRaiders
         {
             if (target.mindState.mentalStateHandler.TryStartMentalState(AdvancedRaidersDefOf.MurderousRageTaunted))
             {
-                ((MentalState_MurderousRageTaunted)target.MentalState).target = parent.pawn;
+                var mentalState = ((MentalState_MurderousRageTaunted)target.MentalState);
+                mentalState.target = parent.pawn;
+                mentalState.forceRecoverAfterTicks = Props.durationTicks;
                 return true;
             }
             return false;

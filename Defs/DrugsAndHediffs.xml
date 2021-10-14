@@ -56,7 +56,7 @@
                     <MeleeHitChance>-0.1</MeleeHitChance>
                     <MeleeDPS>0.2</MeleeDPS>
                     <ShootingAccuracyPawn>-0.2</ShootingAccuracyPawn>
-					<MeleeDodgeChance>-0.1</MeleeDodgeChance>
+					          <MeleeDodgeChance>-0.1</MeleeDodgeChance>
                 </statOffsets>
                 <capMods>
                     <li>
