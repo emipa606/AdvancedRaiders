@@ -28,6 +28,7 @@ namespace AdvancedRaiders
         public static JobDef InspireAllies;
         public static JobDef PacifyDownedPawn;
         public static JobDef KillTaunter;
+        public static JobDef ZhivayaResurrection;
 
         public static PawnKindDef Mercenary_MedicRanged;
         public static PawnKindDef Mercenary_MedicMelee;

@@ -47,4 +47,12 @@
     <casualInterruptible>false</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
+
+  <JobDef>
+    <defName>ZhivayaResurrection</defName>
+    <driverClass>AdvancedRaiders.JobDriver_ResurrectAndGiveIngestible</driverClass>
+    <reportString>resurrecting TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
 </Defs>

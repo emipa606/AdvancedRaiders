@@ -47,7 +47,7 @@ namespace AdvancedRaiders
         {
             Pawn innerPawn = TargetCorpse.InnerPawn;
             SpecialUnitUtility.MakeUkuphilaZombie(innerPawn);
-            if(!innerPawn.Dead)
+            if(!innerPawn.Dead && GetActor().GetLord()!=null)
                 GetActor().GetLord().AddPawn(innerPawn);        
             UkuphilaHerb.Destroy();
         }

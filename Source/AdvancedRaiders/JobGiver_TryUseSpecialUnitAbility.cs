@@ -86,8 +86,8 @@ namespace AdvancedRaiders
 
         protected Job InspirerJob(Pawn inspirer)
         {
-            if (!SpecialUnitAIUtility.AtLeastNAlliesInInspireRadius(4, inspirer))
-                return null;
+            //if (!SpecialUnitAIUtility.AtLeastNAlliesInInspireRadius(4, inspirer))
+            //    return null;
 
             Ability ability = inspirer.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
             if (ability == null || !ability.CanCast || ability.Casting)

@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- Omega stimulant-->
+    <!-- Hediff -->
+    <HediffDef ParentName="DiseaseBase">
+        <defName>OmegaStimulantHigh</defName>
+        <hediffClass>Hediff_High</hediffClass>
+        <label>omega stimulant</label>
+        <description>Omega stimulant in the bloodstream. Despite granting a huge strength, endurance and consciousness buffs at first, it soon backfires with extreme pain, delirium and, at the end, brain hemorrhage and, therefore, death.</description>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <lethalSeverity>1</lethalSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>4.8</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>peak</label>
+                <painFactor>0.2</painFactor>
+                <totalBleedFactor>0.05</totalBleedFactor>
+                <statFactors>
+                    <MeleeWeapon_CooldownMultiplier>0.3</MeleeWeapon_CooldownMultiplier>
+                    <RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
+                    <IncomingDamageFactor>0.3</IncomingDamageFactor>
+                </statFactors>
+                <statOffsets>
+                    <MeleeDPS>10.0</MeleeDPS>
+                    <MeleeHitChance>3</MeleeHitChance>
+                    <ShootingAccuracyPawn>10.0</ShootingAccuracyPawn>
+					<MeleeDodgeChance>3</MeleeDodgeChance>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>1.5</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.6</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>0.8</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.4</minSeverity>
+                <label>decline</label>
+                <painFactor>0.8</painFactor>
+                <painOffset>0.2</painOffset>
+                <totalBleedFactor>0.5</totalBleedFactor>
+                <statOffsets>
+                    <IncomingDamageFactor>0.5</IncomingDamageFactor>
+                    <MeleeHitChance>-0.1</MeleeHitChance>
+                    <MeleeDPS>0.2</MeleeDPS>
+                    <ShootingAccuracyPawn>-0.2</ShootingAccuracyPawn>
+					<MeleeDodgeChance>-0.1</MeleeDodgeChance>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>0.6</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.1</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>0.3</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.7</minSeverity>
+                <label>reckoning</label>
+                <painOffset>0.4</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.25</offset>
+                        <setMax>0.75</setMax>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>terminal</label>
+                <painOffset>1.0</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <offset>-0.75</offset>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <offset>-0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- item -->
+    <ThingDef ParentName="DrugPillBase">
+        <defName>OmegaStimulant</defName>
+        <label>omega stimulant</label>
+        <description>Quite effective combat drug created in attempt of reverse-engineering glitterworld stimulants. Just like original, it boosts reaction, edurance and strength, hardens skin and keeps its flexibility at the same time, and on top of that has a painkiller effect.\n\nStill, this is only replica of high-tech stimulants. In 2 hours after injection effects start to fade and 5 hours after injection soldier dies in terrifying agony.</description>
+        <descriptionHyperlinks>
+            <HediffDef>OmegaStimulantHigh</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Things/Drugs/OmegaStimulant</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <onGroundRandomRotateAngle>60</onGroundRandomRotateAngle>
+        </graphicData>
+        <equippedAngleOffset>-80</equippedAngleOffset>
+        <rotatable>true</rotatable>
+        <randomizeRotationOnSpawn>true</randomizeRotationOnSpawn>
+        <stackLimit>25</stackLimit>
+        <techLevel>Spacer</techLevel>
+        <statBases>
+            <DeteriorationRate>0.5</DeteriorationRate>
+            <MarketValue>15</MarketValue>
+            <Mass>0.01</Mass>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <ingestible>
+            <ingestSound>Ingest_Inject</ingestSound>
+            <foodType>Fluid, Processed</foodType>
+            <drugCategory>Medical</drugCategory>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>OmegaStimulantHigh</hediffDef>
+                    <severity>0.00</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+			</li>
+		</comps>
+    </ThingDef>
+
+
+    <!-- Ukuphila herb -->
+    <!-- Hediff -->
+    <HediffDef ParentName="DiseaseBase">
+        <defName>UkuphilaResurrection</defName>
+        <label>ukuphila resurrection</label>
+        <description>placeholder text with funny joke</description>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <lethalSeverity>1</lethalSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>2</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <IncomingDamageFactor>0.7</IncomingDamageFactor>
+                    <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+                    <MeleeHitChance>0.8</MeleeHitChance>
+                    <MeleeDodgeChance>0.5</MeleeDodgeChance>
+                </statFactors>
+                
+                <label>animation</label>
+                <painFactor>0.0</painFactor>
+                <totalBleedFactor>0.0</totalBleedFactor>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>1.0</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.4</offset>
+                        <setMax>0.6</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- item -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>UkuphilaHerb</defName>
+        <label>ukuphila herb</label>
+        <description>A result of archotechs-know-what rituals on anima grass. Some tribal healers use it to give those who perished on the battlefield a second chance to fulfill their duty to the tribe.\n\n"Resurrected" in such way person can be best described as zombie as they are incapable of anything but fighting. They are quite tenacious, but death will come for them eventually. While they remember their faction, they will attack any outsider they see, even ally.</description>
+        <graphicData>
+          <texPath>Things/Drugs/UkuphilaHerb</texPath>
+          <graphicClass>Graphic_StackCount</graphicClass>
+          <drawSize>0.85</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <stackLimit>25</stackLimit>
+        <techLevel>Neolithic</techLevel>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>0.05</Mass>
+            <DeteriorationRate>5.0</DeteriorationRate>
+            <Flammability>1.5</Flammability>
+            <MarketValue>13</MarketValue>
+        </statBases>
+        <thingCategories>
+          <li>Items</li>
+        </thingCategories>
+        
+        <!--<comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Use ukuphila herb</useLabel>
+                <useDuration>0</useDuration>
+              </li>
+              <li Class="CompProperties_Targetable">
+                <compClass>CompTargetable_SingleCorpse</compClass>
+                <fleshCorpsesOnly>true</fleshCorpsesOnly>
+                <nonDessicatedCorpsesOnly>true</nonDessicatedCorpsesOnly>
+              </li>
+              <li>
+                <compClass>CompTargetEffect_Resurrect</compClass>
+              </li>
+        </comps>-->
+      </ThingDef>
+
+      <!-- Alpha stimulant -->
+      <!-- Hediff -->
+      <HediffDef>
+        <defName>AlphaStimulantHigh</defName>
+        <hediffClass>Hediff_High</hediffClass>
+        <label>alpha stimulant</label>
+        <description>Alpha stimulant in the bloodstream. Subject's capacities are boosted for approximately 3 days. Unlike with omega stimulant, subject won't suffer any negative effects.</description>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.33</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>decline</label>
+                <painFactor>0.8</painFactor>
+                <totalBleedFactor>0.8</totalBleedFactor>
+                <statOffsets>
+                    <IncomingDamageFactor>0.9</IncomingDamageFactor>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>0.6</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.1</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>0.3</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.5</minSeverity>
+                <label>peak</label>
+                <painFactor>0.5</painFactor>
+                <totalBleedFactor>0.3</totalBleedFactor>
+                <statFactors>
+                    <MeleeWeapon_CooldownMultiplier>0.8</MeleeWeapon_CooldownMultiplier>
+                    <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+                    <IncomingDamageFactor>0.8</IncomingDamageFactor>
+                </statFactors>
+                <statOffsets>
+                    <MeleeDPS>2.0</MeleeDPS>
+                    <ShootingAccuracyPawn>2.0</ShootingAccuracyPawn>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>1</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.3</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+      </HediffDef>
+
+      <!-- Item -->
+      <ThingDef ParentName="MakeableDrugBase">
+        <defName>AlphaStimulant</defName>
+        <label>alpha stimulant</label>
+        <description>Unlike its precursor, omega stimulant, alpha's positive effects are much longer and won't end with horrible death, but they has much less impact on subject's combat capabilities. \n\nWhile still being far from glitterworld stimulants, it is highly valued by merchants.</description>
+        <descriptionHyperlinks>
+            <HediffDef>AlphaStimulantHigh</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Things/Drugs/AlphaStimulant</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <onGroundRandomRotateAngle>30</onGroundRandomRotateAngle>
+        </graphicData>
+        <equippedAngleOffset>-30</equippedAngleOffset>
+        <rotatable>true</rotatable>
+        <randomizeRotationOnSpawn>true</randomizeRotationOnSpawn>
+        <stackLimit>25</stackLimit>
+        <techLevel>Spacer</techLevel>
+        <statBases>
+            <WorkToMake>1500</WorkToMake>
+            <DeteriorationRate>0.5</DeteriorationRate>
+            <MarketValue>500</MarketValue>
+            <Mass>0.01</Mass>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <ingestible>
+            <foodType>Fluid, Processed</foodType>
+            <drugCategory>Medical</drugCategory>
+            <ingestSound>Ingest_Inject</ingestSound>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>AlphaStimulantHigh</hediffDef>
+                    <severity>1.00</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <recipeMaker>
+            <researchPrerequisite>ExoticMedicineDistillery</researchPrerequisite>
+            <recipeUsers>
+              <li>DrugLab</li>
+            </recipeUsers>
+            <soundWorking>Recipe_Drug</soundWorking>
+        </recipeMaker>
+        <costList>
+            <Neutroamine>5</Neutroamine>
+            <OmegaStimulant>25</OmegaStimulant>
+            <MedicineIndustrial>3</MedicineIndustrial>
+        </costList>
+        <comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+			</li>
+		</comps>
+      </ThingDef>
+
+      <!-- Zhivaya water-->
+      <!-- hediffs -->
+      <HediffDef>
+        <defName>ZhivayaWaterHigh</defName>
+        <hediffClass>Hediff_High</hediffClass>
+        <label>zhivaya water</label>
+        <disablesNeeds>
+            <li>Rest</li>
+        </disablesNeeds>
+        <description>Zhivaya water in the organism. It allows person to withstand injuries and diseases that otherwise would be lethal and keeps them alive after resurrection. Without regular doses they will die, even if they first took zhivaya water during lifetime.</description>
+        <defaultLabelColor>(0.6,0.2,0.66)</defaultLabelColor>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+          <li Class="HediffCompProperties_HealPermanentWounds" />
+        </comps>
+        <stages>
+          <li>
+            <statFactors>
+                <IncomingDamageFactor>0.7</IncomingDamageFactor>
+            </statFactors>
+            <label>animation</label>
+            <totalBleedFactor>0.4</totalBleedFactor>
+            <painFactor>0.3</painFactor>
+            <capMods>
+              <li>
+                <capacity>Moving</capacity>
+                <offset>0.2</offset>
+              </li>
+              <li>
+                <capacity>BloodFiltration</capacity>
+                <offset>1</offset>
+              </li>
+            </capMods>
+          </li>
+        </stages>
+      </HediffDef>
+
+      <!-- addiction -->
+      <NeedDef ParentName="DrugAddictionNeedBase">
+        <defName>Chemical_ZhivayaWater</defName>
+        <needClass>Need_Chemical</needClass>
+        <label>zhivaya water</label>
+        <description>Revived with zhivaya water. Without regular doses this person will pass away.</description>
+        <listPriority>41</listPriority>
+        <fallPerDay>0.2</fallPerDay>
+      </NeedDef>
+    
+      <HediffDef ParentName="AddictionBase">
+        <defName>ZhivayaWaterAddiction</defName>
+        <label>zhivaya water need</label>
+        <description>This person needs regular zhivaya water doses.</description>
+        <hediffClass>Hediff_Addiction</hediffClass>
+        <causesNeed>Chemical_ZhivayaWater</causesNeed>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+          <li>
+            <label>fulfilled</label>
+            <minSeverity>0.001</minSeverity>
+          </li>
+          <li>
+            <deathMtbDays>1</deathMtbDays>
+            <lifeThreatening>true</lifeThreatening>
+            <label>unmet</label>
+            <statFactors>
+                <IncomingDamageFactor>2</IncomingDamageFactor>
+            </statFactors>
+            <totalBleedFactor>3</totalBleedFactor>
+            <painFactor>2</painFactor>
+            <capMods>
+              <li>
+                <capacity>Moving</capacity>
+                <offset>-0.4</offset>
+              </li>
+              <li>
+                <capacity>BloodFiltration</capacity>
+                <offset>-0.5</offset>
+              </li>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>-0.3</offset>
+              </li>
+            </capMods>
+          </li>
+          <li>
+
+          </li>
+        </stages>
+        
+      </HediffDef>
+
+      <!-- item -->
+      <ThingDef ParentName="MakeableDrugBase">
+        <defName>ZhivayaWater</defName>
+        <label>zhivaya water</label>
+        <description>Distilled, fermented and treated with gold-plasteel electrosys ukuphila herb infusion. Can be used to resurrect the dead, but new dose will be needed every five days to keep them alive.\n\nMankind has always wished to find elixir of life. This liquid is, perhaps, its best attempt at making one, and still, the life it grants has its price. The rich of the glitterworlds, however, prefer to forget about methods its main ingridient, ukuphila herb, produced.</description>
+        <descriptionHyperlinks>
+            <HediffDef>ZhivayaWaterHigh</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+          <texPath>Things/Drugs/ZhivayaWater</texPath>
+          <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <stackLimit>10</stackLimit>
+        <statBases>
+          <WorkToMake>1500</WorkToMake>
+          <MarketValue>600</MarketValue>
+          <Mass>0.1</Mass>
+        </statBases>
+        <techLevel>Industrial</techLevel>
+        <ingestible>
+          <foodType>Processed, Fluid</foodType>
+          <baseIngestTicks>80</baseIngestTicks>
+          <ingestSound>Ingest_Inject</ingestSound>
+          <ingestHoldOffsetStanding>
+            <northDefault>
+              <offset>(0.18,0,0)</offset>
+            </northDefault>
+          </ingestHoldOffsetStanding>
+          <ingestCommandString>Inject {0}</ingestCommandString>
+          <ingestReportString>Injecting {0}.</ingestReportString>
+          <useEatingSpeedStat>false</useEatingSpeedStat>
+          <chairSearchRadius>0</chairSearchRadius>
+          <outcomeDoers>
+            <li Class="IngestionOutcomeDoer_GiveHediff">
+              <hediffDef>ZhivayaWaterHigh</hediffDef>
+              <severity>1.00</severity>
+              <doToGeneratedPawnIfAddicted>true</doToGeneratedPawnIfAddicted>
+            </li>
+          </outcomeDoers>
+        </ingestible>
+        <recipeMaker>
+          <researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+          <recipeUsers>
+            <li>DrugLab</li>
+          </recipeUsers>
+          <soundWorking>Recipe_Drug</soundWorking>
+        </recipeMaker>
+        <costList>
+          <Neutroamine>5</Neutroamine>
+          <UkuphilaHerb>25</UkuphilaHerb>
+          <Gold>5</Gold>
+          <Plasteel>10</Plasteel>
+        </costList>
+        <comps>
+          <li Class="CompProperties_Drug">
+            <chemical>ZhivayaWater</chemical>
+            <addictiveness>1</addictiveness>
+            <needLevelOffset>0.8</needLevelOffset>
+            <listOrder>1001</listOrder>
+          </li>
+          <li Class="CompProperties_Usable">
+            <useJob>UseItem</useJob>
+            <useLabel>Use zhivaya water</useLabel>
+            <useDuration>0</useDuration>
+          </li>
+          <li Class="CompProperties_Targetable">
+            <compClass>CompTargetable_SingleCorpse</compClass>
+            <fleshCorpsesOnly>true</fleshCorpsesOnly>
+            <nonDessicatedCorpsesOnly>true</nonDessicatedCorpsesOnly>
+          </li>
+          <li>
+            <compClass>AdvancedRaiders.CompTargetEffect_ZhivayaResurrect</compClass>
+          </li>
+        </comps>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        
+      </ThingDef>
+
+      <!-- chemical -->
+      <ChemicalDef>
+        <defName>ZhivayaWater</defName>
+        <label>zhivaya water</label>
+        <addictionHediff>ZhivayaWaterAddiction</addictionHediff>
+        <canBinge>false</canBinge>
+      </ChemicalDef>
+</Defs>
