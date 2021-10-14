@@ -23,7 +23,6 @@
         <blockInteractionRecipientExcept>
           <li>Insult</li>
         </blockInteractionRecipientExcept>
-        <category>Aggro</category>
         <colonistsOnly>False</colonistsOnly>
         <minTicksBeforeRecovery>999</minTicksBeforeRecovery>
         <recoveryMtbDays>1</recoveryMtbDays>

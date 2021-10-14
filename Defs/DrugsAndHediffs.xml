@@ -144,6 +144,8 @@
             <Flammability>0.5</Flammability>
         </statBases>
         <ingestible>
+          <ingestCommandString>Inject {0}</ingestCommandString>
+          <ingestReportString>Injecting {0}.</ingestReportString>
             <ingestSound>Ingest_Inject</ingestSound>
             <foodType>Fluid, Processed</foodType>
             <drugCategory>Medical</drugCategory>
@@ -342,6 +344,8 @@
         <ingestible>
             <foodType>Fluid, Processed</foodType>
             <drugCategory>Medical</drugCategory>
+            <ingestCommandString>Inject {0}</ingestCommandString>
+          <ingestReportString>Injecting {0}.</ingestReportString>
             <ingestSound>Ingest_Inject</ingestSound>
             <outcomeDoers>
                 <li Class="IngestionOutcomeDoer_GiveHediff">
@@ -490,8 +494,8 @@
               <offset>(0.18,0,0)</offset>
             </northDefault>
           </ingestHoldOffsetStanding>
-          <ingestCommandString>Inject {0}</ingestCommandString>
-          <ingestReportString>Injecting {0}.</ingestReportString>
+          <ingestCommandString>Drink {0}</ingestCommandString>
+          <ingestReportString>Drinking {0}.</ingestReportString>
           <useEatingSpeedStat>false</useEatingSpeedStat>
           <chairSearchRadius>0</chairSearchRadius>
           <outcomeDoers>

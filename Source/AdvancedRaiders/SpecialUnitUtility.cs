@@ -81,9 +81,7 @@ namespace AdvancedRaiders
 
                 default:
                     //this sholdnt happen
-                    kindDef = PawnKindDefOf.Boomalope;
-                    beastNum = 1;
-                    break;
+                    return;
             }
 
 
@@ -161,11 +159,34 @@ namespace AdvancedRaiders
             int total = 0;
             foreach (var colonist in map.mapPawns.FreeColonistsSpawned)
             {
-                total++;
-                if (colonist.MentalStateDef == AdvancedRaidersDefOf.MurderousRageTaunted)
-                    taunted++;
+                if (colonist.health.State == PawnHealthState.Mobile)
+                {
+                    total++;
+                    if (colonist.MentalStateDef == AdvancedRaidersDefOf.MurderousRageTaunted)
+                        taunted++;
+                }
             }
-            return taunted / total < 0.4;
+            if (total == 0)
+                return true;
+
+            return ((double)taunted / total) > 0.4;
+        }
+
+        public static bool AtLeastNAlliesInInspireRadius(int nPawns, Pawn caster)
+        {
+            Ability ability = caster.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
+            if (ability == null)
+                return false;
+
+            float radius = ((CompAbilityEffect_InspireAllies)ability.comps.Find((AbilityComp c) => c is CompAbilityEffect_InspireAllies)).Props.radius;
+            var pawnsInRadius =
+                from p in caster.Map.mapPawns.FreeColonistsSpawned
+                where p.Position.DistanceTo(caster.Position) < radius &&
+                p.health.State == PawnHealthState.Mobile &&
+                p.Faction == caster.Faction
+                select p;
+
+            return pawnsInRadius.Count() - 1 >= nPawns;       //-1 for caster themself
         }
     }
 }
