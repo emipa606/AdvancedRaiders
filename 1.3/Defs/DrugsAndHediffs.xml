@@ -134,12 +134,13 @@
         </graphicData>
         <equippedAngleOffset>-80</equippedAngleOffset>
         <rotatable>true</rotatable>
+        <tradeability>Sellable</tradeability>
         <randomizeRotationOnSpawn>true</randomizeRotationOnSpawn>
         <stackLimit>25</stackLimit>
         <techLevel>Spacer</techLevel>
         <statBases>
             <DeteriorationRate>0.5</DeteriorationRate>
-            <MarketValue>15</MarketValue>
+            <MarketValue>10</MarketValue>
             <Mass>0.01</Mass>
             <Flammability>0.5</Flammability>
         </statBases>
@@ -157,11 +158,14 @@
             </outcomeDoers>
         </ingestible>
         <comps>
-			<li Class="CompProperties_Drug">
-				<listOrder>1000</listOrder>
-			</li>
-		</comps>
-    </ThingDef>
+			    <li Class="CompProperties_Drug">
+				  <listOrder>1000</listOrder>
+			    </li>
+		    </comps>
+        <tradeTags>
+          <li>ExoticMisc</li>
+        </tradeTags>
+      </ThingDef>
 
 
     <!-- Ukuphila herb -->
@@ -169,7 +173,7 @@
     <HediffDef ParentName="DiseaseBase">
         <defName>UkuphilaResurrection</defName>
         <label>ukuphila resurrection</label>
-        <description>placeholder text with funny joke</description>
+        <description>This person was resurrected with ukuphila herb.</description>
         <scenarioCanAdd>false</scenarioCanAdd>
         <lethalSeverity>1</lethalSeverity>
         <comps>
@@ -202,6 +206,7 @@
                 </capMods>
             </li>
         </stages>
+        
     </HediffDef>
 
     <!-- item -->
@@ -216,6 +221,7 @@
         </graphicData>
         <rotatable>false</rotatable>
         <stackLimit>25</stackLimit>
+        <tradeability>Sellable</tradeability>
         <techLevel>Neolithic</techLevel>
         <useHitPoints>true</useHitPoints>
         <statBases>
@@ -228,7 +234,9 @@
         <thingCategories>
           <li>Items</li>
         </thingCategories>
-        
+        <tradeTags>
+          <li>ExoticMisc</li>
+        </tradeTags>
         <!--<comps>
             <li Class="CompProperties_Usable">
                 <useJob>UseItem</useJob>
@@ -252,7 +260,7 @@
         <defName>AlphaStimulantHigh</defName>
         <hediffClass>Hediff_High</hediffClass>
         <label>alpha stimulant</label>
-        <description>Alpha stimulant in the bloodstream. Subject's capacities are boosted for approximately 3 days. Unlike with omega stimulant, subject won't suffer any negative effects.</description>
+        <description>Alpha stimulant in the bloodstream. Subject's capacities are boosted for approximately 3 days. Unlike omega stimulant, subject won't suffer any negative effects.</description>
         <scenarioCanAdd>true</scenarioCanAdd>
         <maxSeverity>1.0</maxSeverity>
         <isBad>false</isBad>
@@ -331,6 +339,7 @@
         </graphicData>
         <equippedAngleOffset>-30</equippedAngleOffset>
         <rotatable>true</rotatable>
+        <tradeability>Sellable</tradeability>
         <randomizeRotationOnSpawn>true</randomizeRotationOnSpawn>
         <stackLimit>25</stackLimit>
         <techLevel>Spacer</techLevel>
@@ -367,10 +376,13 @@
             <MedicineIndustrial>3</MedicineIndustrial>
         </costList>
         <comps>
-			<li Class="CompProperties_Drug">
-				<listOrder>1000</listOrder>
-			</li>
-		</comps>
+			    <li Class="CompProperties_Drug">
+				    <listOrder>1000</listOrder>
+			    </li>
+		    </comps>
+        <tradeTags>
+          <li>ExoticMisc</li>
+        </tradeTags>
       </ThingDef>
 
       <!-- Zhivaya water-->
@@ -419,7 +431,7 @@
         <label>zhivaya water</label>
         <description>Revived with zhivaya water. Without regular doses this person will pass away.</description>
         <listPriority>41</listPriority>
-        <fallPerDay>0.2</fallPerDay>
+        <fallPerDay>0.18</fallPerDay>
       </NeedDef>
     
       <HediffDef ParentName="AddictionBase">
@@ -458,9 +470,6 @@
               </li>
             </capMods>
           </li>
-          <li>
-
-          </li>
         </stages>
         
       </HediffDef>
@@ -477,6 +486,7 @@
           <texPath>Things/Drugs/ZhivayaWater</texPath>
           <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
+        <tradeability>Sellable</tradeability>
         <rotatable>false</rotatable>
         <stackLimit>10</stackLimit>
         <statBases>

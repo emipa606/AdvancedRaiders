@@ -4,7 +4,27 @@
   <packageId>saloid.AdvancedRaiders</packageId>
   <author>saloid</author>
   <name>Advanced raiders</name>
-  <description>Adds new raider types and related items.</description> 
+  <description>Adds new raider types and some related items.
+    \n
+    \n -Hey Ron, those tribespeople are trying to raid us again.
+    \n -Nah, whatever, they won't pass through our killbox.
+    \n -One of them just resurrected his buddy. 
+    \n -What? 
+    \n -They also brought a warg and two bears with them. And a pack of boomrats.
+    \n -Oh, okay. We just have to kill or down about half of them and they will back off, right?
+    \n -We already did. Looks like this guy in red shouting out weird words keeps them fighting.
+    \n -Damn... But turrets will handle them anyway.
+    \n -They won't. Broken by some guy during previous raid. Some even turned against us.
+    \n -Why haven't anyone repaired them?
+    \n -A sadistic merc beat up our only builder and it looks like he got PTSD. He is smashing walls in his room right now.
+    \n -Use the doomsday rocket then!
+    \n -I wasted it on some really tough guy with minigun during the same raid. 
+    \n -Well, at least you've put it to the right use.
+    \n -How to say... he was just downed and his friend injected him some red fluid. He just became stronger and angrier.
+    \n
+    \n I strongly recommend dont drop items mod (https://steamcommunity.com/sharedfiles/filedetails/?id=1778821244) to use with this one. Or without, it is cool by itself.
+    \n Also you shold set enemy death on downed chance for about 50% or less. Merc medics need someone to "heal" after all.
+  </description> 
 
   <supportedVersions>
     <!-- used by version check warning -->

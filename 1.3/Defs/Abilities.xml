@@ -27,7 +27,8 @@
         </verbProperties>
         <comps>
             <li Class = "AdvancedRaiders.CompProperties_AbilityInspireAllies">
-              <inspirationStrength>0.1</inspirationStrength>
+              <inspirationStrength>0.15</inspirationStrength>
+              <soreThroatEffectFactor>0.5</soreThroatEffectFactor>
               <radius>10.0</radius>
             </li>
         </comps>

@@ -130,7 +130,7 @@
       <apparelMoney>1000~1500</apparelMoney>
           <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
       <apparelColor>(100, 160, 217)</apparelColor>
-      <weaponMoney>1500~1500</weaponMoney>
+      <weaponMoney>500~800</weaponMoney>
       <weaponTags>
         <li>Gun</li>
       </weaponTags>
@@ -250,24 +250,17 @@
     <defaultFactionType>Pirate</defaultFactionType>
     <label>bulldozer</label>
     <combatPower>150</combatPower>
-    <apparelMoney>9999~9999</apparelMoney>
+    <apparelMoney>10000~10000</apparelMoney>
     <apparelColor>(84,145,83)</apparelColor>
-    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
     <apparelTags>
       <li>SpacerMilitary</li>
     </apparelTags>
     <specificApparelRequirements>
       <li>
-        <requiredTag>Apparel_PowerArmor</requiredTag>
+        <requiredTag>SpacerMilitary</requiredTag>
         <color>(84,145,83)</color>
         <biocode>true</biocode>
-        <quality>Masterwork</quality>
-      </li>
-      <li>
-        <apparelDef>Apparel_PowerArmorHelmet</apparelDef>
-        <color>(84,145,83)</color>
-        <biocode>true</biocode>
-        <quality>Masterwork</quality>
+        <quality>Good</quality>
       </li>
     </specificApparelRequirements>
     <forcedTraits>

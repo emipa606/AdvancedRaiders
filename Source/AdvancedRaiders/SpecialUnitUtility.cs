@@ -87,12 +87,11 @@ namespace AdvancedRaiders
 
             for (int i = 0; i < beastNum; i++)
             {
-                var newBeast = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kindDef));
+                var newBeast = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kindDef, beastmaster.Faction));
                 beasts.Add(newBeast);
                 GenSpawn.Spawn(newBeast, CellFinder.RandomSpawnCellForPawnNear(beastmaster.Position, beastmaster.Map), beastmaster.Map, WipeMode.VanishOrMoveAside);
                 beastmaster.relations.AddDirectRelation(PawnRelationDefOf.Bond, newBeast);
 
-                newBeast.SetFaction(beastmaster.Faction);
                 newBeast.training.Train(TrainableDefOf.Tameness, beastmaster, true);
                 newBeast.training.Train(TrainableDefOf.Obedience, beastmaster, true);
                 newBeast.training.Train(TrainableDefOf.Release, beastmaster, true);

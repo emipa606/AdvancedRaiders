@@ -120,10 +120,11 @@ namespace AdvancedRaiders
                 return null;
 
             Job job;
-            if (!master.Spawned || master.CarriedBy != null || beast.def.defName == "Boomrat")
+            if (!master.Spawned || master.CarriedBy != null || beast.def.defName == "Boomrat" || !beast.CanReserve(master))
             {
                 job = JobMaker.MakeJob(JobDefOf.Flee);
                 job.targetA = evacSpot;
+                job.exitMapOnArrival = true;
             }
             else
             {
@@ -163,7 +164,7 @@ namespace AdvancedRaiders
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)
+            if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)        //doesnt seem to be working
                 return null;
 
             switch (pawn.DefClass())

@@ -11,6 +11,7 @@ namespace AdvancedRaiders
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             InspireAlliesInRange(parent.pawn.Position);
+            GiveSoreThroatHediff(parent.pawn);
         }
 
         public override void Apply(GlobalTargetInfo target) => Apply(null, null);               //rewrite later
@@ -38,6 +39,7 @@ namespace AdvancedRaiders
 
         private void InspirePawn(Pawn pawn)
         {
+            
             var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.InspirationHediff);
             if (hediff == null)
             {
@@ -58,12 +60,27 @@ namespace AdvancedRaiders
 
             return hediff.Severity > 1 ? 0 : (1 - hediff.Severity);
         }
+
+        private void GiveSoreThroatHediff(Pawn pawn)
+        {
+            var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.SoreThroat);
+            if (hediff == null)
+            {
+                hediff = pawn.health.AddHediff(AdvancedRaidersDefOf.SoreThroat);
+                hediff.Severity += 0.1f * Props.soreThroatEffectFactor;
+            }
+            else
+            {
+                hediff.Severity += 0.1f * Props.soreThroatEffectFactor;
+            }
+        }
     }
 
     public class CompProperties_AbilityInspireAllies : AbilityCompProperties
     {
         public float inspirationStrength;
         public float radius;
+        public float soreThroatEffectFactor = 1;
 
         public CompProperties_AbilityInspireAllies() => this.compClass = typeof(CompAbilityEffect_InspireAllies);
     }
