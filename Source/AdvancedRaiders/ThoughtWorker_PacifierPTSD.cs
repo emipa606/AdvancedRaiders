@@ -11,7 +11,6 @@ namespace AdvancedRaiders
             if (hediff == null)
                 return ThoughtState.Inactive;
 
-            //TODO rewrite this YandereDev-tier piece
             if (hediff.Severity > 0.9f)
                 return ThoughtState.ActiveAtStage(3);
 

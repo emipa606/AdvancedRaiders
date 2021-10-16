@@ -229,7 +229,7 @@
             <Mass>0.05</Mass>
             <DeteriorationRate>5.0</DeteriorationRate>
             <Flammability>1.5</Flammability>
-            <MarketValue>13</MarketValue>
+            <MarketValue>10</MarketValue>
         </statBases>
         <thingCategories>
           <li>Items</li>
@@ -491,7 +491,7 @@
         <stackLimit>10</stackLimit>
         <statBases>
           <WorkToMake>1500</WorkToMake>
-          <MarketValue>600</MarketValue>
+          <MarketValue>350</MarketValue>
           <Mass>0.1</Mass>
         </statBases>
         <techLevel>Industrial</techLevel>
@@ -524,9 +524,9 @@
           <soundWorking>Recipe_Drug</soundWorking>
         </recipeMaker>
         <costList>
-          <Neutroamine>5</Neutroamine>
-          <UkuphilaHerb>25</UkuphilaHerb>
-          <Gold>5</Gold>
+          <Neutroamine>3</Neutroamine>
+          <UkuphilaHerb>10</UkuphilaHerb>
+          <Gold>1</Gold>      <!-- should be 0.5 actually-->
           <Plasteel>10</Plasteel>
         </costList>
         <comps>

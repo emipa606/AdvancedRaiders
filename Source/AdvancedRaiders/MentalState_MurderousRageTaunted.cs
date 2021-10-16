@@ -1,4 +1,4 @@
-﻿
+﻿using RimWorld;
 using Verse;
 using Verse.AI;
 
@@ -27,6 +27,12 @@ namespace AdvancedRaiders
                 pawn.jobs.StartJob(job);
             }
         }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref target, "target");
+        }
     }
 
     public class JobDriver_KillWithoutReservations : JobDriver_Kill
@@ -36,4 +42,6 @@ namespace AdvancedRaiders
             return true;
         }
     }
+
+    
 }

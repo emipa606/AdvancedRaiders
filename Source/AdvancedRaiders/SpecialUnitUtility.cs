@@ -4,6 +4,7 @@ using System.Linq;
 using Verse;
 using RimWorld;
 using Verse.AI.Group;
+using Verse.AI;
 
 namespace AdvancedRaiders
 {
@@ -156,16 +157,13 @@ namespace AdvancedRaiders
         {
             int taunted = 0;
             int total = 0;
-            foreach (var colonist in map.mapPawns.FreeColonistsSpawned)
+            foreach (var colonist in map.mapPawns.FreeColonistsSpawned.Where((Pawn p) => p.health.State == PawnHealthState.Mobile)) 
             {
-                if (colonist.health.State == PawnHealthState.Mobile)
-                {
-                    total++;
-                    if (colonist.MentalStateDef == AdvancedRaidersDefOf.MurderousRageTaunted)
-                        taunted++;
-                }
+                total++;
+                if (colonist.MentalStateDef == AdvancedRaidersDefOf.MurderousRageTaunted)
+                    taunted++;
             }
-            if (total == 0)
+            if (total < 2)
                 return true;
 
             return ((double)taunted / total) > 0.4;

@@ -18,7 +18,7 @@ namespace AdvancedRaiders
 
     public static class PawnExtentions
     {
-        public static PawnClass DefClass(this Pawn pawn)
+        public static PawnClass AdvancedRaiderClass(this Pawn pawn)
         {
             PawnKindDef def = pawn.kindDef;
 
