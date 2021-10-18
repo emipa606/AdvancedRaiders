@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef> 
+        <defName>ReinforcementsFlareIgnited</defName>
+        <label>reinforcements flare</label>
+        <thingClass>ThingWithComps</thingClass>
+        <category>Item</category> <!-- I have no idea which category is better for ignited flare -->
+        <drawerType>MapMeshOnly</drawerType>
+        <altitudeLayer>Filth</altitudeLayer>
+        <tickerType>Normal</tickerType>         <!-- mb ill replace it with rare -->
+        <selectable>true</selectable>
+        <alwaysHaulable>false</alwaysHaulable>
+        <designateHaulable>false</designateHaulable>
+        <useHitPoints>false</useHitPoints>
+        <graphicData>
+            <!--<drawSize>(0.60,0.60)</drawSize>-->
+            <texPath>Things/Flares/Flare_Ignited</texPath>
+            <graphicClass>Graphic_Flicker</graphicClass>
+            <!-- <onGroundRandomRotateAngle>90</onGroundRandomRotateAngle> -->
+        </graphicData>
+        <statBases>
+            <Beauty>-3</Beauty>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Usable"> 
+                <useJob>ExtinguishReinforcementsFlare</useJob>
+                <useLabel>extinguish reinforcements flare</useLabel>
+                <useDuration>30</useDuration>
+            </li>     
+            <li Class = "CompProperties_Glower">
+                <glowRadius>7.0</glowRadius>
+                <overlightRadius>4.0</overlightRadius>
+                <glowColor>(250,75,30)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>Filth_BurntFlare</defName>
+        <label>burnt flare</label>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Flares/flare_burnt</texPath>
+            <onGroundRandomRotateAngle>90</onGroundRandomRotateAngle>
+        </graphicData>
+        <filth>
+            <disappearsInDays>45~50</disappearsInDays>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+        </filth>
+    </ThingDef>
+</Defs>

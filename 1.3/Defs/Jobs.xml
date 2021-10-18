@@ -55,4 +55,12 @@
     <casualInterruptible>false</casualInterruptible>
     <collideWithPawns>true</collideWithPawns>
   </JobDef>
+
+  <JobDef>
+    <defName>ExtinguishReinforcementsFlare</defName>
+    <driverClass>AdvancedRaiders.JobDriver_ExtinguishReinforcementsFlare</driverClass>
+    <reportString>extinguishing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
 </Defs>

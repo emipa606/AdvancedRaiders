@@ -22,7 +22,7 @@ namespace AdvancedRaiders
             yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.ClosestTouch);
             yield return Toils_General.Wait(100);
 
-            if (Rand.Value < 0.5)
+            if (Rand.Value > ARSettings.turretBugChance)
             {
                 //break turret
                 yield return Toils_General.Do(() =>

@@ -42,14 +42,9 @@ namespace AdvancedRaiders
             
             var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.InspirationHediff);
             if (hediff == null)
-            {
                 hediff = pawn.health.AddHediff(AdvancedRaidersDefOf.InspirationHediff);
-                hediff.Severity += Props.inspirationStrength;
-            }
-            else
-            {
-                hediff.Severity += Props.inspirationStrength * InspirationMultipiler(pawn);
-            }
+
+            hediff.Severity += Props.inspirationStrength * InspirationMultipiler(pawn) * ARSettings.inspirationMultipiler;
         }
         private float InspirationMultipiler(Pawn pawn)
         {
@@ -65,14 +60,9 @@ namespace AdvancedRaiders
         {
             var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.SoreThroat);
             if (hediff == null)
-            {
                 hediff = pawn.health.AddHediff(AdvancedRaidersDefOf.SoreThroat);
-                hediff.Severity += 0.1f * Props.soreThroatEffectFactor;
-            }
-            else
-            {
-                hediff.Severity += 0.1f * Props.soreThroatEffectFactor;
-            }
+
+            hediff.Severity += 0.1f * Props.soreThroatEffectFactor * ARSettings.soreThroatMultipiler;
         }
     }
 

@@ -22,5 +22,7 @@ namespace AdvancedRaiders
 
             return ThoughtState.ActiveAtStage(0);
         }
+
+        public override float MoodMultiplier(Pawn p) => ARSettings.ptsdMultipiler;
     }
 }

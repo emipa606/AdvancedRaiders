@@ -100,6 +100,9 @@ namespace AdvancedRaiders
 
         protected Job MercenaryPacifierJob(Pawn pacifier)
         {
+            if (!ARSettings.allowPacification)
+                return null;
+
             Pawn victim;
             if (SpecialUnitAIUtility.TryFindPacificationTarget(pacifier, 30f, out victim))
             {

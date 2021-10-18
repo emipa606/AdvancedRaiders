@@ -57,14 +57,43 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdvancedRaiders.cs" />
     <Compile Include="AdvancedRaidersDefOf.cs" />
+    <Compile Include="ARSettings.cs" />
     <Compile Include="CompAbilityEffect_InspireAllies.cs" />
     <Compile Include="CompAbilityEffect_Taunt.cs" />
     <Compile Include="CompTargetEffect_ZhivayaResurrect.cs" />
     <Compile Include="JobDriver_BreakTurret.cs" />
+    <Compile Include="JobDriver_ExtinguishReinforcementsFlare.cs" />
     <Compile Include="JobDriver_InspireAllies.cs" />
     <Compile Include="JobDriver_MakeUkuphilaZombie.cs" />
     <Compile Include="JobDriver_PacifyDownedPawn.cs" />

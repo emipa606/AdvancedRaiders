@@ -17,6 +17,9 @@ namespace AdvancedRaiders
         public static ThingDef UkuphilaHerb;
         public static ThingDef MeleeWeapon_ShockBaton;
         public static ThingDef Apparel_BlueScreenBelt;
+        public static ThingDef Filth_BurntFlare;
+        public static ThingDef ReinforcementsFlareIgnited;
+
 
         public static JobDef OmegaStimShot;
         public static JobDef MakeUkuphilaZombie;

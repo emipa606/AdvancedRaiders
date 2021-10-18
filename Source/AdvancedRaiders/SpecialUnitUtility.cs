@@ -20,7 +20,7 @@ namespace AdvancedRaiders
             int beastNum;
             List<Pawn> beasts = new List<Pawn>();
 
-            //Adding presets from xml-file here is a good decision, but me dumb me no understand how to.
+            //Adding presets from xml-file here would be a good decision, but me dumb me no understand how to.
             switch(rng.Next(0,5))
             {
                 case 0:
@@ -137,12 +137,6 @@ namespace AdvancedRaiders
                 return;
             }
 
-            if (!pawn.health.hediffSet.HasHead)
-            {
-                Log.Message("Attempted to make ukuphila zombie from headless corpse. Fail");
-                return;
-            }
-
             ResurrectionUtility.Resurrect(pawn);
             pawn.health.AddHediff(AdvancedRaidersDefOf.UkuphilaResurrection);
             
@@ -166,7 +160,7 @@ namespace AdvancedRaiders
             if (total < 2)
                 return true;
 
-            return ((double)taunted / total) > 0.4;
+            return ((double)taunted / total) > ARSettings.maxColonistsTauntedCoef;
         }
 
         public static bool AtLeastNAlliesInInspireRadius(int nPawns, Pawn caster)

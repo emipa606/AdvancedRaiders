@@ -39,15 +39,16 @@ namespace AdvancedRaiders
                     hediff = Victim.health.AddHediff(AdvancedRaidersDefOf.PacifierPTSD);
                 }
 
-                hediff.Severity += 0.066f;           //TODO replace 0.066f with var
+                hediff.Severity += ARSettings.ptsdPerHit;           
             }
 
             var eyewitnesses = from p in Victim.Map.mapPawns.AllPawnsSpawned
                                where
                                p.RaceProps.Humanlike &&
-                               p.Position.DistanceTo(Victim.Position) < 15.0f &&                      //TODO replace 15f with var
+                               p.Position.DistanceTo(Victim.Position) < ARSettings.witnessedPacificationRadius &&                      
                                (!p.Faction.HostileTo(Victim.Faction) || p.story.traits.HasTrait(TraitDefOf.Bloodlust)) &&
-                               p != Victim
+                               p != Victim &&
+                               p.CanSee(TargetThingA)
                                select p;
 
             Random rng = new Random();
@@ -55,13 +56,13 @@ namespace AdvancedRaiders
             {
                 if (pawn.story.traits.HasTrait(TraitDefOf.Bloodlust))
                 {
-                    if (Rand.Value < 0.5)
+                    if (Rand.Value < ARSettings.witnessedPacificationPerHitChance)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf.WitnessedPacificationBloodlust);
                 }
 
                 else if (!pawn.story.traits.HasTrait(TraitDefOf.Psychopath))
                 {
-                    if (Rand.Value < 0.5)
+                    if (Rand.Value < ARSettings.witnessedPacificationPerHitChance)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf.WitnessedPacification);
                 }
             }
