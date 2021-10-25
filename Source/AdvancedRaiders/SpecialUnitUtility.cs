@@ -8,6 +8,18 @@ using Verse.AI;
 
 namespace AdvancedRaiders
 {
+    public enum PawnClass
+    {
+        None,
+        MercenaryMedic,
+        MercenaryTechnician,
+        MercenaryPacifier,
+        MercenaryBulldozer,
+        TribalMedic,
+        TribalBeastmaster,
+        TribalInspirer
+    }
+
     public static class SpecialUnitUtility
     {
         public static void GenBeastmasterPetsAndRelations(Pawn beastmaster)
@@ -21,7 +33,7 @@ namespace AdvancedRaiders
             List<Pawn> beasts = new List<Pawn>();
 
             //Adding presets from xml-file here would be a good decision, but me dumb me no understand how to.
-            switch(rng.Next(0,5))
+            switch (rng.Next(0, 5))
             {
                 case 0:
                     //A man and a bear.
@@ -105,7 +117,7 @@ namespace AdvancedRaiders
             if (lord == null)
                 return;
 
-            foreach(var relation in beastmaster.relations.DirectRelations)
+            foreach (var relation in beastmaster.relations.DirectRelations)
             {
                 if (relation.def == PawnRelationDefOf.Bond)
                 {
@@ -139,7 +151,7 @@ namespace AdvancedRaiders
 
             ResurrectionUtility.Resurrect(pawn);
             pawn.health.AddHediff(AdvancedRaidersDefOf.UkuphilaResurrection);
-            
+
             if (pawn.Dead)
                 Log.Error("Looks like even forbidden herbs couldn't revive " + pawn.Name + ". Press F.");
 
@@ -151,7 +163,7 @@ namespace AdvancedRaiders
         {
             int taunted = 0;
             int total = 0;
-            foreach (var colonist in map.mapPawns.FreeColonistsSpawned.Where((Pawn p) => p.health.State == PawnHealthState.Mobile)) 
+            foreach (var colonist in map.mapPawns.FreeColonistsSpawned.Where((Pawn p) => p.health.State == PawnHealthState.Mobile))
             {
                 total++;
                 if (colonist.MentalStateDef == AdvancedRaidersDefOf.MurderousRageTaunted)
@@ -178,6 +190,73 @@ namespace AdvancedRaiders
                 select p;
 
             return pawnsInRadius.Count() - 1 >= nPawns;       //-1 for caster themself
+        }
+
+        public static bool IsAllowedAdvancedRaiderClass(PawnClass unitClass)  
+        {
+            switch(unitClass)
+            {
+                case PawnClass.None:
+                    return false;
+                case PawnClass.MercenaryMedic:
+                    return ARSettings.allowMercMedics;
+                case PawnClass.MercenaryTechnician:
+                    return ARSettings.allowTechnicians;
+                case PawnClass.MercenaryPacifier:
+                    return ARSettings.allowPacifiers;
+                case PawnClass.MercenaryBulldozer:
+                    return ARSettings.allowBulldozers;
+                case PawnClass.TribalMedic:
+                    return ARSettings.allowTribalMedics;
+                case PawnClass.TribalBeastmaster:
+                    return ARSettings.allowBeastmasters;
+                case PawnClass.TribalInspirer:
+                    return ARSettings.allowCommanderChiefs;
+                default:
+                    return false;
+            }
+        }
+
+        public static PawnClass AdvancedRaiderClass(Pawn p) => AdvancedRaiderKindDefClass(p.kindDef);
+        public static PawnClass AdvancedRaiderKindDefClass(PawnKindDef def)
+        {
+
+            if (def == AdvancedRaidersDefOf.Mercenary_MedicRanged || def == AdvancedRaidersDefOf.Mercenary_MedicMelee)
+                return PawnClass.MercenaryMedic;
+
+            if (def == AdvancedRaidersDefOf.Mercenary_Technician)
+                return PawnClass.MercenaryTechnician;
+
+            if (def == AdvancedRaidersDefOf.Mercenary_Bulldozer)
+                return PawnClass.MercenaryBulldozer;
+
+            if (def == AdvancedRaidersDefOf.MercenaryPacifier_Bloodlust || def == AdvancedRaidersDefOf.MercenaryPacifier_Psychopath)
+                return PawnClass.MercenaryPacifier;
+
+            if (def == AdvancedRaidersDefOf.Tribal_MedicRanged || def == AdvancedRaidersDefOf.Tribal_MedicMelee)
+                return PawnClass.TribalMedic;
+
+            if (def == AdvancedRaidersDefOf.Tribal_Beastmaster)
+                return PawnClass.TribalBeastmaster;
+
+            if (def == AdvancedRaidersDefOf.Tribal_ChiefCommanderRanged || def == AdvancedRaidersDefOf.Tribal_ChiefCommanderMelee)
+                return PawnClass.TribalInspirer;
+
+            return PawnClass.None;
+        }
+
+        public static bool IsARAndMeleeFighter(PawnKindDef def)
+        {
+            if (def == AdvancedRaidersDefOf.MercenaryPacifier_Bloodlust ||
+                def == AdvancedRaidersDefOf.MercenaryPacifier_Psychopath ||
+                def == AdvancedRaidersDefOf.Mercenary_MedicMelee ||
+                def == AdvancedRaidersDefOf.Tribal_MedicMelee ||
+                def == AdvancedRaidersDefOf.Tribal_ChiefCommanderMelee)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

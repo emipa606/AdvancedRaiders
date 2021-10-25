@@ -174,7 +174,7 @@ namespace AdvancedRaiders
             if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)        //doesnt seem to be working
                 return null;
 
-            switch (pawn.AdvancedRaiderClass())
+            switch (SpecialUnitUtility.AdvancedRaiderClass(pawn))
             {
                 case PawnClass.MercenaryMedic:
                     return MercenaryMedicJob(pawn);

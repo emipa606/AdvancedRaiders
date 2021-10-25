@@ -91,6 +91,7 @@
     <Compile Include="ARSettings.cs" />
     <Compile Include="CompAbilityEffect_InspireAllies.cs" />
     <Compile Include="CompAbilityEffect_Taunt.cs" />
+    <Compile Include="CompReinforcementsSummoner.cs" />
     <Compile Include="CompTargetEffect_ZhivayaResurrect.cs" />
     <Compile Include="JobDriver_BreakTurret.cs" />
     <Compile Include="JobDriver_ExtinguishReinforcementsFlare.cs" />
@@ -103,7 +104,6 @@
     <Compile Include="MentalState_UkuphilaResurrectionPsychosis.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="JobDriver_OmegaStimShot.cs" />
-    <Compile Include="PawnExtentions.cs" />
     <Compile Include="RaidExtentions.cs" />
     <Compile Include="SpecialUnitAIUtility.cs" />
     <Compile Include="SpecialUnitUtility.cs" />

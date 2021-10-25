@@ -26,6 +26,13 @@ namespace AdvancedRaiders
         public static float soreThroatMultipiler = 1f;
         public static float inspirationMultipiler = 1f;
 
+        public static bool allowMercMedics = true;
+        public static bool allowTechnicians = true;
+        public static bool allowPacifiers = true;
+        public static bool allowBulldozers = true;
+        public static bool allowTribalMedics = true;
+        public static bool allowBeastmasters = true;
+        public static bool allowCommanderChiefs = true;
 
         public override void ExposeData()
         {
@@ -43,6 +50,13 @@ namespace AdvancedRaiders
             Scribe_Values.Look(ref soreThroatMultipiler, "soreThroatMultipiler", 1f);
             Scribe_Values.Look(ref inspirationMultipiler, "inspirationMultipiler", 1f);
 
+            Scribe_Values.Look(ref allowMercMedics, "allowMercMedics", true);
+            Scribe_Values.Look(ref allowTechnicians, "allowPacifiers", true);
+            Scribe_Values.Look(ref allowPacifiers, "allowPacifiers", true);
+            Scribe_Values.Look(ref allowBulldozers, "allowBulldozers", true);
+            Scribe_Values.Look(ref allowTribalMedics, "allowTribalMedics", true);
+            Scribe_Values.Look(ref allowBeastmasters, "allowBeastmasters", true);
+            Scribe_Values.Look(ref allowCommanderChiefs, "allowCommanderChiefs", true);
         }
 
         public static void DoSettingsWindowContents(Rect inRect)
@@ -76,6 +90,13 @@ namespace AdvancedRaiders
             listingStandard.Label("Sore throat debuff multipiler (more -> less inspiration casts): " + Math.Round(soreThroatMultipiler, 2));
             soreThroatMultipiler = listingStandard.Slider(soreThroatMultipiler, 0f, 5f);
 
+            listingStandard.CheckboxLabeled("Enable mercenary medics spawn", ref allowMercMedics);
+            listingStandard.CheckboxLabeled("Enable technicians spawn", ref allowTechnicians);
+            listingStandard.CheckboxLabeled("Enable pacifiers spawn", ref allowPacifiers);
+            listingStandard.CheckboxLabeled("Enable bulldozers spawn", ref allowBulldozers);
+            listingStandard.CheckboxLabeled("Enable tribal medics spawn", ref allowTribalMedics);
+            listingStandard.CheckboxLabeled("Enable beastmaster spawn", ref allowBeastmasters);
+            listingStandard.CheckboxLabeled("Enable commander chief spawn", ref allowCommanderChiefs);
             listingStandard.End();
 
             
