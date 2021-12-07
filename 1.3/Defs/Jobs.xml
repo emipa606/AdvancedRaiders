@@ -4,7 +4,7 @@
     <defName>OmegaStimShot</defName>
     <driverClass>AdvancedRaiders.JobDriver_OmegaStimShot</driverClass>
     <reportString>injecting omega stimulant to TargetA.</reportString>
-    <casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
@@ -12,7 +12,7 @@
     <defName>MakeUkuphilaZombie</defName>
     <driverClass>AdvancedRaiders.JobDriver_MakeUkuphilaZombie</driverClass>
     <reportString>making ukuphila zombie from TargetA.</reportString>
-    <casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
@@ -20,7 +20,7 @@
     <defName>BreakTurret</defName>
     <driverClass>AdvancedRaiders.JobDriver_BreakTurret</driverClass>
     <reportString>breaking TargetA.</reportString>
-    <casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
@@ -28,7 +28,7 @@
     <defName>InspireAllies</defName>
     <driverClass>AdvancedRaiders.JobDriver_InspireAllies</driverClass>
     <reportString>inspiring.</reportString>
-    <casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
@@ -36,7 +36,7 @@
     <defName>PacifyDownedPawn</defName>
     <driverClass>AdvancedRaiders.JobDriver_PacifyDownedPawn</driverClass>
     <reportString>pacifing TargetA.</reportString>
-    <casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
   
@@ -44,7 +44,7 @@
     <defName>KillTaunter</defName>
     <driverClass>AdvancedRaiders.JobDriver_KillWithoutReservations</driverClass>
     <reportString>trying to kill TargetA.</reportString>
-    <casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
 
@@ -57,10 +57,11 @@
   </JobDef>
 
   <JobDef>
+    <!-- I wonder if ill ever finish reinforcements call... -->
     <defName>ExtinguishReinforcementsFlare</defName>
     <driverClass>AdvancedRaiders.JobDriver_ExtinguishReinforcementsFlare</driverClass>
     <reportString>extinguishing TargetA.</reportString>
-    <casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>true</collideWithPawns>
   </JobDef>
 </Defs>

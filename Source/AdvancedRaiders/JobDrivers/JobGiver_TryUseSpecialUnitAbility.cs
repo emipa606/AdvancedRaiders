@@ -171,8 +171,8 @@ namespace AdvancedRaiders
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)        //doesnt seem to be working
-                return null;
+            /*if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)        //doesnt seem to be working
+                return null;*/
 
             switch (SpecialUnitUtility.AdvancedRaiderClass(pawn))
             {

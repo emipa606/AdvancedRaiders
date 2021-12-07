@@ -89,21 +89,21 @@
     <Compile Include="AdvancedRaiders.cs" />
     <Compile Include="AdvancedRaidersDefOf.cs" />
     <Compile Include="ARSettings.cs" />
-    <Compile Include="CompAbilityEffect_InspireAllies.cs" />
-    <Compile Include="CompAbilityEffect_Taunt.cs" />
-    <Compile Include="CompReinforcementsSummoner.cs" />
-    <Compile Include="CompTargetEffect_ZhivayaResurrect.cs" />
-    <Compile Include="JobDriver_BreakTurret.cs" />
-    <Compile Include="JobDriver_ExtinguishReinforcementsFlare.cs" />
-    <Compile Include="JobDriver_InspireAllies.cs" />
-    <Compile Include="JobDriver_MakeUkuphilaZombie.cs" />
-    <Compile Include="JobDriver_PacifyDownedPawn.cs" />
-    <Compile Include="JobDriver_ResurrectAndGiveIngestible.cs" />
-    <Compile Include="JobGiver_TryUseSpecialUnitAbility.cs" />
+    <Compile Include="Comps\CompAbilityEffect_InspireAllies.cs" />
+    <Compile Include="Comps\CompAbilityEffect_Taunt.cs" />
+    <Compile Include="Comps\CompReinforcementsSummoner.cs" />
+    <Compile Include="Comps\CompTargetEffect_ZhivayaResurrect.cs" />
+    <Compile Include="JobDrivers\JobDriver_BreakTurret.cs" />
+    <Compile Include="JobDrivers\JobDriver_ExtinguishReinforcementsFlare.cs" />
+    <Compile Include="JobDrivers\JobDriver_InspireAllies.cs" />
+    <Compile Include="JobDrivers\JobDriver_MakeUkuphilaZombie.cs" />
+    <Compile Include="JobDrivers\JobDriver_PacifyDownedPawn.cs" />
+    <Compile Include="JobDrivers\JobDriver_ResurrectAndGiveIngestible.cs" />
+    <Compile Include="JobDrivers\JobGiver_TryUseSpecialUnitAbility.cs" />
     <Compile Include="MentalState_MurderousRageTaunted.cs" />
     <Compile Include="MentalState_UkuphilaResurrectionPsychosis.cs" />
     <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="JobDriver_OmegaStimShot.cs" />
+    <Compile Include="JobDrivers\JobDriver_OmegaStimShot.cs" />
     <Compile Include="RaidExtentions.cs" />
     <Compile Include="SpecialUnitAIUtility.cs" />
     <Compile Include="SpecialUnitUtility.cs" />
@@ -111,5 +111,6 @@
     <Compile Include="ThoughtWorker_PacifierPTSD.cs" />
     <Compile Include="Trigger_FractionPawnsLostAndNoInspirer.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

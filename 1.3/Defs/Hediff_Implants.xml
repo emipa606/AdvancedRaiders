@@ -12,7 +12,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <postFactor>0.9</postFactor>
+            <postFactor>0.75</postFactor>
           </li>
         </capMods>
         <statFactors>
@@ -35,12 +35,20 @@
   <ThingDef ParentName="BodyPartBase">
     <defName>YouWallImplant</defName>
     <label>you-wall implant</label>
+    <tradeability>Sellable</tradeability>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
       <color>(189,169,118)</color>
     </graphicData>
+    <statBases>
+      <MarketValue>350</MarketValue>
+      <Mass>0.8</Mass>
+    </statBases>
+    <thingCategories>
+      <li>BodyPartsProsthetic</li>
+    </thingCategories>
     <description>You-wall implant was created as an answer to imperial armor glands. While it provides much better protection, it somehow messes with user's head making them quite unagile. Which isn't much of a problem for bulldozers.</description>
     <descriptionHyperlinks><RecipeDef>InstallYouWallImplant</RecipeDef></descriptionHyperlinks>
   </ThingDef>
