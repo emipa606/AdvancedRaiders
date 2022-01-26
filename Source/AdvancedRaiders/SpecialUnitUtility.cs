@@ -22,15 +22,15 @@ namespace AdvancedRaiders
 
     public static class SpecialUnitUtility
     {
-        public static void GenBeastmasterPetsAndRelations(Pawn beastmaster)
+        static Random rng = new Random();
+        public static IEnumerable<Pawn> GenBeastmasterPetsAndRelations(Pawn beastmaster)
         {
-            if (beastmaster.relations.GetDirectRelationsCount(PawnRelationDefOf.Bond) > 0)      //avoiding animal spam
-                return;
+            //if (beastmaster.relations.GetDirectRelationsCount(PawnRelationDefOf.Bond) > 0)      //avoiding animal spam
+             //   yield break;
 
-            Random rng = new Random();
+
             PawnKindDef kindDef;
             int beastNum;
-            List<Pawn> beasts = new List<Pawn>();
 
             //Adding presets from xml-file here would be a good decision, but me dumb me no understand how to.
             switch (rng.Next(0, 5))
@@ -43,7 +43,7 @@ namespace AdvancedRaiders
                     if (kindDef == null)
                     {
                         Log.Error("No grizzly def found at GenBeastmasterPetsAndRelations. Weird.");
-                        return;
+                        yield break;
                     }
                     beastNum = 1;
                     break;
@@ -54,7 +54,7 @@ namespace AdvancedRaiders
                     if (kindDef == null)
                     {
                         Log.Error("No Wolf_Timber def found at GenBeastmasterPetsAndRelations.");
-                        return;
+                        yield break;
                     }
                     beastNum = 2;
                     break;
@@ -65,7 +65,7 @@ namespace AdvancedRaiders
                     if (kindDef == null)
                     {
                         Log.Error("No warg def found at GenBeastmasterPetsAndRelations.");
-                        return;
+                        yield break;
                     }
                     beastNum = 1;
                     break;
@@ -76,7 +76,7 @@ namespace AdvancedRaiders
                     if (kindDef == null)
                     {
                         Log.Error("No cougar def found at GenBeastmasterPetsAndRelations.");
-                        return;
+                        yield break;
                     }
                     beastNum = 2;
                     break;
@@ -87,27 +87,28 @@ namespace AdvancedRaiders
                     if (kindDef == null)
                     {
                         Log.Error("No boomrat def found at GenBeastmasterPetsAndRelations.");
-                        return;
+                        yield break;
                     }
                     beastNum = 4;
                     break;
 
                 default:
                     //this sholdnt happen
-                    return;
+                    yield break;
             }
 
 
             for (int i = 0; i < beastNum; i++)
             {
                 var newBeast = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kindDef, beastmaster.Faction));
-                beasts.Add(newBeast);
-                GenSpawn.Spawn(newBeast, CellFinder.RandomSpawnCellForPawnNear(beastmaster.Position, beastmaster.Map), beastmaster.Map, WipeMode.VanishOrMoveAside);
+                
                 beastmaster.relations.AddDirectRelation(PawnRelationDefOf.Bond, newBeast);
 
                 newBeast.training.Train(TrainableDefOf.Tameness, beastmaster, true);
                 newBeast.training.Train(TrainableDefOf.Obedience, beastmaster, true);
                 newBeast.training.Train(TrainableDefOf.Release, beastmaster, true);
+
+                yield return newBeast;
             }
         }
 

@@ -3,7 +3,7 @@
     <ThingDef ParentName="ApparelBase">
         <defName>Apparel_BlueScreenBelt</defName>
         <label>blue screen belt</label>
-        <description>Makeshift cloacking device made by some engineer of questionable qualifications. It hides user's infrared signature and therefore makes turrets unable to detect them. Mechanoids are, however, cant be fooled with this privitive trick as they use more advanced sensors to search for target.</description>
+        <description>Makeshift cloacking device made by some engineer of questionable qualifications. It hides user's infrared signature and therefore makes turrets unable to detect them. Mechanoids, however, cant be fooled with this primitive trick as they use more advanced sensors to search for target.</description>
         <graphicData>
           <texPath>Things/Apparel/BlueScreenBelt</texPath>
           <graphicClass>Graphic_Single</graphicClass>

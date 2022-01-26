@@ -98,8 +98,6 @@ namespace AdvancedRaiders
             listingStandard.CheckboxLabeled("Enable beastmaster spawn", ref allowBeastmasters);
             listingStandard.CheckboxLabeled("Enable commander chief spawn", ref allowCommanderChiefs);
             listingStandard.End();
-
-            
         }
     }
 }

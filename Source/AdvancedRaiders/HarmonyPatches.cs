@@ -55,8 +55,8 @@ namespace AdvancedRaiders
                 if (SpecialUnitUtility.AdvancedRaiderClass(__instance) ==PawnClass.TribalInspirer && __instance.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility) == null)
                     __instance.abilities.GainAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
 
-                if (SpecialUnitUtility.AdvancedRaiderClass(__instance) == PawnClass.TribalBeastmaster)
-                    SpecialUnitUtility.GenBeastmasterPetsAndRelations(__instance);
+                //if (SpecialUnitUtility.AdvancedRaiderClass(__instance) == PawnClass.TribalBeastmaster)
+                //    SpecialUnitUtility.GenBeastmasterPetsAndRelations(__instance);
 
                 if (SpecialUnitUtility.AdvancedRaiderClass(__instance) == PawnClass.MercenaryBulldozer && __instance.abilities.GetAbility(AdvancedRaidersDefOf.TauntAbility) == null)
                     __instance.abilities.GainAbility(AdvancedRaidersDefOf.TauntAbility);
@@ -104,11 +104,40 @@ namespace AdvancedRaiders
 
             foreach(var pawn in startingPawns)
             {
-                if (pawn!=null && pawn.kindDef == AdvancedRaidersDefOf.Tribal_Beastmaster)
+                if (pawn != null && pawn.kindDef == AdvancedRaidersDefOf.Tribal_Beastmaster)
+                {
                     SpecialUnitUtility.AddPetsToBeastmasterLord(pawn);
+                }
             }
         }
     }
+
+    [HarmonyPatch(typeof(IncidentWorker_Raid))]
+    [HarmonyPatch("TryGenerateRaidInfo")]
+    static class SpawnBeastmasterPetsPatch
+    {
+        [HarmonyPostfix]
+        public static void SpawnBeasts(bool __result, ref List<Pawn> pawns, IncidentParms parms)
+        {
+            if (__result && pawns != null)
+            {
+                List<Pawn> beasts = new List<Pawn>();
+                for (int i = 0; i < pawns.Count; i++)
+                {
+                    if (SpecialUnitUtility.AdvancedRaiderClass(pawns[i]) == PawnClass.TribalBeastmaster)
+                    {
+                        beasts.AddRange(SpecialUnitUtility.GenBeastmasterPetsAndRelations(pawns[i]));
+                    }
+                }
+                pawns.AddRange(beasts);
+                parms.raidArrivalMode.Worker.Arrive(beasts, parms);
+            }
+            
+        }
+
+    }
+            
+    
 
     /*
     
