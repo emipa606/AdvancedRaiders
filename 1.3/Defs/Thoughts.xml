@@ -1,66 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <ThoughtDef>
-        <defName>WitnessedPacification</defName>
-        <durationDays>3</durationDays>
-        <stackLimit>10</stackLimit>
-        <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
-        <nullifyingTraits>
-            <li>Psychopath</li>
-            <li>Bloodlust</li>
-        </nullifyingTraits>
-        <stages>
-          <li>
-            <label>Witnessed pacification</label>
-            <description>The way this pacifier beat helpless person... I still hear their screams sometimes.</description>
-            <baseMoodEffect>-4</baseMoodEffect>
-          </li>
-        </stages>
-    </ThoughtDef>
-
-
-    <ThoughtDef>
-        <defName>WitnessedPacificationBloodlust</defName>
-        <durationDays>3</durationDays>
-        <stackLimit>10</stackLimit>
-        <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
-        <requiredTraits>
-            <li>Bloodlust</li>
-        </requiredTraits>
-        <stages>
-          <li>
-            <label>Witnessed pacification</label>
-            <description>Watching this sucker screaming in pain and coughing blood was quite amusing!</description>
-            <baseMoodEffect>4</baseMoodEffect>
-          </li>
-        </stages>
-      </ThoughtDef>
-
-      <ThoughtDef>
-        <defName>PacifierPTSDThought</defName>
-        <workerClass>AdvancedRaiders.ThoughtWorker_PacifierPTSD</workerClass>
-        <validWhileDespawned>true</validWhileDespawned>
-        <stages>
-            <li>
-                <label>bad memories</label>
-                <description>A pacifier beat me up with laughter. It was quite painful and humilating.</description>
-                <baseMoodEffect>-5</baseMoodEffect>
-            </li>
-            <li>
-                <label>shock</label>
-                <description>This electrical crackling, this psychopatic smile... I dont want to meet one of those pacifiers again!</description>
-                <baseMoodEffect>-12</baseMoodEffect>
-            </li>
-            <li>
-                <label>psychological trauma</label>
-                <description>I cant sleep... Wherenever I lie down I feel a boot crushing my rib cage.</description>
-                <baseMoodEffect>-22</baseMoodEffect>
-            </li>
-            <li>
-                <label>flashbacks</label>
-                <description>NOT AGAIN! GET AWAY FROM ME!!!</description>
-                <baseMoodEffect>-40</baseMoodEffect>
-            </li>
-        </stages>
-      </ThoughtDef>
+  <ThoughtDef>
+    <defName>WitnessedPacification</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>Witnessed pacification</label>
+        <description>The way this pacifier beat helpless person... I still hear their screams sometimes.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>WitnessedPacificationBloodlust</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <requiredTraits>
+      <li>Bloodlust</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Witnessed pacification</label>
+        <description>Watching this sucker screaming in pain and coughing blood was quite amusing!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>PacifierPTSDThought</defName>
+    <workerClass>AdvancedRaiders.ThoughtWorker_PacifierPTSD</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>bad memories</label>
+        <description>A pacifier beat me up with laughter. It was quite painful and humilating.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>shock</label>
+        <description>This electrical crackling, this psychopatic smile... I dont want to meet one of those pacifiers again!</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+      <li>
+        <label>psychological trauma</label>
+        <description>I cant sleep... Wherenever I lie down I feel a boot crushing my rib cage.</description>
+        <baseMoodEffect>-22</baseMoodEffect>
+      </li>
+      <li>
+        <label>flashbacks</label>
+        <description>NOT AGAIN! GET AWAY FROM ME!!!</description>
+        <baseMoodEffect>-40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

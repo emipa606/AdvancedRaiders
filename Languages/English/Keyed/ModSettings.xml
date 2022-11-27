@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <AdRa.turretBugChance>Chance for turret to turn against colony instead of breaking down: {0}</AdRa.turretBugChance>
+  <AdRa.maxColonistsTauntedCoef>Max % of colonists taunted by bulldozer (last colonist standing cant be taunted): {0}</AdRa.maxColonistsTauntedCoef>
+  <AdRa.allowPacification>Allow pacifiers to beat downed pawns: </AdRa.allowPacification>
+  <AdRa.ptsdPerHit>PTSD severety per pacifier hit: {0}</AdRa.ptsdPerHit>
+  <AdRa.witnessedPacificationPerHitChance>Chance for witness to get "witnessed pacification" memory per pacifier hit: {0}</AdRa.witnessedPacificationPerHitChance>
+  <AdRa.witnessedPacificationRadius>Pacification observation radius (pawns with no LOS for victim won't get memories): {0}</AdRa.witnessedPacificationRadius>
+  <AdRa.ptsdMultipiler>PTSD mood debuff multipiler: {0}</AdRa.ptsdMultipiler>
+  <AdRa.inspirationMultipiler>Inspiration strength multipiler: {0}</AdRa.inspirationMultipiler>
+  <AdRa.soreThroatMultipiler>Sore throat debuff multipiler (more -&gt; less inspiration casts): {0}</AdRa.soreThroatMultipiler>
+  <AdRa.allowMercMedics>Enable mercenary medics spawn</AdRa.allowMercMedics>
+  <AdRa.allowTechnicians>Enable technicians spawn</AdRa.allowTechnicians>
+  <AdRa.allowPacifiers>Enable pacifiers spawn</AdRa.allowPacifiers>
+  <AdRa.allowBulldozers>Enable bulldozers spawn</AdRa.allowBulldozers>
+  <AdRa.allowTribalMedics>Enable tribal medics spawn</AdRa.allowTribalMedics>
+  <AdRa.allowBeastmasters>Enable beastmaster spawn</AdRa.allowBeastmasters>
+  <AdRa.allowCommanderChiefs>Enable commander chief spawn</AdRa.allowCommanderChiefs>
+  <AdRa.modVersion>Installed mod-version: {0}</AdRa.modVersion>
+</LanguageData>

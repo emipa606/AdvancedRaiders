@@ -1,73 +1,75 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using RimWorld;
 using Verse;
 using Verse.AI;
 
-namespace AdvancedRaiders
+namespace AdvancedRaiders;
+
+public class JobDriver_PacifyDownedPawn : JobDriver
 {
-    public class JobDriver_PacifyDownedPawn : JobDriver
+    protected Pawn Victim => TargetThingA as Pawn;
+
+    protected bool TargetPacified =>
+        !Victim.Downed || Victim.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) < 0.11;
+
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
-        protected Pawn Victim => TargetThingA as Pawn;
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
+        return pawn.Map.reservationManager.Reserve(pawn, job, job.targetA);
+    }
+
+    protected override IEnumerable<Toil> MakeNewToils()
+    {
+        this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
+        AddFailCondition(() => !GetActor().HasReserved(TargetA) && !GetActor().CanReserve(TargetA));
+        AddEndCondition(() => TargetPacified ? JobCondition.Succeeded : JobCondition.Ongoing);
+
+        yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.InteractionCell);
+
+        yield return Toils_General.Do(Terrify);
+        yield return Toils_General.Do(() => GetActor().meleeVerbs.TryMeleeAttack(TargetThingA));
+    }
+
+    protected void Terrify()
+    {
+        if (!Victim.story.traits.HasTrait(TraitDefOf.Masochist))
         {
-            return pawn.Map.reservationManager.Reserve(pawn, job, job.targetA); ;
-        }
-
-        protected override IEnumerable<Toil> MakeNewToils()
-        {
-            this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-            AddFailCondition(() => !GetActor().HasReserved(TargetA) && !GetActor().CanReserve(TargetA));
-            AddEndCondition(() => TargetPacified ? JobCondition.Succeeded : JobCondition.Ongoing);
-            
-            yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.InteractionCell);
-
-            yield return Toils_General.Do(Terrify);
-            yield return Toils_General.Do(() => GetActor().meleeVerbs.TryMeleeAttack(TargetThingA));
-        }
-
-        protected bool TargetPacified => !Victim.Downed || Victim.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) < 0.11;
-
-        protected void Terrify()
-        {
-            if (!Victim.story.traits.HasTrait(TraitDefOf.Masochist))
+            var hediff = Victim.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.PacifierPTSD);
+            if (hediff == null)
             {
-                var hediff = Victim.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.PacifierPTSD);
-                if (hediff==null)
-                {
-                    hediff = Victim.health.AddHediff(AdvancedRaidersDefOf.PacifierPTSD);
-                }
-
-                hediff.Severity += ARSettings.ptsdPerHit;           
+                hediff = Victim.health.AddHediff(AdvancedRaidersDefOf.PacifierPTSD);
             }
 
-            var eyewitnesses = from p in Victim.Map.mapPawns.AllPawnsSpawned
-                               where
-                               p.RaceProps.Humanlike &&
-                               p.Position.DistanceTo(Victim.Position) < ARSettings.witnessedPacificationRadius &&                      
-                               (!p.Faction.HostileTo(Victim.Faction) || p.story.traits.HasTrait(TraitDefOf.Bloodlust)) &&
-                               p != Victim &&
-                               p.CanSee(TargetThingA)
-                               select p;
+            hediff.Severity += ARSettings.ptsdPerHit;
+        }
 
-            Random rng = new Random();
-            foreach (var pawn in eyewitnesses)
+        var eyewitnesses = from p in Victim.Map.mapPawns.AllPawnsSpawned
+            where
+                p.RaceProps.Humanlike &&
+                p.Position.DistanceTo(Victim.Position) < ARSettings.witnessedPacificationRadius &&
+                (!p.Faction.HostileTo(Victim.Faction) || p.story.traits.HasTrait(TraitDefOf.Bloodlust)) &&
+                p != Victim &&
+                p.CanSee(TargetThingA)
+            select p;
+
+        foreach (var witness in eyewitnesses)
+        {
+            if (witness.story.traits.HasTrait(TraitDefOf.Bloodlust))
             {
-                if (pawn.story.traits.HasTrait(TraitDefOf.Bloodlust))
+                if (Rand.Value < ARSettings.witnessedPacificationPerHitChance)
                 {
-                    if (Rand.Value < ARSettings.witnessedPacificationPerHitChance)
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf.WitnessedPacificationBloodlust);
-                }
-
-                else if (!pawn.story.traits.HasTrait(TraitDefOf.Psychopath))
-                {
-                    if (Rand.Value < ARSettings.witnessedPacificationPerHitChance)
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf.WitnessedPacification);
+                    witness.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf
+                        .WitnessedPacificationBloodlust);
                 }
             }
-            
 
+            else if (!witness.story.traits.HasTrait(TraitDefOf.Psychopath))
+            {
+                if (Rand.Value < ARSettings.witnessedPacificationPerHitChance)
+                {
+                    witness.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf.WitnessedPacification);
+                }
+            }
         }
     }
 }

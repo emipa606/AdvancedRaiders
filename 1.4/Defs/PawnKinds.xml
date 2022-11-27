@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Mercenary medic -->
+  <PawnKindDef Name="MercenaryMedicBase" ParentName="MercenaryBase" Abstract="True">
+    <defaultFactionType>Pirate</defaultFactionType>
+    <race>Human</race>
+    <label>mercenary medic</label>
+    <combatPower>80</combatPower>
+    <inventoryOptions>
+      <subOptionsTakeAll>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>1~2</countRange>
+        </li>
+        <li>
+          <thingDef>OmegaStimulant</thingDef>
+          <countRange>3~4</countRange>
+        </li>
+      </subOptionsTakeAll>
+    </inventoryOptions>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>1000~1500</apparelMoney>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <apparelColor>(245,235,235)</apparelColor>
+    <weaponMoney>330~650</weaponMoney>
+    <requiredWorkTags>
+      <li>Caring</li>
+    </requiredWorkTags>
+    <skills>
+      <li>
+        <skill>Medicine</skill>
+        <range>6~20</range>
+      </li>
+    </skills>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>8~16</initialResistanceRange>
+  </PawnKindDef>
+  <PawnKindDef ParentName="MercenaryMedicBase">
+    <defName>Mercenary_MedicRanged</defName>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+  </PawnKindDef>
+  <PawnKindDef ParentName="MercenaryMedicBase">
+    <defName>Mercenary_MedicMelee</defName>
+    <apparelRequired>
+      <li>Apparel_ShieldBelt</li>
+    </apparelRequired>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>MedievalMeleeAdvanced</li>
+    </weaponTags>
+  </PawnKindDef>
+  <!-- Tribal medic -->
+  <PawnKindDef Name="TribalMedicBase" ParentName="TribalBase" Abstract="True">
+    <defaultFactionType>TribeRough</defaultFactionType>
+    <label>tribal medic</label>
+    <combatPower>90</combatPower>
+    <inventoryOptions>
+      <subOptionsTakeAll>
+        <li>
+          <thingDef>UkuphilaHerb</thingDef>
+          <countRange>2~3</countRange>
+        </li>
+      </subOptionsTakeAll>
+    </inventoryOptions>
+    <gearHealthRange>0.5~1.8</gearHealthRange>
+    <apparelMoney>200~300</apparelMoney>
+    <apparelColor>(166,16,235)</apparelColor>
+    <apparelRequired>
+      <li>Apparel_WarVeil</li>
+    </apparelRequired>
+    <weaponMoney>160~160</weaponMoney>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <requiredWorkTags>
+      <li>Caring</li>
+    </requiredWorkTags>
+    <skills>
+      <li>
+        <skill>Medicine</skill>
+        <range>6~20</range>
+      </li>
+    </skills>
+  </PawnKindDef>
+  <PawnKindDef ParentName="TribalMedicBase">
+    <defName>Tribal_MedicRanged</defName>
+    <weaponTags>
+      <li>NeolithicRangedDecent</li>
+    </weaponTags>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+  </PawnKindDef>
+  <PawnKindDef ParentName="TribalMedicBase">
+    <defName>Tribal_MedicMelee</defName>
+    <weaponTags>
+      <li>NeolithicMeleeDecent</li>
+    </weaponTags>
+  </PawnKindDef>
+  <!-- Technician -->
+  <PawnKindDef ParentName="MercenaryBase">
+    <defName>Mercenary_Technician</defName>
+    <combatPower>85</combatPower>
+    <label>mercenary technician</label>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelRequired>
+      <li>Apparel_BlueScreenBelt</li>
+    </apparelRequired>
+    <apparelMoney>1000~1500</apparelMoney>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <apparelColor>(100, 160, 217)</apparelColor>
+    <weaponMoney>500~800</weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <requiredWorkTags>
+      <li>Crafting</li>
+    </requiredWorkTags>
+    <skills>
+      <li>
+        <skill>Crafting</skill>
+        <range>6~20</range>
+      </li>
+    </skills>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+  </PawnKindDef>
+  <!-- Cheif commander -->
+  <PawnKindDef Name="ChiefCommanderBase" ParentName="TribalChiefBase" Abstract="True">
+    <defaultFactionType>TribeRough</defaultFactionType>
+    <label>commander chief</label>
+    <combatPower>100</combatPower>
+    <apparelColor>(214,56,56)</apparelColor>
+    <initialResistanceRange>36~48</initialResistanceRange>
+  </PawnKindDef>
+  <PawnKindDef ParentName="ChiefCommanderBase">
+    <defName>Tribal_ChiefCommanderRanged</defName>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <weaponTags>
+      <li>NeolithicRangedChief</li>
+    </weaponTags>
+  </PawnKindDef>
+  <PawnKindDef ParentName="ChiefCommanderBase">
+    <defName>Tribal_ChiefCommanderMelee</defName>
+    <weaponTags>
+      <li>NeolithicMeleeAdvanced</li>
+      <li>MedievalMeleeAdvanced</li>
+    </weaponTags>
+  </PawnKindDef>
+  <!-- Pacifier -->
+  <PawnKindDef ParentName="MercenaryMidTierBase" Name="MercenaryPacifierBase" Abstract="True">
+    <label>pacifier</label>
+    <combatPower>110</combatPower>
+    <apparelRequired>
+      <li>Apparel_FlakJacket</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelColor>(28,26,26)</apparelColor>
+    <weaponMoney>1500~1500</weaponMoney>
+    <apparelMoney>700~1500</apparelMoney>
+    <weaponTags>
+      <li>Weapon_MercenaryPacifier</li>
+    </weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>32~42</initialResistanceRange>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>8~20</range>
+      </li>
+    </skills>
+  </PawnKindDef>
+  <PawnKindDef ParentName="MercenaryPacifierBase">
+    <defName>MercenaryPacifier_Bloodlust</defName>
+    <forcedTraits>
+      <li>Bloodlust</li>
+    </forcedTraits>
+  </PawnKindDef>
+  <PawnKindDef ParentName="MercenaryPacifierBase">
+    <defName>MercenaryPacifier_Psychopath</defName>
+    <forcedTraits>
+      <li>Psychopath</li>
+    </forcedTraits>
+  </PawnKindDef>
+  <!-- Beastmaster -->
+  <PawnKindDef ParentName="TribalBase">
+    <defName>Tribal_Beastmaster</defName>
+    <defaultFactionType>TribeRough</defaultFactionType>
+    <label>beastmaster</label>
+    <combatPower>90</combatPower>
+    <apparelColor>(84,145,83)</apparelColor>
+    <apparelMoney>200~550</apparelMoney>
+    <apparelRequired>
+      <li>Apparel_TribalHeaddress</li>
+    </apparelRequired>
+    <weaponTags>
+      <li>NeolithicRangedHeavy</li>
+    </weaponTags>
+    <weaponMoney>250~250</weaponMoney>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <skills>
+      <li>
+        <skill>Animals</skill>
+        <range>12~20</range>
+      </li>
+    </skills>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>16~28</initialResistanceRange>
+  </PawnKindDef>
+  <!-- Bulldozer -->
+  <PawnKindDef ParentName="MercenaryBase">
+    <defName>Mercenary_Bulldozer</defName>
+    <defaultFactionType>Pirate</defaultFactionType>
+    <label>bulldozer</label>
+    <combatPower>150</combatPower>
+    <apparelMoney>10000~10000</apparelMoney>
+    <apparelColor>(84,145,83)</apparelColor>
+    <apparelTags>
+      <li>SpacerMilitary</li>
+    </apparelTags>
+    <specificApparelRequirements>
+      <li>
+        <requiredTag>SpacerMilitary</requiredTag>
+        <color>(84,145,83)</color>
+        <biocode>true</biocode>
+        <quality>Good</quality>
+      </li>
+    </specificApparelRequirements>
+    <forcedTraits>
+      <li>Tough</li>
+    </forcedTraits>
+    <techHediffsRequired>
+      <li>YouWallImplant</li>
+    </techHediffsRequired>
+    <weaponMoney>900~2200</weaponMoney>
+    <weaponTags>
+      <li>Weapon_BulldozerRanged</li>
+    </weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>32~42</initialResistanceRange>
+  </PawnKindDef>
+</Defs>

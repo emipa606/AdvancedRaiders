@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <JobDef>
     <defName>OmegaStimShot</defName>
@@ -7,7 +7,6 @@
     <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
-
   <JobDef>
     <defName>MakeUkuphilaZombie</defName>
     <driverClass>AdvancedRaiders.JobDriver_MakeUkuphilaZombie</driverClass>
@@ -15,7 +14,6 @@
     <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
-
   <JobDef>
     <defName>BreakTurret</defName>
     <driverClass>AdvancedRaiders.JobDriver_BreakTurret</driverClass>
@@ -23,7 +21,6 @@
     <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
-
   <JobDef>
     <defName>InspireAllies</defName>
     <driverClass>AdvancedRaiders.JobDriver_InspireAllies</driverClass>
@@ -31,7 +28,6 @@
     <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
-
   <JobDef>
     <defName>PacifyDownedPawn</defName>
     <driverClass>AdvancedRaiders.JobDriver_PacifyDownedPawn</driverClass>
@@ -39,7 +35,6 @@
     <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
-  
   <JobDef>
     <defName>KillTaunter</defName>
     <driverClass>AdvancedRaiders.JobDriver_KillWithoutReservations</driverClass>
@@ -47,7 +42,6 @@
     <casualInterruptible>true</casualInterruptible>
     <collideWithPawns>false</collideWithPawns>
   </JobDef>
-
   <JobDef>
     <defName>ZhivayaResurrection</defName>
     <driverClass>AdvancedRaiders.JobDriver_ResurrectAndGiveIngestible</driverClass>
@@ -55,7 +49,6 @@
     <casualInterruptible>false</casualInterruptible>
     <collideWithPawns>true</collideWithPawns>
   </JobDef>
-
   <JobDef>
     <!-- I wonder if ill ever finish reinforcements call... -->
     <defName>ExtinguishReinforcementsFlare</defName>

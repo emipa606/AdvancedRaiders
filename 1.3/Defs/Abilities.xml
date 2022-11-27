@@ -1,63 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-      <AbilityDef>
-        <defName>InspireAlliesAbility</defName>
-        <label>inspire allies</label>
-        <description>Shout out inspiring phrases and slogans to improve combat capabilities of allies. Cant be done with sore throat.</description>
-        <iconPath>UI/inspire</iconPath>
-        <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
-        <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
-        <showPsycastEffects>True</showPsycastEffects>
-        <stunTargetWhileCasting>True</stunTargetWhileCasting>
-        <cooldownTicksRange>1200</cooldownTicksRange>
-        <targetRequired>False</targetRequired>
-        <verbProperties>
-          <verbClass>Verb_CastAbility</verbClass>
-          <range>-1</range>
-          <warmupTime>1.0</warmupTime>
-          <requireLineOfSight>False</requireLineOfSight>
-          <targetParams>
-            <canTargetSelf>true</canTargetSelf>
-            <canTargetPawns>false</canTargetPawns>
-            <canTargetBuildings>false</canTargetBuildings>
-            <canTargetAnimals>false</canTargetAnimals>
-            <canTargetHumans>false</canTargetHumans>
-            <canTargetMechs>false</canTargetMechs>
-          </targetParams>
-        </verbProperties>
-        <comps>
-            <li Class = "AdvancedRaiders.CompProperties_AbilityInspireAllies">
-              <inspirationStrength>0.15</inspirationStrength>
-              <soreThroatEffectFactor>0.5</soreThroatEffectFactor>
-              <radius>10.0</radius>
-            </li>
-        </comps>
-      </AbilityDef> 
-
-      <AbilityDef>
-        <defName>TauntAbility</defName>
-        <label>taunt</label>
-        <iconPath>UI/taunt</iconPath>
-        <description>Fill the target with immense hatred towards caster. Subject will try to kill caster for some time and wont stop even if their object of hatred is downed.\n\nSome say bulldozer's unique ability to pull fire on themselfs is a result of natural psylink formed during exhausting trainings. But it seems they are just good at pissing off people.</description>
-        <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
-        <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
-        <stunTargetWhileCasting>False</stunTargetWhileCasting>
-        <cooldownTicksRange>1200</cooldownTicksRange>
-        <targetRequired>True</targetRequired>
-        <verbProperties>
-          <verbClass>Verb_CastAbility</verbClass>
-          <warmupTime>1.0</warmupTime>
-          <range>24.9</range>
-          <targetParams>
-            <canTargetSelf>False</canTargetSelf>
-            <canTargetAnimals>True</canTargetAnimals>
-          </targetParams>
-        </verbProperties>
-        <comps>
-          <li Class="AdvancedRaiders.CompProperties_AbilityTaunt">
-            <durationTicks>800</durationTicks>
-          </li>
-        </comps>
-      </AbilityDef>
-     
+  <AbilityDef>
+    <defName>InspireAlliesAbility</defName>
+    <label>inspire allies</label>
+    <description>Shout out inspiring phrases and slogans to improve combat capabilities of allies. Cant be done with sore throat.</description>
+    <iconPath>UI/inspire</iconPath>
+    <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
+    <showPsycastEffects>True</showPsycastEffects>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <targetRequired>False</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>-1</range>
+      <warmupTime>1.0</warmupTime>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="AdvancedRaiders.CompProperties_AbilityInspireAllies">
+        <inspirationStrength>0.15</inspirationStrength>
+        <soreThroatEffectFactor>0.5</soreThroatEffectFactor>
+        <radius>10.0</radius>
+      </li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef>
+    <defName>TauntAbility</defName>
+    <label>taunt</label>
+    <iconPath>UI/taunt</iconPath>
+    <description>Fill the target with immense hatred towards caster. Subject will try to kill caster for some time and wont stop even if their object of hatred is downed.\n\nSome say bulldozer's unique ability to pull fire on themselfs is a result of natural psylink formed during exhausting trainings. But it seems they are just good at pissing off people.</description>
+    <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
+    <stunTargetWhileCasting>False</stunTargetWhileCasting>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <targetRequired>True</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>1.0</warmupTime>
+      <range>24.9</range>
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="AdvancedRaiders.CompProperties_AbilityTaunt">
+        <durationTicks>800</durationTicks>
+      </li>
+    </comps>
+  </AbilityDef>
 </Defs>

@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Patch>
-   <!-- for reason beyond me patches by defName dont work properly-->
-
-
+  <!-- for reason beyond me patches by defName dont work properly-->
   <!--outlanders-->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="outlander"]/pawnGroupMakers/li[1]/options</xpath>
@@ -15,7 +13,6 @@
       <Mercenary_Bulldozer>5</Mercenary_Bulldozer>
     </value>
   </Operation>
-
   <!--pirates-->
   <!-- common raid-->
   <Operation Class="PatchOperationAdd">
@@ -29,7 +26,6 @@
       <Mercenary_Bulldozer>4</Mercenary_Bulldozer>
     </value>
   </Operation>
-
   <!-- melee only raid -->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[2]/options</xpath>
@@ -39,7 +35,6 @@
       <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
     </value>
   </Operation>
-
   <!-- ranged only raid -->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[3]/options</xpath>
@@ -49,7 +44,6 @@
       <Mercenary_Bulldozer>4</Mercenary_Bulldozer>
     </value>
   </Operation>
-
   <!-- explosives with ranged mix in -->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[4]/options</xpath>
@@ -59,7 +53,6 @@
       <Mercenary_Bulldozer>2</Mercenary_Bulldozer>
     </value>
   </Operation>
-
   <!-- ooga boogas-->
   <!-- common raid-->
   <Operation Class="PatchOperationAdd">
@@ -72,7 +65,6 @@
       <Tribal_Beastmaster>5</Tribal_Beastmaster>
     </value>
   </Operation>
-
   <!-- ranged only -->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[2]/options</xpath>
@@ -81,7 +73,6 @@
       <Tribal_ChiefCommanderRanged>3</Tribal_ChiefCommanderRanged>
     </value>
   </Operation>
-
   <!-- Melee only-->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[3]/options</xpath>
@@ -90,7 +81,6 @@
       <Tribal_ChiefCommanderMelee>3</Tribal_ChiefCommanderMelee>
     </value>
   </Operation>
-
   <!-- breach -->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[4]/options</xpath>

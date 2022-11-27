@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <HediffDef ParentName="ImplantHediffBase">
     <defName>YouWallImplant</defName>
     <label>you-wall implant</label>
     <labelNoun>a you-wall implant</labelNoun>
     <description>An installed you-wall implant.</description>
-    <descriptionHyperlinks><ThingDef>YouWallImplant</ThingDef></descriptionHyperlinks>
+    <descriptionHyperlinks>
+      <ThingDef>YouWallImplant</ThingDef>
+    </descriptionHyperlinks>
     <spawnThingOnRemoved>YouWallImplant</spawnThingOnRemoved>
     <stages>
       <li>
@@ -29,9 +31,10 @@
         </statOffsets>
       </li>
     </stages>
-    <tags><li>BulldozerImplant</li></tags>
+    <tags>
+      <li>BulldozerImplant</li>
+    </tags>
   </HediffDef>
-
   <ThingDef ParentName="BodyPartBase">
     <defName>YouWallImplant</defName>
     <label>you-wall implant</label>
@@ -50,9 +53,10 @@
       <li>BodyPartsProsthetic</li>
     </thingCategories>
     <description>You-wall implant was created as an answer to imperial armor glands. While it provides much better protection, it somehow messes with user's head making them quite unagile. Which isn't much of a problem for bulldozers.</description>
-    <descriptionHyperlinks><RecipeDef>InstallYouWallImplant</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallYouWallImplant</RecipeDef>
+    </descriptionHyperlinks>
   </ThingDef>
-
   <RecipeDef ParentName="SurgeryInstallImplantBase">
     <defName>InstallYouWallImplant</defName>
     <label>install you-wall implant</label>
@@ -86,7 +90,6 @@
       <li>BulldozerImplant</li>
     </incompatibleWithHediffTags>
   </RecipeDef>
-  
   <RecipeDef ParentName="SurgeryRemoveImplantBase">
     <defName>RemoveYouWallImplant</defName>
     <label>remove you-wall implant</label>

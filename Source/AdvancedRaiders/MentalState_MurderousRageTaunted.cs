@@ -1,47 +1,39 @@
-﻿using RimWorld;
-using Verse;
+﻿using Verse;
 using Verse.AI;
 
-namespace AdvancedRaiders
+namespace AdvancedRaiders;
+
+public class MentalState_MurderousRageTaunted : MentalState
 {
-    public class MentalState_MurderousRageTaunted : MentalState
+    public Pawn target;
+
+    public override void MentalStateTick()
     {
-        public Pawn target;
-
-        public override void MentalStateTick()
+        base.MentalStateTick();
+        if (!pawn.IsHashIntervalTick(120))
         {
-            base.MentalStateTick();
-            if (!this.pawn.IsHashIntervalTick(120))
-                return;
-
-            if (target == null || target.Dead)
-            {
-                RecoverFromState();
-                return;
-            }
-
-            if (pawn.CurJobDef != AdvancedRaidersDefOf.KillTaunter)
-            {
-                Job job = JobMaker.MakeJob(AdvancedRaidersDefOf.KillTaunter);
-                job.targetA = target;
-                pawn.jobs.StartJob(job);
-            }
+            return;
         }
 
-        public override void ExposeData()
+        if (target == null || target.Dead)
         {
-            base.ExposeData();
-            Scribe_References.Look(ref target, "target");
+            RecoverFromState();
+            return;
         }
+
+        if (pawn.CurJobDef == AdvancedRaidersDefOf.KillTaunter)
+        {
+            return;
+        }
+
+        var job = JobMaker.MakeJob(AdvancedRaidersDefOf.KillTaunter);
+        job.targetA = target;
+        pawn.jobs.StartJob(job);
     }
 
-    public class JobDriver_KillWithoutReservations : JobDriver_Kill
+    public override void ExposeData()
     {
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
-        {
-            return true;
-        }
+        base.ExposeData();
+        Scribe_References.Look(ref target, "target");
     }
-
-    
 }

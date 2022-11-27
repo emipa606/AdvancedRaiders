@@ -1,36 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  
-  <packageId>saloid.AdvancedRaiders</packageId>
+  <name>Advanced Raiders (Continued)</name>
+  <packageId>Mlie.AdvancedRaiders</packageId>
   <author>saloid</author>
-  <name>Advanced raiders</name>
-  <description>Adds new raider types and some related items.
-    \n
-    \n -Hey Ron, those tribespeople are trying to raid us again.
-    \n -Nah, whatever, they won't pass through our killbox.
-    \n -One of them just resurrected his buddy. 
-    \n -What? 
-    \n -They also brought a warg and two bears with them. And a pack of boomrats.
-    \n -Oh, okay. We just have to kill or down about half of them and they will back off, right?
-    \n -We already did. Looks like this guy in red shouting out weird words keeps them fighting.
-    \n -Damn... But turrets will handle them anyway.
-    \n -They won't. Broken by some guy during previous raid. Some even turned against us.
-    \n -Why haven't anyone repaired them?
-    \n -A sadistic merc beat up our only builder and it looks like he got PTSD. He is smashing walls in his room right now.
-    \n -Use the doomsday rocket then!
-    \n -I wasted it on some really tough guy with minigun during the same raid. 
-    \n -Well, at least you've put it to the right use.
-    \n -How to say... he was just downed and his friend injected him some red fluid. He just became stronger and angrier.
-    \n
-    \n I strongly recommend dont drop items mod (https://steamcommunity.com/sharedfiles/filedetails/?id=1778821244) to use with this one. Or without, it is cool by itself.
-    \n Also you shold set enemy death on downed chance for about 50% or less. Merc medics need someone to "heal" after all.
-    \n
-    \n Please send your suggestions and report any bugs (I bet there is ton of them) and grammar mistakes you find. 
-  </description> 
-
+  <url>https://github.com/emipa606/AdvancedRaiders</url>
   <supportedVersions>
-    <!-- used by version check warning -->
     <li>1.3</li>
+    <li>1.4</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -43,4 +19,91 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+Update of saloids mod
+https://steamcommunity.com/sharedfiles/filedetails/?id=2628440891
+
+[img]https://i.imgur.com/pufA0kM.png[/img]
+
+[table]
+    [tr]
+        [td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+        [td][url=https://github.com/emipa606/AdvancedRaiders][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [/tr]
+    [tr]
+        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
+        [td][img]https://i.imgur.com/Be8E2qJ.png[/img][/td]
+    [/tr]
+[/table]
+	
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
+[b]Adds 7 (3 tribesman and 4 mercenary) new raider types and some related items.[/b]
+    
+ -Hey Ron, those tribespeople are trying to raid us again.
+    
+ -Nah, whatever, they won't pass through our killbox.
+    
+ -One of them just resurrected his buddy. 
+    
+ -What? 
+    
+ -They also brought a warg and two bears with them. And a pack of boomrats.
+    
+ -Oh, okay. We just have to kill or down about half of them and they will back off, right?
+    
+ -We already did. Looks like this guy in red shouting out weird words keeps them fighting.
+    
+ -Damn... But turrets will handle them anyway.
+    
+ -They won't. Broken by some guy during previous raid. Some even turned against us.
+    
+ -Why haven't anyone repaired them?
+    
+ -A sadistic merc beat up our only builder and it looks like he got PTSD. He is smashing walls in his room right now.
+    
+ -Use the doomsday rocket then!
+    
+ -I wasted it on some really tough guy with minigun during the same raid. 
+    
+ -Well, at least you've put it to the right use.
+    
+ -How to say... he was just downed and his friend injected him some red fluid. He just became stronger and angrier.
+    
+[h1]Raider types [/h1]
+
+[b]Mercenary medic[/b]- equipped with 3-4 doses of quite effective combat stimulant, they can make downed allies a serious threat.
+
+[b]Technician[/b] - their bluescreen belts make them invisible for turrets which they can break down or even make hostile towards you
+
+[b]Pacifier[/b] - armed with shock baton, they arent much of a threat for ranged fighters. However, should your pawn get downed, they will gently beat them till they pass away, terrifying all your colonists in some radius. Even if victim survives, they will suffer a PTSD.
+
+[b]Bulldozer[/b] - a human centipede. No, not that one. Quite bad as shooter, but quite tough. They also can taunt your colonists forcing them to attack dozer for some time.
+
+[b]Tribal medic[/b] - will resurrect downed allies. Resurrected pawn are fast, tenacious, dont bleed, but suffer accuracy debuffs.
+
+[b]Beastmaster[/b] - while they have no special behaviour or abilities (yet), they come with their pet battle animals. Downing beastmaster will force beasts to flee and/or evacuate master, and killing one will cause animal mental breaks (which can come in handy)
+
+[b]Commander chief[/b] - do you know what the difference between vanilla chiefs and regular raiders? Equipment. Thats all. Commanders can buff their allies. Also, raiders won't run away while they have one.
+
+After proper research you can use medic's medicine to create something useful for your colony.
+
+
+ I strongly recommend [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1778821244]dont drop items mod[/url] to use with this one. Or without, it is cool by itself.
+ Also you shold set enemy death on downed chance for about 50% or less. Merc medics need someone to "heal" after all.
+
+ Should be compatible with any mod that doesn't alter the way npc groups work. And even if it does, it probably wont cause any troubles. Probably. As for CE, I havent tested it, but 99% no since this mod adds new weapon.
+    
+ Please leave your suggestions and report any bugs (I bet there is ton of them) and grammar mistakes you find. 
+
+[url=https://github.com/definitelyNotSaloid/AdvancedRaiders]GitHub[/url]
+	
+[img]https://i.imgur.com/PwoNOj4.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[/list]</description>
 </ModMetaData>

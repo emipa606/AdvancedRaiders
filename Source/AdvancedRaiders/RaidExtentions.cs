@@ -1,20 +1,19 @@
-﻿
-using Verse.AI.Group;
+﻿using Verse.AI.Group;
 
-namespace AdvancedRaiders
+namespace AdvancedRaiders;
+
+public static class RaidExtentions
 {
-    public static class RaidExtentions
+    public static bool OwnsAnyInspirers(this Lord lord)
     {
-        public static bool OwnsAnyInspirers(this Lord lord)
+        foreach (var pawn in lord.ownedPawns)
         {
-            foreach (var pawn in lord.ownedPawns)
+            if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommanderRanged)
             {
-                if (pawn.kindDef == AdvancedRaidersDefOf.Tribal_ChiefCommanderRanged)
-                    return true;
+                return true;
             }
-
-            return false;
         }
 
+        return false;
     }
 }

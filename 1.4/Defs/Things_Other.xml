@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef>
+    <defName>ReinforcementsFlareIgnited</defName>
+    <label>reinforcements flare</label>
+    <thingClass>ThingWithComps</thingClass>
+    <!-- <drawerType>RealtimeOnly</drawerType> -->
+    <category>Item</category>
+    <!-- I have no idea which category is better for ignited flare -->
+    <tickerType>Normal</tickerType>
+    <selectable>true</selectable>
+    <alwaysHaulable>false</alwaysHaulable>
+    <designateHaulable>false</designateHaulable>
+    <useHitPoints>true</useHitPoints>
+    <graphicData>
+      <!--<drawSize>(0.60,0.60)</drawSize>-->
+      <texPath>Things/Flares/Flare_Ignited</texPath>
+      <graphicClass>Graphic_Flicker</graphicClass>
+      <onGroundRandomRotateAngle>30</onGroundRandomRotateAngle>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>10</MaxHitPoints>
+      <Flammability>2</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>ExtinguishReinforcementsFlare</useJob>
+        <useLabel>extinguish reinforcements flare</useLabel>
+        <useDuration>30</useDuration>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>7.0</glowRadius>
+        <overlightRadius>2.0</overlightRadius>
+        <glowColor>(250,75,30)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_BurntFlare</defName>
+    <label>burnt flare</label>
+    <graphicData>
+      <drawSize>(0.60,0.60)</drawSize>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Flares/flare_burnt</texPath>
+      <onGroundRandomRotateAngle>90</onGroundRandomRotateAngle>
+    </graphicData>
+    <filth>
+      <disappearsInDays>45~50</disappearsInDays>
+      <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+    </filth>
+  </ThingDef>
+</Defs>

@@ -1,38 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <ThingDef ParentName="ApparelBase">
-        <defName>Apparel_BlueScreenBelt</defName>
-        <label>blue screen belt</label>
-        <description>Makeshift cloacking device made by some engineer of questionable qualifications. It hides user's infrared signature and therefore makes turrets unable to detect them. Mechanoids, however, cant be fooled with this primitive trick as they use more advanced sensors to search for target.</description>
-        <graphicData>
-          <texPath>Things/Apparel/BlueScreenBelt</texPath>
-          <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <tradeability>Sellable</tradeability>
-        <statBases>
-          <MarketValue>130</MarketValue>
-          <Mass>1.3</Mass>
-          <Flammability>0.4</Flammability>
-          <EquipDelay>2</EquipDelay>
-        </statBases>
-        <thingCategories>
-          <li>ApparelUtility</li>
-        </thingCategories>
-        <apparel>
-          <countsAsClothingForNudity>false</countsAsClothingForNudity>
-          <careIfWornByCorpse>false</careIfWornByCorpse>
-          <careIfDamaged>false</careIfDamaged>
-          <wearPerDay>0</wearPerDay>
-          <bodyPartGroups>
-            <li>Waist</li>
-          </bodyPartGroups>
-          <layers>
-            <li>Belt</li>
-          </layers>
-          <tags>
-            <li>MercenaryTechnician_Belt</li>
-          </tags>
-        </apparel>
-    </ThingDef>
-
+  <ThingDef ParentName="ApparelBase">
+    <defName>Apparel_BlueScreenBelt</defName>
+    <label>blue screen belt</label>
+    <description>Makeshift cloacking device made by some engineer of questionable qualifications. It hides user's infrared signature and therefore makes turrets unable to detect them. Mechanoids, however, cant be fooled with this primitive trick as they use more advanced sensors to search for target.</description>
+    <graphicData>
+      <texPath>Things/Apparel/BlueScreenBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tradeability>Sellable</tradeability>
+    <statBases>
+      <MarketValue>130</MarketValue>
+      <Mass>1.3</Mass>
+      <Flammability>0.4</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>MercenaryTechnician_Belt</li>
+      </tags>
+    </apparel>
+  </ThingDef>
 </Defs>

@@ -1,32 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HarmonyLib;
+using Mlie;
 using UnityEngine;
 using Verse;
-using HarmonyLib;
-using UnityStandardAssets;
 
-namespace AdvancedRaiders
+namespace AdvancedRaiders;
+
+[StaticConstructorOnStartup]
+public class AdvancedRaiders : Mod
 {
-    [StaticConstructorOnStartup]
-    public class AdvancedRaiders : Mod
-    {
-        public static ARSettings settings;
-        public static Harmony harmonyInstance;
-        public AdvancedRaiders(ModContentPack content) : base(content)
-        {
-            GetSettings<ARSettings>().Write();
-            harmonyInstance = new Harmony("saloid.AdvancedRaiders");
-        }
+    public static ARSettings settings;
+    public static Harmony harmonyInstance;
+    public static string currentVersion;
 
-        public override void DoSettingsWindowContents(Rect inRect)
-        {
-            ARSettings.DoSettingsWindowContents(inRect);
-            base.DoSettingsWindowContents(inRect);
-            
-        }
-        public override string SettingsCategory() => "Advanced raiders";
+    public AdvancedRaiders(ModContentPack content) : base(content)
+    {
+        GetSettings<ARSettings>().Write();
+        harmonyInstance = new Harmony("saloid.AdvancedRaiders");
+        currentVersion =
+            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.AdvancedRaiders"));
+    }
+
+    public override void DoSettingsWindowContents(Rect inRect)
+    {
+        ARSettings.DoSettingsWindowContents(inRect);
+        base.DoSettingsWindowContents(inRect);
+    }
+
+    public override string SettingsCategory()
+    {
+        return "Advanced raiders";
     }
 }

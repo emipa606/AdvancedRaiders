@@ -2,17 +2,19 @@
 using Verse;
 using Verse.AI;
 
-namespace AdvancedRaiders
+namespace AdvancedRaiders;
+
+public class CompTargetEffect_ZhivayaResurrect : CompTargetEffect
 {
-    public class CompTargetEffect_ZhivayaResurrect : CompTargetEffect
+    public override void DoEffectOn(Pawn user, Thing target)
     {
-        public override void DoEffectOn(Pawn user, Thing target)
+        if (!user.IsColonistPlayerControlled || !user.CanReserveAndReach(target, PathEndMode.Touch, Danger.Deadly))
         {
-            if (!user.IsColonistPlayerControlled || !user.CanReserveAndReach(target, PathEndMode.Touch, Danger.Deadly))
-                return;
-            Job job = JobMaker.MakeJob(AdvancedRaidersDefOf.ZhivayaResurrection, target, parent);
-            job.count = 1;
-            user.jobs.TryTakeOrderedJob(job);
+            return;
         }
+
+        var job = JobMaker.MakeJob(AdvancedRaidersDefOf.ZhivayaResurrection, target, parent);
+        job.count = 1;
+        user.jobs.TryTakeOrderedJob(job);
     }
 }

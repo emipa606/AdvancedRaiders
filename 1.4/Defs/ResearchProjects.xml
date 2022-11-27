@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ResearchTabDef>
+    <defName>AdvancedRaiders</defName>
+    <label>advanced raiders</label>
+  </ResearchTabDef>
+  <ResearchProjectDef>
+    <tab>AdvancedRaiders</tab>
+    <defName>ExoticMedicineDistillery</defName>
+    <label>exotic medicine distillery</label>
+    <description>Learn how to process ukuphila herb and omega stimulant into something safer for use.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>0.40</researchViewY>
+  </ResearchProjectDef>
+</Defs>

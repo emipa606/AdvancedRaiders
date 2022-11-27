@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <!--<ThingDef ParentName="BaseWeapon">
+  <!--<ThingDef ParentName="BaseWeapon">
         <defName>MeleeWeapon_PlasteelCrowbar</defName>
         <label>plasteel crowbar</label>
         <description>Hehe funny description</description>
@@ -52,60 +52,58 @@
           </li>
         </tools>
       </ThingDef> -->
-
-      <ThingDef ParentName="BaseWeapon">
-        <defName>MeleeWeapon_ShockBaton</defName>
-        <label>shock baton</label>
-        <description>This baton was designed in some urban world to be used for crowd control. Its distinctive crackling itself can pacify rioters and electrical shock will finish the most tough ones. Sadly, some sadists like to use it to fulfill their lust for violence.</description>
-        <graphicData>
-          <texPath>Things/Weapons/ShockBaton</texPath>
-          <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <equippedAngleOffset>-65</equippedAngleOffset>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>WeaponsMelee</li>
-        </thingCategories>
-        <weaponTags>
-          <li>Weapon_MercenaryPacifier</li>
-        </weaponTags>
-        <weaponClasses>
-            <li>Melee</li>
-        </weaponClasses>
-        <statBases>
-          <MarketValue>140</MarketValue>
-          <Mass>0.8</Mass>
-        </statBases>
-        <tools>
+  <ThingDef ParentName="BaseWeapon">
+    <defName>MeleeWeapon_ShockBaton</defName>
+    <label>shock baton</label>
+    <description>This baton was designed in some urban world to be used for crowd control. Its distinctive crackling itself can pacify rioters and electrical shock will finish the most tough ones. Sadly, some sadists like to use it to fulfill their lust for violence.</description>
+    <graphicData>
+      <texPath>Things/Weapons/ShockBaton</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>WeaponsMelee</li>
+    </thingCategories>
+    <weaponTags>
+      <li>Weapon_MercenaryPacifier</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <statBases>
+      <MarketValue>140</MarketValue>
+      <Mass>0.8</Mass>
+    </statBases>
+    <tools>
+      <li>
+        <label>shock head</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.0</cooldownTime>
+        <extraMeleeDamages>
           <li>
-            <label>shock head</label>
-            <capacities>
-              <li>Poke</li>
-            </capacities>
-            <power>10</power>
-            <cooldownTime>2.0</cooldownTime>
-            <extraMeleeDamages>
-              <li>
-                <def>ShockBatonTase</def>
-                <amount>2</amount>
-                <chance>1</chance>
-              </li>
-            </extraMeleeDamages>
+            <def>ShockBatonTase</def>
+            <amount>2</amount>
+            <chance>1</chance>
           </li>
-        </tools>
-      </ThingDef>
-
-      <DamageDef ParentName="BluntBase">
-        <defName>ShockBatonTase</defName>
-        <label>tase</label>
-        <makesBlood>false</makesBlood>
-        <additionalHediffs>
-          <li>
-            <hediff>ElectricalSpasm</hediff>
-            <severityPerDamageDealt>0.1</severityPerDamageDealt>
-            <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
-          </li>
-        </additionalHediffs>
-        <impactSoundType>Electric</impactSoundType>
-      </DamageDef>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+  <DamageDef ParentName="BluntBase">
+    <defName>ShockBatonTase</defName>
+    <label>tase</label>
+    <makesBlood>false</makesBlood>
+    <additionalHediffs>
+      <li>
+        <hediff>ElectricalSpasm</hediff>
+        <severityPerDamageDealt>0.1</severityPerDamageDealt>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+      </li>
+    </additionalHediffs>
+    <impactSoundType>Electric</impactSoundType>
+  </DamageDef>
 </Defs>

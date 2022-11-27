@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- for reason beyond me patches by defName dont work properly-->
+  <!--outlanders-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="outlander"]/pawnGroupMakers/li[1]/options</xpath>
+    <value>
+      <Mercenary_MedicRanged>4.5</Mercenary_MedicRanged>
+      <Mercenary_MedicMelee>2.5</Mercenary_MedicMelee>
+      <Mercenary_Technician>5</Mercenary_Technician>
+      <MercenaryPacifier_Bloodlust>2</MercenaryPacifier_Bloodlust>
+      <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
+      <Mercenary_Bulldozer>5</Mercenary_Bulldozer>
+    </value>
+  </Operation>
+  <!--pirates-->
+  <!-- common raid-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[1]/options</xpath>
+    <value>
+      <Mercenary_MedicRanged>4.5</Mercenary_MedicRanged>
+      <Mercenary_MedicMelee>2.5</Mercenary_MedicMelee>
+      <Mercenary_Technician>4</Mercenary_Technician>
+      <MercenaryPacifier_Bloodlust>3</MercenaryPacifier_Bloodlust>
+      <MercenaryPacifier_Psychopath>3</MercenaryPacifier_Psychopath>
+      <Mercenary_Bulldozer>4</Mercenary_Bulldozer>
+    </value>
+  </Operation>
+  <!-- melee only raid -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[2]/options</xpath>
+    <value>
+      <Mercenary_MedicMelee>4</Mercenary_MedicMelee>
+      <MercenaryPacifier_Bloodlust>2</MercenaryPacifier_Bloodlust>
+      <MercenaryPacifier_Psychopath>2</MercenaryPacifier_Psychopath>
+    </value>
+  </Operation>
+  <!-- ranged only raid -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[3]/options</xpath>
+    <value>
+      <Mercenary_MedicRanged>5</Mercenary_MedicRanged>
+      <Mercenary_Technician>4</Mercenary_Technician>
+      <Mercenary_Bulldozer>4</Mercenary_Bulldozer>
+    </value>
+  </Operation>
+  <!-- explosives with ranged mix in -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="pirate"]/pawnGroupMakers/li[4]/options</xpath>
+    <value>
+      <Mercenary_MedicRanged>4</Mercenary_MedicRanged>
+      <Mercenary_Technician>2</Mercenary_Technician>
+      <Mercenary_Bulldozer>2</Mercenary_Bulldozer>
+    </value>
+  </Operation>
+  <!-- ooga boogas-->
+  <!-- common raid-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[1]/options</xpath>
+    <value>
+      <Tribal_MedicRanged>2</Tribal_MedicRanged>
+      <Tribal_MedicMelee>1.5</Tribal_MedicMelee>
+      <Tribal_ChiefCommanderRanged>2</Tribal_ChiefCommanderRanged>
+      <Tribal_ChiefCommanderMelee>1</Tribal_ChiefCommanderMelee>
+      <Tribal_Beastmaster>5</Tribal_Beastmaster>
+    </value>
+  </Operation>
+  <!-- ranged only -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[2]/options</xpath>
+    <value>
+      <Tribal_MedicRanged>3</Tribal_MedicRanged>
+      <Tribal_ChiefCommanderRanged>3</Tribal_ChiefCommanderRanged>
+    </value>
+  </Operation>
+  <!-- Melee only-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[3]/options</xpath>
+    <value>
+      <Tribal_MedicMelee>3</Tribal_MedicMelee>
+      <Tribal_ChiefCommanderMelee>3</Tribal_ChiefCommanderMelee>
+    </value>
+  </Operation>
+  <!-- breach -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[pawnSingular="tribesman"]/pawnGroupMakers/li[4]/options</xpath>
+    <value>
+      <Tribal_MedicRanged>3</Tribal_MedicRanged>
+      <Tribal_MedicMelee>2</Tribal_MedicMelee>
+      <Tribal_ChiefCommanderRanged>2</Tribal_ChiefCommanderRanged>
+      <Tribal_ChiefCommanderMelee>1</Tribal_ChiefCommanderMelee>
+      <Tribal_Beastmaster>5</Tribal_Beastmaster>
+    </value>
+  </Operation>
+</Patch>
