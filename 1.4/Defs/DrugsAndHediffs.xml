@@ -484,6 +484,7 @@
     <techLevel>Industrial</techLevel>
     <ingestible>
       <foodType>Processed, Fluid</foodType>
+      <drugCategory>Medical</drugCategory>
       <baseIngestTicks>80</baseIngestTicks>
       <ingestSound>Ingest_Inject</ingestSound>
       <ingestHoldOffsetStanding>
