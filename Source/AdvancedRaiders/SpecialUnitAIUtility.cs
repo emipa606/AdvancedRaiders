@@ -17,14 +17,6 @@ public static class SpecialUnitAIUtility
 
         var curMap = medic.Map;
 
-        bool Validator(Thing t)
-        {
-            var pawn = t as Pawn;
-            return pawn != null && pawn.RaceProps.Humanlike && pawn.Downed && pawn.Faction == medic.Faction &&
-                   medic.CanReserve((LocalTargetInfo)pawn) &&
-                   !pawn.health.hediffSet.HasHediff(AdvancedRaidersDefOf.OmegaStimulantHigh);
-        }
-
 
         targetPawn = (Pawn)GenClosest.ClosestThingReachable(
             medic.Position,
@@ -36,6 +28,14 @@ public static class SpecialUnitAIUtility
             Validator);
 
         return targetPawn != null;
+
+        bool Validator(Thing t)
+        {
+            var pawn = t as Pawn;
+            return pawn != null && pawn.RaceProps.Humanlike && pawn.Downed && pawn.Faction == medic.Faction &&
+                   medic.CanReserve((LocalTargetInfo)pawn) &&
+                   !pawn.health.hediffSet.HasHediff(AdvancedRaidersDefOf.OmegaStimulantHigh);
+        }
     }
 
     public static bool TryFindUkuphilaHerbResurrectionTarget(Pawn medic, float searchRadius, out Corpse target)
@@ -49,15 +49,6 @@ public static class SpecialUnitAIUtility
 
         var curMap = medic.Map;
 
-        bool Validator(Thing t)
-        {
-            var corpse = t as Corpse;
-            return corpse != null && corpse.InnerPawn.RaceProps.Humanlike &&
-                   corpse.InnerPawn.health.hediffSet.HasHead && corpse.InnerPawn.Faction == medic.Faction &&
-                   medic.CanReserve((LocalTargetInfo)corpse) &&
-                   !corpse.InnerPawn.health.hediffSet.HasHediff(AdvancedRaidersDefOf.UkuphilaResurrection);
-        }
-
         target = (Corpse)GenClosest.ClosestThingReachable(
             medic.Position,
             curMap,
@@ -68,12 +59,33 @@ public static class SpecialUnitAIUtility
             Validator);
 
         return target != null;
+
+        bool Validator(Thing t)
+        {
+            var corpse = t as Corpse;
+            return corpse != null && corpse.InnerPawn.RaceProps.Humanlike &&
+                   corpse.InnerPawn.health.hediffSet.HasHead && corpse.InnerPawn.Faction == medic.Faction &&
+                   medic.CanReserve((LocalTargetInfo)corpse) &&
+                   !corpse.InnerPawn.health.hediffSet.HasHediff(AdvancedRaidersDefOf.UkuphilaResurrection);
+        }
     }
 
 
     public static bool TryFindBreakableEnemyTurret(Pawn technician, float searchRadius, out Building turret)
     {
         var curMap = technician.Map;
+
+
+        turret = (Building)GenClosest.ClosestThingReachable(
+            technician.Position,
+            curMap,
+            ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
+            PathEndMode.ClosestTouch,
+            TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
+            searchRadius,
+            Validator);
+
+        return turret != null;
 
         bool Validator(Thing t)
         {
@@ -92,32 +104,10 @@ public static class SpecialUnitAIUtility
                    !turretComp.BrokenDown && technician.Faction.HostileTo(building.Faction) &&
                    building.Faction != Faction.OfMechanoids && technician.CanReserve(building);
         }
-
-
-        turret = (Building)GenClosest.ClosestThingReachable(
-            technician.Position,
-            curMap,
-            ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
-            PathEndMode.ClosestTouch,
-            TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
-            searchRadius,
-            Validator);
-
-        return turret != null;
     }
 
     public static bool TryFindPacificationTarget(Pawn pacifier, float searchRadius, out Pawn targetPawn)
     {
-        bool Validator(Thing t)
-        {
-            var pawn = t as Pawn;
-            return pawn != null && pawn.Faction.HostileTo(pacifier.Faction) && pawn.RaceProps.Humanlike &&
-                   pawn.Downed &&
-                   pawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) >
-                   0.1 && //beating someone who had already passed out isnt that much of a joy, you know
-                   pacifier.CanReserve(pawn);
-        }
-
         targetPawn = (Pawn)GenClosest.ClosestThingReachable(
             pacifier.Position,
             pacifier.Map,
@@ -128,21 +118,20 @@ public static class SpecialUnitAIUtility
             Validator);
 
         return targetPawn != null;
+
+        bool Validator(Thing t)
+        {
+            var pawn = t as Pawn;
+            return pawn != null && pawn.Faction.HostileTo(pacifier.Faction) && pawn.RaceProps.Humanlike &&
+                   pawn.Downed &&
+                   pawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) >
+                   0.1 && //beating someone who had already passed out isn't that much of a joy, you know
+                   pacifier.CanReserve(pawn);
+        }
     }
 
     public static bool TryFindTauntTarget(Pawn dozer, float searchRadius, out Pawn targetPawn)
     {
-        bool Validator(Thing t)
-        {
-            var pawn = t as Pawn;
-            return pawn != null && pawn.Faction.HostileTo(dozer.Faction) &&
-                   pawn.health.State == PawnHealthState.Mobile &&
-                   //!pawn.skills.GetSkill(SkillDefOf.Shooting).TotallyDisabled &&
-                   //!pawn.skills.GetSkill(SkillDefOf.Melee).TotallyDisabled &&
-                   pawn.RaceProps.Humanlike && pawn.MentalStateDef != AdvancedRaidersDefOf.MurderousRageTaunted &&
-                   dozer.CanSee(pawn) && dozer.CanReserve(pawn);
-        }
-
         targetPawn = (Pawn)GenClosest.ClosestThingReachable(
             dozer.Position,
             dozer.Map,
@@ -153,5 +142,16 @@ public static class SpecialUnitAIUtility
             Validator);
 
         return targetPawn != null;
+
+        bool Validator(Thing t)
+        {
+            var pawn = t as Pawn;
+            return pawn != null && pawn.Faction.HostileTo(dozer.Faction) &&
+                   pawn.health.State == PawnHealthState.Mobile &&
+                   //!pawn.skills.GetSkill(SkillDefOf.Shooting).TotallyDisabled &&
+                   //!pawn.skills.GetSkill(SkillDefOf.Melee).TotallyDisabled &&
+                   pawn.RaceProps.Humanlike && pawn.MentalStateDef != AdvancedRaidersDefOf.MurderousRageTaunted &&
+                   dozer.CanSee(pawn) && dozer.CanReserve(pawn);
+        }
     }
 }

@@ -17,10 +17,10 @@ public static class OogaBoogaGoWaaaagh
         {
             if (line.opcode == OpCodes.Newobj &&
                 (ConstructorInfo)line.operand ==
-                typeof(Trigger_FractionPawnsLost).GetConstructor(new[] { typeof(float) }))
+                typeof(Trigger_FractionPawnsLost).GetConstructor([typeof(float)]))
             {
                 yield return new CodeInstruction(OpCodes.Newobj,
-                    typeof(Trigger_FractionPawnsLostAndNoInspirer).GetConstructor(new[] { typeof(float) }));
+                    typeof(Trigger_FractionPawnsLostAndNoInspirer).GetConstructor([typeof(float)]));
             }
             else
             {

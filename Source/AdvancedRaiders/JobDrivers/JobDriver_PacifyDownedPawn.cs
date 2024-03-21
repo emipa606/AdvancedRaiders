@@ -32,7 +32,7 @@ public class JobDriver_PacifyDownedPawn : JobDriver
 
     protected void Terrify()
     {
-        if (!Victim.story.traits.HasTrait(TraitDefOf.Masochist))
+        if (!Victim.story.traits.HasTrait(AdvancedRaidersDefOf.Masochist))
         {
             var hediff = Victim.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.PacifierPTSD);
             if (hediff == null)

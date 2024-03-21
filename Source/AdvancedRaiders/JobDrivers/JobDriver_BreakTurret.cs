@@ -37,7 +37,7 @@ public class JobDriver_BreakTurret : JobDriver
             );
         }
 
-        yield return Toils_General.Do(() => //these guys arent really engineers, you know
+        yield return Toils_General.Do(() => //these guys aren't really engineers, you know
             GetActor().meleeVerbs.TryMeleeAttack(Turret)
         );
     }

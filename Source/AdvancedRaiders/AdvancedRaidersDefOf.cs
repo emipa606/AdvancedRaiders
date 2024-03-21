@@ -50,6 +50,8 @@ public static class AdvancedRaidersDefOf
     public static ThoughtDef WitnessedPacification;
     public static ThoughtDef WitnessedPacificationBloodlust;
 
+    public static TraitDef Masochist;
+
     static AdvancedRaidersDefOf()
     {
         DefOfHelper.EnsureInitializedInCtor(typeof(AdvancedRaidersDefOf));

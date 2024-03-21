@@ -4,9 +4,9 @@ namespace AdvancedRaiders;
 
 public class CompProperties_AbilityInspireAllies : AbilityCompProperties
 {
+    public readonly float soreThroatEffectFactor = 1;
     public float inspirationStrength;
     public float radius;
-    public float soreThroatEffectFactor = 1;
 
     public CompProperties_AbilityInspireAllies()
     {

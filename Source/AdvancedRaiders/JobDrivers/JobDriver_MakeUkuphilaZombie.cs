@@ -18,7 +18,7 @@ public class JobDriver_MakeUkuphilaZombie : JobDriver
 
     protected override IEnumerable<Toil> MakeNewToils()
     {
-        var unused = TargetCorpse.InnerPawn;
+        _ = TargetCorpse.InnerPawn;
         this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
         AddFailCondition(() => !GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA));
 

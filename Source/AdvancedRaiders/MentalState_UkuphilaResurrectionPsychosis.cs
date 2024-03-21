@@ -8,7 +8,7 @@ public class MentalState_UkuphilaResurrectionPsychosis : MentalState
 {
     public override bool AllowRestingInBed => false;
 
-    //private int _findNewTargetCounter = 0;                      //zombie doesnt need to search for new target every 30 ticks
+    //private int _findNewTargetCounter = 0;                      //zombie doesn't need to search for new target every 30 ticks
     public override bool ForceHostileTo(Thing t)
     {
         return t is Pawn p && p.RaceProps.Humanlike && ForceHostileTo(p.Faction);

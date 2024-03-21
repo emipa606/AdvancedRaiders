@@ -17,7 +17,7 @@ public class AdvancedRaiders : Mod
         GetSettings<ARSettings>().Write();
         harmonyInstance = new Harmony("saloid.AdvancedRaiders");
         currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.AdvancedRaiders"));
+            VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     public override void DoSettingsWindowContents(Rect inRect)

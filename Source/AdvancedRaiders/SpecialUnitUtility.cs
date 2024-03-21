@@ -126,10 +126,11 @@ public static class SpecialUnitUtility
             return;
         }
 
-        ResurrectionUtility.Resurrect(pawn);
-        pawn.health.AddHediff(AdvancedRaidersDefOf.UkuphilaResurrection);
-
-        if (pawn.Dead)
+        if (ResurrectionUtility.TryResurrect(pawn))
+        {
+            pawn.health.AddHediff(AdvancedRaidersDefOf.UkuphilaResurrection);
+        }
+        else
         {
             Log.Error($"Looks like even forbidden herbs couldn't revive {pawn.Name}. Press F.");
         }
@@ -176,7 +177,7 @@ public static class SpecialUnitUtility
                   p.Faction == caster.Faction
             select p;
 
-        return pawnsInRadius.Count() - 1 >= nPawns; //-1 for caster themself
+        return pawnsInRadius.Count() - 1 >= nPawns; //-1 for caster themselves
     }
 
     public static bool IsAllowedAdvancedRaiderClass(PawnClass unitClass)

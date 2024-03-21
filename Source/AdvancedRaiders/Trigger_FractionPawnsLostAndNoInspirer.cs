@@ -2,15 +2,8 @@
 
 namespace AdvancedRaiders;
 
-public class Trigger_FractionPawnsLostAndNoInspirer : Trigger
+public class Trigger_FractionPawnsLostAndNoInspirer(float fraction) : Trigger
 {
-    private readonly float fraction;
-
-    public Trigger_FractionPawnsLostAndNoInspirer(float fraction)
-    {
-        this.fraction = fraction;
-    }
-
     public override bool ActivateOn(Lord lord, TriggerSignal signal)
     {
         var originalTriggerWouldBeActivated =

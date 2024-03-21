@@ -185,7 +185,7 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
 
     protected override Job TryGiveJob(Pawn pawn)
     {
-        /*if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)        //doesnt seem to be working
+        /*if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)        //doesn't seem to be working
             return null;*/
 
         switch (SpecialUnitUtility.AdvancedRaiderClass(pawn))

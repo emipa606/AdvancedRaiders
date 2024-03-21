@@ -36,7 +36,9 @@ public class JobDriver_ResurrectAndGiveIngestible : JobDriver
     private void Resurrect()
     {
         var innerPawn = Corpse.InnerPawn;
-        ResurrectionUtility.Resurrect(innerPawn);
-        Messages.Message("MessagePawnResurrected".Translate(innerPawn), innerPawn, MessageTypeDefOf.PositiveEvent);
+        if (ResurrectionUtility.TryResurrect(innerPawn))
+        {
+            Messages.Message("MessagePawnResurrected".Translate(innerPawn), innerPawn, MessageTypeDefOf.PositiveEvent);
+        }
     }
 }

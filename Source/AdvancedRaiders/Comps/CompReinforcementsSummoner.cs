@@ -9,11 +9,6 @@ public class CompReinforcementsSummoner : ThingComp
     private IncidentParms parms;
     public int reinforcementsPoints = 250;
 
-    public CompReinforcementsSummoner()
-    {
-        _ageTicks = 0;
-    }
-
     public CompProperties_ReinforcementsSummoner Props => props as CompProperties_ReinforcementsSummoner;
 
     public override void CompTick()
