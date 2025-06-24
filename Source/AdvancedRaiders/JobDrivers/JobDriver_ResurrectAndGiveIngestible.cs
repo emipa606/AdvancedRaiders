@@ -29,11 +29,11 @@ public class JobDriver_ResurrectAndGiveIngestible : JobDriver
         yield return toil;
 
         var innerPawn = Corpse.InnerPawn;
-        yield return Toils_General.Do(Resurrect);
+        yield return Toils_General.Do(resurrect);
         yield return Toils_Ingest.FinalizeIngest(innerPawn, TargetIndex.B);
     }
 
-    private void Resurrect()
+    private void resurrect()
     {
         var innerPawn = Corpse.InnerPawn;
         if (ResurrectionUtility.TryResurrect(innerPawn))

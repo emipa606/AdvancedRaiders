@@ -1,4 +1,4 @@
-# AdvancedRaiders
+# [Advanced Raiders (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2894402265)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
@@ -6,7 +6,6 @@ Update of saloids mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2628440891
 
 ![Image](https://i.imgur.com/pufA0kM.png)
-
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
 
@@ -62,7 +61,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2628440891
 After proper research you can use medic's medicine to create something useful for your colony.
 
 
- I strongly recommend https://steamcommunity.com/sharedfiles/filedetails/?id=1778821244]dont drop items mod to use with this one. Or without, it is cool by itself.
+ I strongly recommend [dont drop items mod](https://steamcommunity.com/sharedfiles/filedetails/?id=1778821244) to use with this one. Or without, it is cool by itself.
  Also you shold set enemy death on downed chance for about 50% or less. Merc medics need someone to "heal" after all.
 
  Should be compatible with any mod that doesn't alter the way npc groups work. And even if it does, it probably wont cause any troubles. Probably. As for CE, I havent tested it, but 99% no since this mod adds new weapon.
@@ -75,13 +74,12 @@ After proper research you can use medic's medicine to create something useful fo
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
-
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2894402265]![Image](https://img.shields.io/github/v/release/emipa606/AdvancedRaiders?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[![Image](https://img.shields.io/github/v/release/emipa606/AdvancedRaiders?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2894402265) | tags:  raider types

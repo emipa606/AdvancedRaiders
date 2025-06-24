@@ -8,9 +8,9 @@ namespace AdvancedRaiders;
 
 public class JobDriver_PacifyDownedPawn : JobDriver
 {
-    protected Pawn Victim => TargetThingA as Pawn;
+    private Pawn Victim => TargetThingA as Pawn;
 
-    protected bool TargetPacified =>
+    private bool TargetPacified =>
         !Victim.Downed || Victim.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) < 0.11;
 
     public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -26,27 +26,24 @@ public class JobDriver_PacifyDownedPawn : JobDriver
 
         yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.InteractionCell);
 
-        yield return Toils_General.Do(Terrify);
+        yield return Toils_General.Do(terrify);
         yield return Toils_General.Do(() => GetActor().meleeVerbs.TryMeleeAttack(TargetThingA));
     }
 
-    protected void Terrify()
+    private void terrify()
     {
         if (!Victim.story.traits.HasTrait(AdvancedRaidersDefOf.Masochist))
         {
-            var hediff = Victim.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.PacifierPTSD);
-            if (hediff == null)
-            {
-                hediff = Victim.health.AddHediff(AdvancedRaidersDefOf.PacifierPTSD);
-            }
+            var hediff = Victim.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.PacifierPTSD) ??
+                         Victim.health.AddHediff(AdvancedRaidersDefOf.PacifierPTSD);
 
-            hediff.Severity += ARSettings.ptsdPerHit;
+            hediff.Severity += ARSettings.PtsdPerHit;
         }
 
         var eyewitnesses = from p in Victim.Map.mapPawns.AllPawnsSpawned
             where
                 p.RaceProps.Humanlike &&
-                p.Position.DistanceTo(Victim.Position) < ARSettings.witnessedPacificationRadius &&
+                p.Position.DistanceTo(Victim.Position) < ARSettings.WitnessedPacificationRadius &&
                 (!p.Faction.HostileTo(Victim.Faction) || p.story.traits.HasTrait(TraitDefOf.Bloodlust)) &&
                 p != Victim &&
                 p.CanSee(TargetThingA)
@@ -56,7 +53,7 @@ public class JobDriver_PacifyDownedPawn : JobDriver
         {
             if (witness.story.traits.HasTrait(TraitDefOf.Bloodlust))
             {
-                if (Rand.Value < ARSettings.witnessedPacificationPerHitChance)
+                if (Rand.Value < ARSettings.WitnessedPacificationPerHitChance)
                 {
                     witness.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf
                         .WitnessedPacificationBloodlust);
@@ -65,7 +62,7 @@ public class JobDriver_PacifyDownedPawn : JobDriver
 
             else if (!witness.story.traits.HasTrait(TraitDefOf.Psychopath))
             {
-                if (Rand.Value < ARSettings.witnessedPacificationPerHitChance)
+                if (Rand.Value < ARSettings.WitnessedPacificationPerHitChance)
                 {
                     witness.needs.mood.thoughts.memories.TryGainMemory(AdvancedRaidersDefOf.WitnessedPacification);
                 }

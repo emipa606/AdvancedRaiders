@@ -4,12 +4,10 @@ using Verse;
 
 namespace AdvancedRaiders;
 
-[HarmonyPatch(typeof(Building_TurretGun))]
-[HarmonyPatch("IsValidTarget")]
-internal static class TurretPatch
+[HarmonyPatch(typeof(Building_TurretGun), "IsValidTarget")]
+internal static class Building_TurretGun_IsValidTarget
 {
-    [HarmonyPostfix]
-    public static void DontShootPawnsWithBlueScreenBelt(Building_TurretGun __instance, ref bool __result, Thing t)
+    public static void Postfix(Building_TurretGun __instance, ref bool __result, Thing t)
     {
         if (t == null)
         {

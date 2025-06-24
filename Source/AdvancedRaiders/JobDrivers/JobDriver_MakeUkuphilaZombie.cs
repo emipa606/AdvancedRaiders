@@ -8,8 +8,8 @@ namespace AdvancedRaiders;
 
 public class JobDriver_MakeUkuphilaZombie : JobDriver
 {
-    public Corpse TargetCorpse => TargetThingA as Corpse;
-    public Thing UkuphilaHerb => TargetThingB;
+    private Corpse TargetCorpse => TargetThingA as Corpse;
+    private Thing UkuphilaHerb => TargetThingB;
 
     public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
@@ -26,7 +26,7 @@ public class JobDriver_MakeUkuphilaZombie : JobDriver
         yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.ClosestTouch);
         yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
         yield return Toils_General.Wait(100);
-        yield return Toils_General.Do(MakeUkuphilaZombie);
+        yield return Toils_General.Do(makeUkuphilaZombie);
         //better let zombies be controlled by lord
         /*yield return Toils_General.Do(() =>
             pawnToResurrect.mindState.mentalStateHandler.TryStartMentalState(
@@ -37,7 +37,7 @@ public class JobDriver_MakeUkuphilaZombie : JobDriver
                 transitionSilently: true));*/
     }
 
-    private void MakeUkuphilaZombie()
+    private void makeUkuphilaZombie()
     {
         var innerPawn = TargetCorpse.InnerPawn;
         SpecialUnitUtility.MakeUkuphilaZombie(innerPawn);

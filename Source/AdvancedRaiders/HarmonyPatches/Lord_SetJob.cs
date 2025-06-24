@@ -6,12 +6,10 @@ using Verse.AI.Group;
 
 namespace AdvancedRaiders;
 
-[HarmonyPatch(typeof(Lord))]
-[HarmonyPatch("SetJob")]
-public static class OogaBoogaGoWaaaagh
+[HarmonyPatch(typeof(Lord), nameof(Lord.SetJob))]
+public static class Lord_SetJob
 {
-    [HarmonyTranspiler]
-    public static IEnumerable<CodeInstruction> DontPanicFleeIfInspirerPresent(IEnumerable<CodeInstruction> instructions)
+    public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         foreach (var line in instructions)
         {

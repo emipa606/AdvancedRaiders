@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: taunted -->
+  <MurderousRageTaunted.label>taunted</MurderousRageTaunted.label>
+  <!-- EN: Mental state: taunted -->
+  <MurderousRageTaunted.baseInspectLine>Mental state: taunted</MurderousRageTaunted.baseInspectLine>
+  <!-- EN: ukuphila resurrected -->
+  <UkuphilaResurrectionPsychosis.label>ukuphila resurrected</UkuphilaResurrectionPsychosis.label>
+  <!-- EN: Mental state: ukuphila psyhosis -->
+  <UkuphilaResurrectionPsychosis.baseInspectLine>Mental state: ukuphila psyhosis</UkuphilaResurrectionPsychosis.baseInspectLine>
+</LanguageData>

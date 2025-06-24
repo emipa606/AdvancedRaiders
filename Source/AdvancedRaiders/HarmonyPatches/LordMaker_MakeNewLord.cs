@@ -5,12 +5,10 @@ using Verse.AI.Group;
 
 namespace AdvancedRaiders;
 
-[HarmonyPatch(typeof(LordMaker))]
-[HarmonyPatch("MakeNewLord")]
-internal static class LordMakerPatch
+[HarmonyPatch(typeof(LordMaker), nameof(LordMaker.MakeNewLord))]
+internal static class LordMaker_MakeNewLord
 {
-    [HarmonyPostfix]
-    public static void AddBeastmasterPets(IEnumerable<Pawn> startingPawns)
+    public static void Postfix(IEnumerable<Pawn> startingPawns)
     {
         if (startingPawns == null)
         {

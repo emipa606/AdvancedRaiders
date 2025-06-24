@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: alpha stimulant -->
+  <AlphaStimulantHigh.label>alpha stimulant</AlphaStimulantHigh.label>
+  <!-- EN: Alpha stimulant in the bloodstream. Subject's capacities are boosted for approximately 3 days. Unlike omega stimulant, subject won't suffer any negative effects. -->
+  <AlphaStimulantHigh.description>Alpha stimulant in the bloodstream. Subject's capacities are boosted for approximately 3 days. Unlike omega stimulant, subject won't suffer any negative effects.</AlphaStimulantHigh.description>
+  <!-- EN: decline -->
+  <AlphaStimulantHigh.stages.decline.label>decline</AlphaStimulantHigh.stages.decline.label>
+  <!-- EN: peak -->
+  <AlphaStimulantHigh.stages.peak.label>peak</AlphaStimulantHigh.stages.peak.label>
+  <!-- EN: omega stimulant -->
+  <OmegaStimulantHigh.label>omega stimulant</OmegaStimulantHigh.label>
+  <!-- EN: Omega stimulant in the bloodstream. Despite granting a huge strength, endurance and consciousness buffs at first, it soon backfires with extreme pain, delirium and, at the end, brain hemorrhage and, therefore, death. -->
+  <OmegaStimulantHigh.description>Omega stimulant in the bloodstream. Despite granting a huge strength, endurance and consciousness buffs at first, it soon backfires with extreme pain, delirium and, at the end, brain hemorrhage and, therefore, death.</OmegaStimulantHigh.description>
+  <!-- EN: peak -->
+  <OmegaStimulantHigh.stages.peak.label>peak</OmegaStimulantHigh.stages.peak.label>
+  <!-- EN: decline -->
+  <OmegaStimulantHigh.stages.decline.label>decline</OmegaStimulantHigh.stages.decline.label>
+  <!-- EN: reckoning -->
+  <OmegaStimulantHigh.stages.reckoning.label>reckoning</OmegaStimulantHigh.stages.reckoning.label>
+  <!-- EN: terminal -->
+  <OmegaStimulantHigh.stages.terminal.label>terminal</OmegaStimulantHigh.stages.terminal.label>
+  <!-- EN: ukuphila resurrection -->
+  <UkuphilaResurrection.label>ukuphila resurrection</UkuphilaResurrection.label>
+  <!-- EN: This person was resurrected with ukuphila herb. -->
+  <UkuphilaResurrection.description>This person was resurrected with ukuphila herb.</UkuphilaResurrection.description>
+  <!-- EN: animation -->
+  <UkuphilaResurrection.stages.animation.label>animation</UkuphilaResurrection.stages.animation.label>
+  <!-- EN: zhivaya water need -->
+  <ZhivayaWaterAddiction.label>zhivaya water need</ZhivayaWaterAddiction.label>
+  <!-- EN: This person needs regular zhivaya water doses. -->
+  <ZhivayaWaterAddiction.description>This person needs regular zhivaya water doses.</ZhivayaWaterAddiction.description>
+  <!-- EN: fulfilled -->
+  <ZhivayaWaterAddiction.stages.fulfilled.label>fulfilled</ZhivayaWaterAddiction.stages.fulfilled.label>
+  <!-- EN: unmet -->
+  <ZhivayaWaterAddiction.stages.unmet.label>unmet</ZhivayaWaterAddiction.stages.unmet.label>
+  <!-- EN: zhivaya water -->
+  <ZhivayaWaterHigh.label>zhivaya water</ZhivayaWaterHigh.label>
+  <!-- EN: Zhivaya water in the organism. It allows person to withstand injuries and diseases that otherwise would be lethal and keeps them alive after resurrection. Without regular doses they will die, even if they first took zhivaya water during lifetime. -->
+  <ZhivayaWaterHigh.description>Zhivaya water in the organism. It allows person to withstand injuries and diseases that otherwise would be lethal and keeps them alive after resurrection. Without regular doses they will die, even if they first took zhivaya water during lifetime.</ZhivayaWaterHigh.description>
+  <!-- EN: animation -->
+  <ZhivayaWaterHigh.stages.animation.label>animation</ZhivayaWaterHigh.stages.animation.label>
+</LanguageData>

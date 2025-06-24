@@ -5,7 +5,7 @@ namespace AdvancedRaiders;
 
 public class CompAbilityEffect_Taunt : CompAbilityEffect
 {
-    public new CompProperties_AbilityTaunt Props => (CompProperties_AbilityTaunt)props;
+    private new CompProperties_AbilityTaunt Props => (CompProperties_AbilityTaunt)props;
 
     public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
     {
@@ -15,7 +15,7 @@ public class CompAbilityEffect_Taunt : CompAbilityEffect
         }
 
         //base.Apply(target, dest);     //TODO make base apply work properly
-        if (!TryTauntPawn(target.Pawn))
+        if (!tryTauntPawn(target.Pawn))
         {
             Log.Warning($"Failed to taunt {target.Pawn.Name}");
         }
@@ -33,7 +33,7 @@ public class CompAbilityEffect_Taunt : CompAbilityEffect
         return Valid(target);
     }
 
-    private bool TryTauntPawn(Pawn target)
+    private bool tryTauntPawn(Pawn target)
     {
         if (!target.mindState.mentalStateHandler.TryStartMentalState(AdvancedRaidersDefOf.MurderousRageTaunted))
         {

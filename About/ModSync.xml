@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>dd8a38a9-4491-4694-875b-faf1b830579c</ID>
   <ModName>Advanced Raiders (Continued)</ModName>
-  <Version>1.5.0</Version>
+  <Version>1.6.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,3 +12,4 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+

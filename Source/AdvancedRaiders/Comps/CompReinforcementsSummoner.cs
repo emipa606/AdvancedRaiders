@@ -9,7 +9,7 @@ public class CompReinforcementsSummoner : ThingComp
     private IncidentParms parms;
     public int reinforcementsPoints = 250;
 
-    public CompProperties_ReinforcementsSummoner Props => props as CompProperties_ReinforcementsSummoner;
+    private CompProperties_ReinforcementsSummoner Props => props as CompProperties_ReinforcementsSummoner;
 
     public override void CompTick()
     {
@@ -18,9 +18,5 @@ public class CompReinforcementsSummoner : ThingComp
         if (_ageTicks > Props.reinforcementsDelay)
         {
         }
-    }
-
-    private void CallReinforcements()
-    {
     }
 }

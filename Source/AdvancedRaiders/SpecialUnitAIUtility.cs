@@ -25,11 +25,11 @@ public static class SpecialUnitAIUtility
             PathEndMode.OnCell,
             TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
             searchRadius,
-            Validator);
+            validator);
 
         return targetPawn != null;
 
-        bool Validator(Thing t)
+        bool validator(Thing t)
         {
             var pawn = t as Pawn;
             return pawn != null && pawn.RaceProps.Humanlike && pawn.Downed && pawn.Faction == medic.Faction &&
@@ -56,11 +56,11 @@ public static class SpecialUnitAIUtility
             PathEndMode.OnCell,
             TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
             searchRadius,
-            Validator);
+            validator);
 
         return target != null;
 
-        bool Validator(Thing t)
+        bool validator(Thing t)
         {
             var corpse = t as Corpse;
             return corpse != null && corpse.InnerPawn.RaceProps.Humanlike &&
@@ -83,11 +83,11 @@ public static class SpecialUnitAIUtility
             PathEndMode.ClosestTouch,
             TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
             searchRadius,
-            Validator);
+            validator);
 
         return turret != null;
 
-        bool Validator(Thing t)
+        bool validator(Thing t)
         {
             CompBreakdownable turretComp;
             if (t is Building building)
@@ -115,11 +115,11 @@ public static class SpecialUnitAIUtility
             PathEndMode.ClosestTouch,
             TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Some),
             searchRadius,
-            Validator);
+            validator);
 
         return targetPawn != null;
 
-        bool Validator(Thing t)
+        bool validator(Thing t)
         {
             var pawn = t as Pawn;
             return pawn != null && pawn.Faction.HostileTo(pacifier.Faction) && pawn.RaceProps.Humanlike &&
@@ -139,11 +139,11 @@ public static class SpecialUnitAIUtility
             PathEndMode.OnCell,
             TraverseParms.For(TraverseMode.NoPassClosedDoors),
             searchRadius,
-            Validator);
+            validator);
 
         return targetPawn != null;
 
-        bool Validator(Thing t)
+        bool validator(Thing t)
         {
             var pawn = t as Pawn;
             return pawn != null && pawn.Faction.HostileTo(dozer.Faction) &&

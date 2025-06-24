@@ -6,18 +6,18 @@ namespace AdvancedRaiders;
 
 public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
 {
-    protected Job MercenaryMedicJob(Pawn medic)
+    private static Job mercenaryMedicJob(Pawn medic)
     {
         if (!SpecialUnitAIUtility.TryFindOmegaStimShotTarget(medic, 20f, out var patient))
         {
             return null;
         }
 
-        var requiedThingDef = AdvancedRaidersDefOf.OmegaStimulant;
+        var requiredThingDef = AdvancedRaidersDefOf.OmegaStimulant;
         Thing thingToUse = null;
         foreach (var t in medic.inventory.GetDirectlyHeldThings())
         {
-            if (t.def != requiedThingDef)
+            if (t.def != requiredThingDef)
             {
                 continue;
             }
@@ -38,18 +38,18 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         return job;
     }
 
-    protected Job TribalMedicJob(Pawn medic)
+    private static Job tribalMedicJob(Pawn medic)
     {
         if (!SpecialUnitAIUtility.TryFindUkuphilaHerbResurrectionTarget(medic, 20f, out var targetCorpse))
         {
             return null;
         }
 
-        var requiedThingDef = AdvancedRaidersDefOf.UkuphilaHerb;
+        var requiredThingDef = AdvancedRaidersDefOf.UkuphilaHerb;
         Thing thingToUse = null;
         foreach (var t in medic.inventory.GetDirectlyHeldThings())
         {
-            if (t.def != requiedThingDef)
+            if (t.def != requiredThingDef)
             {
                 continue;
             }
@@ -71,7 +71,7 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
     }
 
 
-    protected Job MercenaryTechnicianJob(Pawn technician)
+    private static Job mercenaryTechnicianJob(Pawn technician)
     {
         if (!SpecialUnitAIUtility.TryFindBreakableEnemyTurret(technician, 30f, out var turretToBreak))
         {
@@ -84,7 +84,7 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         return job;
     }
 
-    protected Job InspirerJob(Pawn inspirer)
+    private static Job inspirerJob(Pawn inspirer)
     {
         var hediff = inspirer.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.SoreThroat);
         if (hediff is { Visible: true })
@@ -93,9 +93,12 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         }
 
         var ability = inspirer.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
-        if (ability is not { CanCast: true } || ability.Casting)
+        if (ability is not null)
         {
-            return null;
+            if (ability.CanCast || ability.Casting)
+            {
+                return null;
+            }
         }
 
         var job = JobMaker.MakeJob(JobDefOf
@@ -104,9 +107,9 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         return job;
     }
 
-    protected Job MercenaryPacifierJob(Pawn pacifier)
+    private static Job mercenaryPacifierJob(Pawn pacifier)
     {
-        if (!ARSettings.allowPacification)
+        if (!ARSettings.AllowPacification)
         {
             return null;
         }
@@ -122,7 +125,7 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         return job;
     }
 
-    protected Job EvacMasterOrFleeJob(Pawn beast)
+    private static Job evacMasterOrFleeJob(Pawn beast)
     {
         if (!RCellFinder.TryFindBestExitSpot(beast, out var evacSpot))
         {
@@ -154,7 +157,7 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         return job;
     }
 
-    protected Job MercenaryBulldozerJob(Pawn dozer)
+    private static Job mercenaryBulldozerJob(Pawn dozer)
     {
         var canUseAbility = !SpecialUnitUtility.TooManyColonistsTaunted(dozer.Map) &&
                             dozer.CurJobDef != JobDefOf.CastAbilityOnThing;
@@ -165,9 +168,12 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
 
         var ability = dozer.abilities.GetAbility(AdvancedRaidersDefOf.TauntAbility);
 
-        if (ability is not { CanCast: true } || ability.Casting)
+        if (ability is not null)
         {
-            return null;
+            if (ability.CanCast || ability.Casting)
+            {
+                return null;
+            }
         }
 
         if (!SpecialUnitAIUtility.TryFindTauntTarget(dozer, 30, out var victim))
@@ -178,7 +184,7 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         var job = JobMaker.MakeJob(JobDefOf.CastAbilityOnThing);
         job.targetA = victim;
         job.ability = ability;
-        job.verbToUse = ability.verb;
+        job.verbToUse = ability?.verb;
         job.count = 1;
         return job;
     }
@@ -191,27 +197,27 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         switch (SpecialUnitUtility.AdvancedRaiderClass(pawn))
         {
             case PawnClass.MercenaryMedic:
-                return MercenaryMedicJob(pawn);
+                return mercenaryMedicJob(pawn);
 
             case PawnClass.MercenaryBulldozer:
-                return MercenaryBulldozerJob(pawn);
+                return mercenaryBulldozerJob(pawn);
 
             case PawnClass.MercenaryPacifier:
-                return MercenaryPacifierJob(pawn);
+                return mercenaryPacifierJob(pawn);
 
             case PawnClass.MercenaryTechnician:
-                return MercenaryTechnicianJob(pawn);
+                return mercenaryTechnicianJob(pawn);
 
             case PawnClass.TribalMedic:
-                return TribalMedicJob(pawn);
+                return tribalMedicJob(pawn);
 
             case PawnClass.TribalInspirer:
-                return InspirerJob(pawn);
+                return inspirerJob(pawn);
 
             case PawnClass.TribalBeastmaster:
                 break; //those guys have no special abilities
         }
 
-        return pawn.RaceProps.Animal ? EvacMasterOrFleeJob(pawn) : null;
+        return pawn.RaceProps.Animal ? evacMasterOrFleeJob(pawn) : null;
     }
 }

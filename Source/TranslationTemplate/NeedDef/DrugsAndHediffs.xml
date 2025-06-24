@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: zhivaya water -->
+  <Chemical_ZhivayaWater.label>zhivaya water</Chemical_ZhivayaWater.label>
+  <!-- EN: Revived with zhivaya water. Without regular doses this person will pass away. -->
+  <Chemical_ZhivayaWater.description>Revived with zhivaya water. Without regular doses this person will pass away.</Chemical_ZhivayaWater.description>
+</LanguageData>

@@ -28,6 +28,6 @@ public class ThoughtWorker_PacifierPTSD : ThoughtWorker
 
     public override float MoodMultiplier(Pawn p)
     {
-        return ARSettings.ptsdMultipiler;
+        return ARSettings.PtsdMultiplier;
     }
 }

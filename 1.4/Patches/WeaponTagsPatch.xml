@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Patch>
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/ThingDef[defName = "Gun_PumpShotgun" or defName ="Gun_ChainShotgun" or defName="Gun_LMG" or defName="Gun_Minigun"]/weaponTags</xpath>

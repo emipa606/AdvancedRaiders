@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: burnt flare -->
+  <Filth_BurntFlare.label>burnt flare</Filth_BurntFlare.label>
+  <!-- EN: reinforcements flare -->
+  <ReinforcementsFlareIgnited.label>reinforcements flare</ReinforcementsFlareIgnited.label>
+  <!-- EN: extinguish reinforcements flare -->
+  <ReinforcementsFlareIgnited.comps.CompUsable.useLabel>extinguish reinforcements flare</ReinforcementsFlareIgnited.comps.CompUsable.useLabel>
+</LanguageData>

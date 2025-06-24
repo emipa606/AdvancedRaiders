@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: alpha stimulant -->
+  <AlphaStimulant.label>alpha stimulant</AlphaStimulant.label>
+  <!-- EN: Unlike its precursor, omega stimulant, alpha's positive effects are much longer and won't end with horrible death, but they has much less impact on subject's combat capabilities. \n\nWhile still being far from glitterworld stimulants, it is highly valued by merchants. -->
+  <AlphaStimulant.description>Unlike its precursor, omega stimulant, alpha's positive effects are much longer and won't end with horrible death, but they has much less impact on subject's combat capabilities. 
+
+While still being far from glitterworld stimulants, it is highly valued by merchants.</AlphaStimulant.description>
+  <!-- EN: Inject {0} -->
+  <AlphaStimulant.ingestible.ingestCommandString>Inject {0}</AlphaStimulant.ingestible.ingestCommandString>
+  <!-- EN: Injecting {0}. -->
+  <AlphaStimulant.ingestible.ingestReportString>Injecting {0}.</AlphaStimulant.ingestible.ingestReportString>
+  <!-- EN: omega stimulant -->
+  <OmegaStimulant.label>omega stimulant</OmegaStimulant.label>
+  <!-- EN: Quite effective combat drug created in attempt of reverse-engineering glitterworld stimulants. Just like original, it boosts reaction, edurance and strength, hardens skin and keeps its flexibility at the same time, and on top of that has a painkiller effect.\n\nStill, this is only replica of high-tech stimulants. In 2 hours after injection effects start to fade and 5 hours after injection soldier dies in terrifying agony. -->
+  <OmegaStimulant.description>Quite effective combat drug created in attempt of reverse-engineering glitterworld stimulants. Just like original, it boosts reaction, edurance and strength, hardens skin and keeps its flexibility at the same time, and on top of that has a painkiller effect.
+
+Still, this is only replica of high-tech stimulants. In 2 hours after injection effects start to fade and 5 hours after injection soldier dies in terrifying agony.</OmegaStimulant.description>
+  <!-- EN: Inject {0} -->
+  <OmegaStimulant.ingestible.ingestCommandString>Inject {0}</OmegaStimulant.ingestible.ingestCommandString>
+  <!-- EN: Injecting {0}. -->
+  <OmegaStimulant.ingestible.ingestReportString>Injecting {0}.</OmegaStimulant.ingestible.ingestReportString>
+  <!-- EN: ukuphila herb -->
+  <UkuphilaHerb.label>ukuphila herb</UkuphilaHerb.label>
+  <!-- EN: A result of archotechs-know-what rituals on anima grass. Some tribal healers use it to give those who perished on the battlefield a second chance to fulfill their duty to the tribe.\n\n"Resurrected" in such way person can be best described as zombie as they are incapable of anything but fighting. They are quite tenacious, but death will come for them eventually. While they remember their faction, they will attack any outsider they see, even ally. -->
+  <UkuphilaHerb.description>A result of archotechs-know-what rituals on anima grass. Some tribal healers use it to give those who perished on the battlefield a second chance to fulfill their duty to the tribe.
+
+"Resurrected" in such way person can be best described as zombie as they are incapable of anything but fighting. They are quite tenacious, but death will come for them eventually. While they remember their faction, they will attack any outsider they see, even ally.</UkuphilaHerb.description>
+  <!-- EN: zhivaya water -->
+  <ZhivayaWater.label>zhivaya water</ZhivayaWater.label>
+  <!-- EN: Distilled, fermented and treated with gold-plasteel electrosys ukuphila herb infusion. Can be used to resurrect the dead, but new dose will be needed every five days to keep them alive.\n\nMankind has always wished to find elixir of life. This liquid is, perhaps, its best attempt at making one, and still, the life it grants has its price. The rich of the glitterworlds, however, prefer to forget about methods its main ingridient, ukuphila herb, produced. -->
+  <ZhivayaWater.description>Distilled, fermented and treated with gold-plasteel electrosys ukuphila herb infusion. Can be used to resurrect the dead, but new dose will be needed every five days to keep them alive.
+
+Mankind has always wished to find elixir of life. This liquid is, perhaps, its best attempt at making one, and still, the life it grants has its price. The rich of the glitterworlds, however, prefer to forget about methods its main ingridient, ukuphila herb, produced.</ZhivayaWater.description>
+  <!-- EN: Use zhivaya water -->
+  <ZhivayaWater.comps.CompUsable.useLabel>Use zhivaya water</ZhivayaWater.comps.CompUsable.useLabel>
+  <!-- EN: Drink {0} -->
+  <ZhivayaWater.ingestible.ingestCommandString>Drink {0}</ZhivayaWater.ingestible.ingestCommandString>
+  <!-- EN: Drinking {0}. -->
+  <ZhivayaWater.ingestible.ingestReportString>Drinking {0}.</ZhivayaWater.ingestible.ingestReportString>
+</LanguageData>

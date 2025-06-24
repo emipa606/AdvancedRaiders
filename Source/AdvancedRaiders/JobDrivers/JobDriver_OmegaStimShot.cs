@@ -8,12 +8,12 @@ namespace AdvancedRaiders;
 
 public class JobDriver_OmegaStimShot : JobDriver
 {
-    public Pawn FirstAidTarget => TargetThingA as Pawn;
+    private Pawn FirstAidTarget => TargetThingA as Pawn;
     public Thing FirstAidDrug => TargetThingB;
 
     public bool FirstAidTargetIsMobile => FirstAidTarget.health.State == PawnHealthState.Mobile;
 
-    private bool NoNeedInOmegaStim()
+    private bool noNeedInOmegaStim()
     {
         return FirstAidTarget.health.State != PawnHealthState.Down ||
                FirstAidTarget.health.hediffSet.HasHediff(AdvancedRaidersDefOf.OmegaStimulantHigh);
@@ -22,7 +22,7 @@ public class JobDriver_OmegaStimShot : JobDriver
     protected override IEnumerable<Toil> MakeNewToils()
     {
         this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-        AddFailCondition(NoNeedInOmegaStim);
+        AddFailCondition(noNeedInOmegaStim);
         AddFailCondition(() => !GetActor().CanReserve(TargetA) && !GetActor().HasReserved(TargetA));
 
         yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);

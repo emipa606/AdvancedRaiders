@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: breaking TargetA. -->
+  <BreakTurret.reportString>breaking TargetA.</BreakTurret.reportString>
+  <!-- EN: extinguishing TargetA. -->
+  <ExtinguishReinforcementsFlare.reportString>extinguishing TargetA.</ExtinguishReinforcementsFlare.reportString>
+  <!-- EN: inspiring. -->
+  <InspireAllies.reportString>inspiring.</InspireAllies.reportString>
+  <!-- EN: trying to kill TargetA. -->
+  <KillTaunter.reportString>trying to kill TargetA.</KillTaunter.reportString>
+  <!-- EN: making ukuphila zombie from TargetA. -->
+  <MakeUkuphilaZombie.reportString>making ukuphila zombie from TargetA.</MakeUkuphilaZombie.reportString>
+  <!-- EN: injecting omega stimulant to TargetA. -->
+  <OmegaStimShot.reportString>injecting omega stimulant to TargetA.</OmegaStimShot.reportString>
+  <!-- EN: pacifing TargetA. -->
+  <PacifyDownedPawn.reportString>pacifing TargetA.</PacifyDownedPawn.reportString>
+  <!-- EN: resurrecting TargetA. -->
+  <ZhivayaResurrection.reportString>resurrecting TargetA.</ZhivayaResurrection.reportString>
+</LanguageData>

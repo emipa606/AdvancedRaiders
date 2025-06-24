@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: electrical spasm -->
+  <ElectricalSpasm.label>electrical spasm</ElectricalSpasm.label>
+  <!-- EN: General spasms caused by multipile elictical discharges. It can cause an extreme pain along with paralysis due to muscle strains. However it dissipates quickly and can be deadly only if patient has to run away from something (or someone) already treating their life. -->
+  <ElectricalSpasm.description>General spasms caused by multipile elictical discharges. It can cause an extreme pain along with paralysis due to muscle strains. However it dissipates quickly and can be deadly only if patient has to run away from something (or someone) already treating their life.</ElectricalSpasm.description>
+  <!-- EN: slight pain -->
+  <ElectricalSpasm.stages.slight_pain.label>slight pain</ElectricalSpasm.stages.slight_pain.label>
+  <!-- EN: moderate pain -->
+  <ElectricalSpasm.stages.moderate_pain.label>moderate pain</ElectricalSpasm.stages.moderate_pain.label>
+  <!-- EN: extreme pain -->
+  <ElectricalSpasm.stages.extreme_pain.label>extreme pain</ElectricalSpasm.stages.extreme_pain.label>
+  <!-- EN: paralysis -->
+  <ElectricalSpasm.stages.paralysis.label>paralysis</ElectricalSpasm.stages.paralysis.label>
+  <!-- EN: inspiration -->
+  <InspirationHediff.label>inspiration</InspirationHediff.label>
+  <!-- EN: General improvement in mood and body condition. It may be placebo, but it surely does make person a better combatant. -->
+  <InspirationHediff.description>General improvement in mood and body condition. It may be placebo, but it surely does make person a better combatant.</InspirationHediff.description>
+  <!-- EN: motivated -->
+  <InspirationHediff.stages.motivated.label>motivated</InspirationHediff.stages.motivated.label>
+  <!-- EN: enthusiastic -->
+  <InspirationHediff.stages.enthusiastic.label>enthusiastic</InspirationHediff.stages.enthusiastic.label>
+  <!-- EN: battle trance -->
+  <InspirationHediff.stages.battle_trance.label>battle trance</InspirationHediff.stages.battle_trance.label>
+  <!-- EN: post traumatic stress disorder -->
+  <PacifierPTSD.label>post traumatic stress disorder</PacifierPTSD.label>
+  <!-- EN: Mental and behavioral disorder caused by traumatic event. Its symptoms include tremor, delirium, hallucinations and fatigue. At late stages it can cause extreme mental breaks. -->
+  <PacifierPTSD.description>Mental and behavioral disorder caused by traumatic event. Its symptoms include tremor, delirium, hallucinations and fatigue. At late stages it can cause extreme mental breaks.</PacifierPTSD.description>
+  <!-- EN: bad memories -->
+  <PacifierPTSD.stages.bad_memories.label>bad memories</PacifierPTSD.stages.bad_memories.label>
+  <!-- EN: shock -->
+  <PacifierPTSD.stages.shock.label>shock</PacifierPTSD.stages.shock.label>
+  <!-- EN: psychological trauma -->
+  <PacifierPTSD.stages.psychological_trauma.label>psychological trauma</PacifierPTSD.stages.psychological_trauma.label>
+  <!-- EN: flashbacks -->
+  <PacifierPTSD.stages.flashbacks.label>flashbacks</PacifierPTSD.stages.flashbacks.label>
+  <!-- EN: sore throat -->
+  <SoreThroat.label>sore throat</SoreThroat.label>
+  <!-- EN: Pain and irritation of the throat caused by yelling. Not dangerous, but will make person unable to speak loudly for some time. -->
+  <SoreThroat.description>Pain and irritation of the throat caused by yelling. Not dangerous, but will make person unable to speak loudly for some time.</SoreThroat.description>
+  <!-- EN: mild -->
+  <SoreThroat.stages.mild.label>mild</SoreThroat.stages.mild.label>
+  <!-- EN: moderate -->
+  <SoreThroat.stages.moderate.label>moderate</SoreThroat.stages.moderate.label>
+</LanguageData>

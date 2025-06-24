@@ -7,10 +7,10 @@ public class MentalState_MurderousRageTaunted : MentalState
 {
     public Pawn target;
 
-    public override void MentalStateTick()
+    public override void MentalStateTick(int delta)
     {
-        base.MentalStateTick();
-        if (!pawn.IsHashIntervalTick(120))
+        base.MentalStateTick(delta);
+        if (!pawn.IsHashIntervalTick(120, delta))
         {
             return;
         }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: install you-wall implant -->
+  <InstallYouWallImplant.label>install you-wall implant</InstallYouWallImplant.label>
+  <!-- EN: Install a you-wall implant. -->
+  <InstallYouWallImplant.description>Install a you-wall implant.</InstallYouWallImplant.description>
+  <!-- EN: Installing you-wall implant. -->
+  <InstallYouWallImplant.jobString>Installing you-wall implant.</InstallYouWallImplant.jobString>
+  <!-- EN: remove you-wall implant -->
+  <RemoveYouWallImplant.label>remove you-wall implant</RemoveYouWallImplant.label>
+  <!-- EN: Remove you-wall implant. -->
+  <RemoveYouWallImplant.description>Remove you-wall implant.</RemoveYouWallImplant.description>
+  <!-- EN: Removing you-wall implant. -->
+  <RemoveYouWallImplant.jobString>Removing you-wall implant.</RemoveYouWallImplant.jobString>
+</LanguageData>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: blue screen belt -->
+  <Apparel_BlueScreenBelt.label>blue screen belt</Apparel_BlueScreenBelt.label>
+  <!-- EN: Makeshift cloacking device made by some engineer of questionable qualifications. It hides user's infrared signature and therefore makes turrets unable to detect them. Mechanoids, however, cant be fooled with this primitive trick as they use more advanced sensors to search for target. -->
+  <Apparel_BlueScreenBelt.description>Makeshift cloacking device made by some engineer of questionable qualifications. It hides user's infrared signature and therefore makes turrets unable to detect them. Mechanoids, however, cant be fooled with this primitive trick as they use more advanced sensors to search for target.</Apparel_BlueScreenBelt.description>
+</LanguageData>

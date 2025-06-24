@@ -22,7 +22,7 @@ public class JobDriver_BreakTurret : JobDriver
         yield return Toils_Goto.Goto(TargetIndex.A, PathEndMode.ClosestTouch);
         yield return Toils_General.Wait(100);
 
-        if (Rand.Value > ARSettings.turretBugChance)
+        if (Rand.Value > ARSettings.TurretBugChance)
         {
             //break turret
             yield return Toils_General.Do(() =>

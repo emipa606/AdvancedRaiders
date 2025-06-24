@@ -11,8 +11,8 @@ public class CompAbilityEffect_InspireAllies : CompAbilityEffect
 
     public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
     {
-        InspireAlliesInRange(parent.pawn.Position);
-        GiveSoreThroatHediff(parent.pawn);
+        inspireAlliesInRange(parent.pawn.Position);
+        giveSoreThroatHediff(parent.pawn);
     }
 
     public override void Apply(GlobalTargetInfo target)
@@ -21,7 +21,7 @@ public class CompAbilityEffect_InspireAllies : CompAbilityEffect
         //rewrite later
     }
 
-    private void InspireAlliesInRange(LocalTargetInfo center)
+    private void inspireAlliesInRange(LocalTargetInfo center)
     {
         var alliesInRange =
             from p in parent.pawn.Map.mapPawns.FreeHumanlikesSpawnedOfFaction(parent.pawn.Faction)
@@ -30,7 +30,7 @@ public class CompAbilityEffect_InspireAllies : CompAbilityEffect
 
         foreach (var pawn in alliesInRange)
         {
-            InspirePawn(pawn);
+            inspirePawn(pawn);
         }
     }
 
@@ -45,18 +45,15 @@ public class CompAbilityEffect_InspireAllies : CompAbilityEffect
         return CanApplyOn(null, null);
     }
 
-    private void InspirePawn(Pawn pawn)
+    private void inspirePawn(Pawn pawn)
     {
-        var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.InspirationHediff);
-        if (hediff == null)
-        {
-            hediff = pawn.health.AddHediff(AdvancedRaidersDefOf.InspirationHediff);
-        }
+        var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.InspirationHediff) ??
+                     pawn.health.AddHediff(AdvancedRaidersDefOf.InspirationHediff);
 
-        hediff.Severity += Props.inspirationStrength * InspirationMultipiler(pawn) * ARSettings.inspirationMultipiler;
+        hediff.Severity += Props.inspirationStrength * inspirationMultiplier(pawn) * ARSettings.InspirationMultiplier;
     }
 
-    private float InspirationMultipiler(Pawn pawn)
+    private static float inspirationMultiplier(Pawn pawn)
     {
         var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.InspirationHediff);
 
@@ -68,14 +65,11 @@ public class CompAbilityEffect_InspireAllies : CompAbilityEffect
         return hediff.Severity > 1 ? 0 : 1 - hediff.Severity;
     }
 
-    private void GiveSoreThroatHediff(Pawn pawn)
+    private void giveSoreThroatHediff(Pawn pawn)
     {
-        var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.SoreThroat);
-        if (hediff == null)
-        {
-            hediff = pawn.health.AddHediff(AdvancedRaidersDefOf.SoreThroat);
-        }
+        var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AdvancedRaidersDefOf.SoreThroat) ??
+                     pawn.health.AddHediff(AdvancedRaidersDefOf.SoreThroat);
 
-        hediff.Severity += 0.1f * Props.soreThroatEffectFactor * ARSettings.soreThroatMultipiler;
+        hediff.Severity += 0.1f * Props.soreThroatEffectFactor * ARSettings.SoreThroatMultiplier;
     }
 }

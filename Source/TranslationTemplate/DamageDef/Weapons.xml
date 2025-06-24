@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: tase -->
+  <ShockBatonTase.label>tase</ShockBatonTase.label>
+  <!-- EN: {0} has been beaten to death. -->
+  <ShockBatonTase.deathMessage>{0} has been beaten to death.</ShockBatonTase.deathMessage>
+</LanguageData>

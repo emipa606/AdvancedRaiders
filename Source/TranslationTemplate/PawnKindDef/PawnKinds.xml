@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: bulldozer -->
+  <Mercenary_Bulldozer.label>bulldozer</Mercenary_Bulldozer.label>
+  <!-- EN: mercenary medic -->
+  <Mercenary_MedicMelee.label>mercenary medic</Mercenary_MedicMelee.label>
+  <!-- EN: mercenary medic -->
+  <Mercenary_MedicRanged.label>mercenary medic</Mercenary_MedicRanged.label>
+  <!-- EN: mercenary technician -->
+  <Mercenary_Technician.label>mercenary technician</Mercenary_Technician.label>
+  <!-- EN: pacifier -->
+  <MercenaryPacifier_Bloodlust.label>pacifier</MercenaryPacifier_Bloodlust.label>
+  <!-- EN: pacifier -->
+  <MercenaryPacifier_Psychopath.label>pacifier</MercenaryPacifier_Psychopath.label>
+  <!-- EN: beastmaster -->
+  <Tribal_Beastmaster.label>beastmaster</Tribal_Beastmaster.label>
+  <!-- EN: commander chief -->
+  <Tribal_ChiefCommanderMelee.label>commander chief</Tribal_ChiefCommanderMelee.label>
+  <!-- EN: commander chief -->
+  <Tribal_ChiefCommanderRanged.label>commander chief</Tribal_ChiefCommanderRanged.label>
+  <!-- EN: tribal medic -->
+  <Tribal_MedicMelee.label>tribal medic</Tribal_MedicMelee.label>
+  <!-- EN: tribal medic -->
+  <Tribal_MedicRanged.label>tribal medic</Tribal_MedicRanged.label>
+</LanguageData>

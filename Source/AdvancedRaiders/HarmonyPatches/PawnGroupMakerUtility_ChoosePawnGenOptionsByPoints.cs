@@ -5,9 +5,8 @@ using Verse;
 
 namespace AdvancedRaiders;
 
-[HarmonyPatch(typeof(PawnGroupMakerUtility))]
-[HarmonyPatch("ChoosePawnGenOptionsByPoints")]
-internal static class RemoveDisabledPawnsPatch
+[HarmonyPatch(typeof(PawnGroupMakerUtility), nameof(PawnGroupMakerUtility.ChoosePawnGenOptionsByPoints))]
+internal static class PawnGroupMakerUtility_ChoosePawnGenOptionsByPoints
 {
     private static readonly PawnKindDef scavDef = DefDatabase<PawnKindDef>.GetNamedSilentFail("Scavenger");
 
@@ -20,9 +19,7 @@ internal static class RemoveDisabledPawnsPatch
     private static readonly PawnKindDef gunnerDef = DefDatabase<PawnKindDef>.GetNamedSilentFail("Mercenary_Gunner");
 
     //TODO add AR frequency controls
-    [HarmonyPostfix]
-    public static IEnumerable<PawnGenOptionWithXenotype> ReplaceDisabledRaiderTypesWithNeutral(
-        IEnumerable<PawnGenOptionWithXenotype> options)
+    public static IEnumerable<PawnGenOptionWithXenotype> Postfix(IEnumerable<PawnGenOptionWithXenotype> options)
     {
         if (options == null)
         {

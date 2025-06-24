@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: inspire allies -->
+  <InspireAlliesAbility.label>inspire allies</InspireAlliesAbility.label>
+  <!-- EN: Shout out inspiring phrases and slogans to improve combat capabilities of allies. Cant be done with sore throat. -->
+  <InspireAlliesAbility.description>Shout out inspiring phrases and slogans to improve combat capabilities of allies. Cant be done with sore throat.</InspireAlliesAbility.description>
+  <!-- EN: taunt -->
+  <TauntAbility.label>taunt</TauntAbility.label>
+  <!-- EN: Fill the target with immense hatred towards caster. Subject will try to kill caster for some time and wont stop even if their object of hatred is downed.\n\nSome say bulldozer's unique ability to pull fire on themselfs is a result of natural psylink formed during exhausting trainings. But it seems they are just good at pissing off people. -->
+  <TauntAbility.description>Fill the target with immense hatred towards caster. Subject will try to kill caster for some time and wont stop even if their object of hatred is downed.
+
+Some say bulldozer's unique ability to pull fire on themselfs is a result of natural psylink formed during exhausting trainings. But it seems they are just good at pissing off people.</TauntAbility.description>
+</LanguageData>

@@ -5,18 +5,17 @@ using Verse;
 
 namespace AdvancedRaiders;
 
-[StaticConstructorOnStartup]
 public class AdvancedRaiders : Mod
 {
-    public static ARSettings settings;
-    public static Harmony harmonyInstance;
-    public static string currentVersion;
+    public static ARSettings Settings;
+    public static Harmony HarmonyInstance;
+    public static string CurrentVersion;
 
     public AdvancedRaiders(ModContentPack content) : base(content)
     {
         GetSettings<ARSettings>().Write();
-        harmonyInstance = new Harmony("saloid.AdvancedRaiders");
-        currentVersion =
+        HarmonyInstance = new Harmony("saloid.AdvancedRaiders");
+        CurrentVersion =
             VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 

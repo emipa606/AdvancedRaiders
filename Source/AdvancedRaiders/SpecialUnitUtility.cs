@@ -9,7 +9,7 @@ namespace AdvancedRaiders;
 
 public static class SpecialUnitUtility
 {
-    private static readonly Random rng = new Random();
+    private static readonly Random rng = new();
 
     public static IEnumerable<Pawn> GenBeastmasterPetsAndRelations(Pawn beastmaster)
     {
@@ -157,27 +157,7 @@ public static class SpecialUnitUtility
             return true;
         }
 
-        return (double)taunted / total > ARSettings.maxColonistsTauntedCoef;
-    }
-
-    public static bool AtLeastNAlliesInInspireRadius(int nPawns, Pawn caster)
-    {
-        var ability = caster.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
-        if (ability == null)
-        {
-            return false;
-        }
-
-        var radius = ((CompAbilityEffect_InspireAllies)ability.comps.Find(c => c is CompAbilityEffect_InspireAllies))
-            .Props.radius;
-        var pawnsInRadius =
-            from p in caster.Map.mapPawns.FreeColonistsSpawned
-            where p.Position.DistanceTo(caster.Position) < radius &&
-                  p.health.State == PawnHealthState.Mobile &&
-                  p.Faction == caster.Faction
-            select p;
-
-        return pawnsInRadius.Count() - 1 >= nPawns; //-1 for caster themselves
+        return (double)taunted / total > ARSettings.MaxColonistsTauntedCoef;
     }
 
     public static bool IsAllowedAdvancedRaiderClass(PawnClass unitClass)
@@ -187,19 +167,19 @@ public static class SpecialUnitUtility
             case PawnClass.None:
                 return false;
             case PawnClass.MercenaryMedic:
-                return ARSettings.allowMercMedics;
+                return ARSettings.AllowMercMedics;
             case PawnClass.MercenaryTechnician:
-                return ARSettings.allowTechnicians;
+                return ARSettings.AllowTechnicians;
             case PawnClass.MercenaryPacifier:
-                return ARSettings.allowPacifiers;
+                return ARSettings.AllowPacifiers;
             case PawnClass.MercenaryBulldozer:
-                return ARSettings.allowBulldozers;
+                return ARSettings.AllowBulldozers;
             case PawnClass.TribalMedic:
-                return ARSettings.allowTribalMedics;
+                return ARSettings.AllowTribalMedics;
             case PawnClass.TribalBeastmaster:
-                return ARSettings.allowBeastmasters;
+                return ARSettings.AllowBeastmasters;
             case PawnClass.TribalInspirer:
-                return ARSettings.allowCommanderChiefs;
+                return ARSettings.AllowCommanderChiefs;
             default:
                 return false;
         }

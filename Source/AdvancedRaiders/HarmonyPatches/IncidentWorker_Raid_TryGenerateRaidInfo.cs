@@ -5,12 +5,10 @@ using Verse;
 
 namespace AdvancedRaiders;
 
-[HarmonyPatch(typeof(IncidentWorker_Raid))]
-[HarmonyPatch("TryGenerateRaidInfo")]
-internal static class SpawnBeastmasterPetsPatch
+[HarmonyPatch(typeof(IncidentWorker_Raid), nameof(IncidentWorker_Raid.TryGenerateRaidInfo))]
+internal static class IncidentWorker_Raid_TryGenerateRaidInfo
 {
-    [HarmonyPostfix]
-    public static void SpawnBeasts(bool __result, ref List<Pawn> pawns, IncidentParms parms)
+    public static void Postfix(bool __result, ref List<Pawn> pawns, IncidentParms parms)
     {
         if (!__result || pawns == null)
         {

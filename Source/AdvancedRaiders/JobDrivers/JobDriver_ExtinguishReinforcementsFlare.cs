@@ -19,10 +19,10 @@ public class JobDriver_ExtinguishReinforcementsFlare : JobDriver
         waitToil.FailOnDespawnedOrNull(TargetIndex.A);
         waitToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
         yield return waitToil;
-        yield return Toils_General.Do(Extinguish);
+        yield return Toils_General.Do(extinguish);
     }
 
-    private void Extinguish()
+    private void extinguish()
     {
         GenSpawn.Spawn(AdvancedRaidersDefOf.Filth_BurntFlare, TargetLocA, Map);
         TargetThingA.Destroy();

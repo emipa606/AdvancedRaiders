@@ -8,6 +8,6 @@ internal class Patch
 {
     static Patch()
     {
-        AdvancedRaiders.harmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
+        AdvancedRaiders.HarmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
     }
 }

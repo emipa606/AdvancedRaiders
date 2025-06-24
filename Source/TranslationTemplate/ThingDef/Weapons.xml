@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: shock baton -->
+  <MeleeWeapon_ShockBaton.label>shock baton</MeleeWeapon_ShockBaton.label>
+  <!-- EN: This baton was designed in some urban world to be used for crowd control. Its distinctive crackling itself can pacify rioters and electrical shock will finish the most tough ones. Sadly, some sadists like to use it to fulfill their lust for violence. -->
+  <MeleeWeapon_ShockBaton.description>This baton was designed in some urban world to be used for crowd control. Its distinctive crackling itself can pacify rioters and electrical shock will finish the most tough ones. Sadly, some sadists like to use it to fulfill their lust for violence.</MeleeWeapon_ShockBaton.description>
+  <!-- EN: shock head -->
+  <MeleeWeapon_ShockBaton.tools.shock_head.label>shock head</MeleeWeapon_ShockBaton.tools.shock_head.label>
+</LanguageData>

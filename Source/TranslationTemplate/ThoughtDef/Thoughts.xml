@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: bad memories -->
+  <PacifierPTSDThought.stages.bad_memories.label>bad memories</PacifierPTSDThought.stages.bad_memories.label>
+  <!-- EN: A pacifier beat me up with laughter. It was quite painful and humilating. -->
+  <PacifierPTSDThought.stages.bad_memories.description>A pacifier beat me up with laughter. It was quite painful and humilating.</PacifierPTSDThought.stages.bad_memories.description>
+  <!-- EN: shock -->
+  <PacifierPTSDThought.stages.shock.label>shock</PacifierPTSDThought.stages.shock.label>
+  <!-- EN: This electrical crackling, this psychopatic smile... I dont want to meet one of those pacifiers again! -->
+  <PacifierPTSDThought.stages.shock.description>This electrical crackling, this psychopatic smile... I dont want to meet one of those pacifiers again!</PacifierPTSDThought.stages.shock.description>
+  <!-- EN: psychological trauma -->
+  <PacifierPTSDThought.stages.psychological_trauma.label>psychological trauma</PacifierPTSDThought.stages.psychological_trauma.label>
+  <!-- EN: I cant sleep... Wherenever I lie down I feel a boot crushing my rib cage. -->
+  <PacifierPTSDThought.stages.psychological_trauma.description>I cant sleep... Wherenever I lie down I feel a boot crushing my rib cage.</PacifierPTSDThought.stages.psychological_trauma.description>
+  <!-- EN: flashbacks -->
+  <PacifierPTSDThought.stages.flashbacks.label>flashbacks</PacifierPTSDThought.stages.flashbacks.label>
+  <!-- EN: NOT AGAIN! GET AWAY FROM ME!!! -->
+  <PacifierPTSDThought.stages.flashbacks.description>NOT AGAIN! GET AWAY FROM ME!!!</PacifierPTSDThought.stages.flashbacks.description>
+  <!-- EN: Witnessed pacification -->
+  <WitnessedPacification.stages.Witnessed_pacification.label>Witnessed pacification</WitnessedPacification.stages.Witnessed_pacification.label>
+  <!-- EN: The way this pacifier beat helpless person... I still hear their screams sometimes. -->
+  <WitnessedPacification.stages.Witnessed_pacification.description>The way this pacifier beat helpless person... I still hear their screams sometimes.</WitnessedPacification.stages.Witnessed_pacification.description>
+  <!-- EN: Witnessed pacification -->
+  <WitnessedPacificationBloodlust.stages.Witnessed_pacification.label>Witnessed pacification</WitnessedPacificationBloodlust.stages.Witnessed_pacification.label>
+  <!-- EN: Watching this sucker screaming in pain and coughing blood was quite amusing! -->
+  <WitnessedPacificationBloodlust.stages.Witnessed_pacification.description>Watching this sucker screaming in pain and coughing blood was quite amusing!</WitnessedPacificationBloodlust.stages.Witnessed_pacification.description>
+</LanguageData>
