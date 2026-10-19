@@ -14,9 +14,6 @@ public class CompReinforcementsSummoner : ThingComp
     public override void CompTick()
     {
         base.CompTick();
-        _ageTicks++; //TODO make age increase less frequent
-        if (_ageTicks > Props.reinforcementsDelay)
-        {
-        }
+        _ageTicks++;
     }
 }

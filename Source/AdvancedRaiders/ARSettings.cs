@@ -91,10 +91,10 @@ public class ARSettings : ModSettings
         listingStandard.CheckboxLabeled("AdRa.allowTribalMedics".Translate(), ref AllowTribalMedics);
         listingStandard.CheckboxLabeled("AdRa.allowBeastmasters".Translate(), ref AllowBeastmasters);
         listingStandard.CheckboxLabeled("AdRa.allowCommanderChiefs".Translate(), ref AllowCommanderChiefs);
-        if (AdvancedRaiders.CurrentVersion != null)
+        if (AdvancedRaidersMod.CurrentVersion != null)
         {
             GUI.contentColor = Color.gray;
-            listingStandard.Label("AdRa.modVersion".Translate(AdvancedRaiders.CurrentVersion));
+            listingStandard.Label("AdRa.modVersion".Translate(AdvancedRaidersMod.CurrentVersion));
             GUI.contentColor = Color.white;
         }
 

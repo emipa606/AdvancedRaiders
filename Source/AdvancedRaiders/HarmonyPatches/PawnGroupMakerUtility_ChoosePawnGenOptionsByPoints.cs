@@ -18,7 +18,6 @@ internal static class PawnGroupMakerUtility_ChoosePawnGenOptionsByPoints
 
     private static readonly PawnKindDef gunnerDef = DefDatabase<PawnKindDef>.GetNamedSilentFail("Mercenary_Gunner");
 
-    //TODO add AR frequency controls
     public static IEnumerable<PawnGenOptionWithXenotype> Postfix(IEnumerable<PawnGenOptionWithXenotype> options)
     {
         if (options == null)

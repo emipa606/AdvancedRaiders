@@ -3,4 +3,32 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="AdvancedRaiders/AdvancedRaiders.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/">
+    <File Path="../1.7/Defs/Abilities.xml" />
+    <File Path="../1.7/Defs/Apparel.xml" />
+    <File Path="../1.7/Defs/DrugsAndHediffs.xml" />
+    <File Path="../1.7/Defs/Hediff_Implants.xml" />
+    <File Path="../1.7/Defs/Hediffs_Other.xml" />
+    <File Path="../1.7/Defs/Jobs.xml" />
+    <File Path="../1.7/Defs/MentalStates.xml" />
+    <File Path="../1.7/Defs/PawnKinds.xml" />
+    <File Path="../1.7/Defs/ResearchProjects.xml" />
+    <File Path="../1.7/Defs/Things_Other.xml" />
+    <File Path="../1.7/Defs/Thoughts.xml" />
+    <File Path="../1.7/Defs/Weapons.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Patches/">
+    <File Path="../1.7/Patches/DutiesPatch.xml" />
+    <File Path="../1.7/Patches/GroupMakerPatch.xml" />
+    <File Path="../1.7/Patches/WeaponTagsPatch.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/ModSettings.xml" />
+  </Folder>
 </Solution>

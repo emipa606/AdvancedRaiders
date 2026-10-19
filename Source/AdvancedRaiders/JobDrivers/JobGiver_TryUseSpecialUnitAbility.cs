@@ -93,12 +93,9 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
         }
 
         var ability = inspirer.abilities.GetAbility(AdvancedRaidersDefOf.InspireAlliesAbility);
-        if (ability is not null)
+        if (ability is not null && (ability.CanCast || ability.Casting))
         {
-            if (ability.CanCast || ability.Casting)
-            {
-                return null;
-            }
+            return null;
         }
 
         var job = JobMaker.MakeJob(JobDefOf
@@ -168,12 +165,9 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
 
         var ability = dozer.abilities.GetAbility(AdvancedRaidersDefOf.TauntAbility);
 
-        if (ability is not null)
+        if (ability is not null && (ability.CanCast || ability.Casting))
         {
-            if (ability.CanCast || ability.Casting)
-            {
-                return null;
-            }
+            return null;
         }
 
         if (!SpecialUnitAIUtility.TryFindTauntTarget(dozer, 30, out var victim))
@@ -191,9 +185,6 @@ public class JobGiver_TryUseSpecialUnitAbility : ThinkNode_JobGiver
 
     protected override Job TryGiveJob(Pawn pawn)
     {
-        /*if (pawn.CurJobDef == JobDefOf.Wait_MaintainPosture)        //doesn't seem to be working
-            return null;*/
-
         switch (SpecialUnitUtility.AdvancedRaiderClass(pawn))
         {
             case PawnClass.MercenaryMedic:

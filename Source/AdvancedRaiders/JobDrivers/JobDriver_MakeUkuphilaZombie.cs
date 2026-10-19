@@ -27,14 +27,6 @@ public class JobDriver_MakeUkuphilaZombie : JobDriver
         yield return Toils_Misc.TakeItemFromInventoryToCarrier(GetActor(), TargetIndex.B);
         yield return Toils_General.Wait(100);
         yield return Toils_General.Do(makeUkuphilaZombie);
-        //better let zombies be controlled by lord
-        /*yield return Toils_General.Do(() =>
-            pawnToResurrect.mindState.mentalStateHandler.TryStartMentalState(
-                AdvancedRaidersDefOf.UkuphilaResurrectionPsychosis,
-                "resurrected with ukuphila herb",
-                forceWake: true,
-                otherPawn: GetActor(),
-                transitionSilently: true));*/
     }
 
     private void makeUkuphilaZombie()

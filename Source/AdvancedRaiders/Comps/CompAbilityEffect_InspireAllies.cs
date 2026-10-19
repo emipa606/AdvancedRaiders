@@ -7,7 +7,7 @@ namespace AdvancedRaiders;
 
 public class CompAbilityEffect_InspireAllies : CompAbilityEffect
 {
-    public new CompProperties_AbilityInspireAllies Props => props as CompProperties_AbilityInspireAllies;
+    private new CompProperties_AbilityInspireAllies Props => props as CompProperties_AbilityInspireAllies;
 
     public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
     {

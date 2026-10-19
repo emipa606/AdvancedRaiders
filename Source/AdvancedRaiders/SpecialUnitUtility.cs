@@ -13,10 +13,6 @@ public static class SpecialUnitUtility
 
     public static IEnumerable<Pawn> GenBeastmasterPetsAndRelations(Pawn beastmaster)
     {
-        //if (beastmaster.relations.GetDirectRelationsCount(PawnRelationDefOf.Bond) > 0)      //avoiding animal spam
-        //   yield break;
-
-
         PawnKindDef kindDef;
         int beastNum;
 

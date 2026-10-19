@@ -1,13 +1,13 @@
 # [Advanced Raiders (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2894402265)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of saloids mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2628440891
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
 **Adds 7 (3 tribesman and 4 mercenary) new raider types and some related items.**
     
@@ -68,13 +68,13 @@ After proper research you can use medic's medicine to create something useful fo
     
  Please leave your suggestions and report any bugs (I bet there is ton of them) and grammar mistakes you find. 
 	
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -82,4 +82,4 @@ After proper research you can use medic's medicine to create something useful fo
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/AdvancedRaiders?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2894402265) | tags:  raider types
+[![Image](https://img.shields.io/github/v/release/emipa606/AdvancedRaiders?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2894402265) | raider types

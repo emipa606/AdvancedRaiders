@@ -14,7 +14,6 @@ public class CompAbilityEffect_Taunt : CompAbilityEffect
             return;
         }
 
-        //base.Apply(target, dest);     //TODO make base apply work properly
         if (!tryTauntPawn(target.Pawn))
         {
             Log.Warning($"Failed to taunt {target.Pawn.Name}");
